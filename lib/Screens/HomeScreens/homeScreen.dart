@@ -423,6 +423,9 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
+              SizedBox(
+                height: h * 0.030,
+              ),
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
@@ -434,16 +437,97 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-              ...List.generate(
-                  CategoriesIconList.length,
-                  (index) => Container(
-                        height: h * 0.3,
-                        width: w * 0.3,
-                        decoration: BoxDecoration(
+              SizedBox(
+                height: h * 0.010,
+              ),
+              SizedBox(
+                height: h * 0.3,
+                width: w * 0.85,
+                child: GridView.builder(
+                  itemCount: CategoriesIconList.length,
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 3,
+                  ),
+                  itemBuilder: (BuildContext context, int index) {
+                    return Column(
+                      children: [
+                        Container(
+                          // padding: EdgeInsets.all(8),
+                          margin: EdgeInsets.all(6),
+                          height: h * 0.08 + 10,
+                          width: w * 0.3 + 10,
+                          decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             image: DecorationImage(
-                                image: AssetImage(CategoriesIconList[index]))),
-                      ))
+                              fit: BoxFit.contain,
+                              image: AssetImage(
+                                CategoriesIconList[index]['categoryImage'],
+                              ),
+                            ),
+                          ),
+                        ),
+                        Text(CategoriesIconList[index]['categoryName'])
+                      ],
+                    );
+                  },
+                ),
+              ),
+              Container(
+                height: h * 0.8,
+                width: w * 0.99 + 10,
+                decoration: BoxDecoration(
+                  color: Color(0xffECEAE8),
+                ),
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            '   Barista Recommends',
+                            style: TextStyle(
+                              color: Color(0xff213C35),
+                              fontSize: 25,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                        Spacer(),
+                        Container(
+                          height: h * 0.09 + 10,
+                          width: w * 0.2,
+                          decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  image: AssetImage(
+                                      'assets/images/extraImages/bg_flower.jpg'))),
+                        ),
+                      ],
+                    ),
+                    Container(
+                      height: h * 0.2,
+                      width: w * 0.800,
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10)),
+                      child: Row(
+                        children: [
+                          Column(
+                            children: [
+                              CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/brewed_coffee/bc(1).jpg'),
+                              ),
+                              // Container(height: h*0.1,)
+                            ],
+                          )
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              )
             ],
           ),
         ),

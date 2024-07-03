@@ -1,11 +1,28 @@
 
-import 'package:starbucks_app/Screens/CategoriesScreen/categoryScreen.dart';
 
-List CategoriesIconList=[
-  'assets/images/categoryIcons/bestseller.jpg',
-  'assets/images/categoryIcons/cofeeAtHome.jpg',
-  'assets/images/categoryIcons/Drinks.jpg',
-  'assets/images/categoryIcons/food.jpg',
-  'assets/images/categoryIcons/merchandise.jpg',
-  'assets/images/categoryIcons/readyToEat.jpg',
+List CategoriesIconList = [
+  {
+    'categoryName': 'Bestseller',
+    'categoryImage': 'assets/images/categoryIcons/bestseller.jpg',
+  },
+  {
+    'categoryName': 'Drinks',
+    'categoryImage': 'assets/images/categoryIcons/Drinks.jpg',
+  },
+  {
+    'categoryName': 'Food',
+    'categoryImage': 'assets/images/categoryIcons/food.jpg',
+  },
+  {
+    'categoryName': 'Merchandise',
+    'categoryImage': 'assets/images/categoryIcons/merchandise.jpg',
+  },
+  {
+    'categoryName': 'Coffee At Home',
+    'categoryImage': 'assets/images/categoryIcons/cofeeAtHome.jpg',
+  },
+  {
+    'categoryName': 'Ready to Eat',
+    'categoryImage': 'assets/images/categoryIcons/readyToEat.jpg',
+  },
 ];
