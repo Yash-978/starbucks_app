@@ -65,6 +65,13 @@ flutter:
   #   - images/a_dot_ham.jpeg
   assets:
     - assets/images/
+    - assets/images/categoryIcons/
+    - assets/images/brewed_coffee/
+    - assets/images/cold_Brew/
+    - assets/images/Espresso/
+    - assets/images/frappuccino_bledended_beverages/
+    - assets/images/other_beverages/
+    - assets/images/tea/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

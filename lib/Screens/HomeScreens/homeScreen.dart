@@ -1,6 +1,8 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
+import '../../Utils/ImagesList.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -31,23 +33,28 @@ class _HomePageState extends State<HomePage> {
               child: Icon(
                 Icons.home,
                 size: 30,
+                color: Color(0xff00714E),
               ),
             ),
             Icon(
               Icons.card_giftcard_outlined,
               size: 30,
+              color: Color(0xff00714E),
             ),
-            Icon(
-              Icons.coffee_outlined,
-              size: 30,
+            CircleAvatar(
+              backgroundColor: Color(0xff00714E),
+              radius: 27,
+              backgroundImage: AssetImage('assets/images/center_button.jpg'),
             ),
             Icon(
               Icons.payment,
               size: 30,
+              color: Color(0xff00714E),
             ),
             Icon(
               Icons.search,
               size: 30,
+              color: Color(0xff00714E),
             ),
           ],
         ),
@@ -56,13 +63,13 @@ class _HomePageState extends State<HomePage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                height: h * 0.4,
+                height: h * 0.23,
                 width: w * 0.99 + 10,
                 padding: EdgeInsets.only(left: 8, right: 15),
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    // opacity: 1.,
-                    fit: BoxFit.contain,
+                    opacity: 0.9,
+                    fit: BoxFit.fitWidth,
                     image: AssetImage(
                         'assets/images/homeScreen_appBar_image.jpeg'),
                   ),
@@ -211,7 +218,7 @@ class _HomePageState extends State<HomePage> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
                   image: DecorationImage(
-                    // opacity: 1.,
+                    opacity: 0.099 + 1,
                     fit: BoxFit.cover,
                     image: AssetImage(
                         'assets/images/homeScreen_video_image_2.jpeg'),
@@ -234,9 +241,187 @@ class _HomePageState extends State<HomePage> {
               SizedBox(
                 height: h * 0.050,
               ),
-
+              Container(
+                height: h * 0.28,
+                width: w * 0.9,
+                decoration: BoxDecoration(
+                  color: Color(0xff006241),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Row(
+                  children: [
+                    Column(
+                      children: [
+                        Container(
+                          height: h * 0.27,
+                          width: w * 0.2,
+                          decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  image:
+                                      AssetImage('assets/images/offersBg.jpeg'),
+                                  fit: BoxFit.fill)),
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      width: 6,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          RichText(
+                            text: const TextSpan(
+                                text: 'Now Brewing',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 12),
+                                children: <TextSpan>[
+                                  TextSpan(
+                                      text: '\nStarbucks Menu',
+                                      style: TextStyle(
+                                          color: Colors.white, fontSize: 20)),
+                                  TextSpan(
+                                      text:
+                                          "\n\nIndulge in season's feasting! Make\nyour sips extra special!. Explore\nMenu",
+                                      style: TextStyle(
+                                          color: Colors.white, fontSize: 13)),
+                                ]),
+                          ),
+                          SizedBox(
+                            height: 25,
+                          ),
+                          Container(
+                            width: w * 0.6,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                RichText(
+                                    text: TextSpan(
+                                        text: 'Starting from',
+                                        style: TextStyle(
+                                            color: Colors.white, fontSize: 13),
+                                        children: <TextSpan>[
+                                      TextSpan(
+                                          text: "\nRs 250",
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 15))
+                                    ])),
+                                Container(
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      Container(
+                                        height: w * 0.095,
+                                        width: w * 0.27,
+                                        decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(20),
+                                            color: Colors.white),
+                                        child: Center(
+                                            child: Text(
+                                          'Order now',
+                                          style: TextStyle(
+                                              fontSize: 15,
+                                              fontWeight: FontWeight.bold),
+                                        )),
+                                      )
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              ),
               SizedBox(
                 height: h * 0.050,
+              ),
+              Container(
+                height: h * 0.28,
+                width: w * 0.9,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage('assets/images/offersBg.jpeg'),
+                      fit: BoxFit.fill),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Row(
+                  children: [
+                    Column(
+                      children: [
+                        Container(
+                          height: h * 0.27,
+                          width: w * 0.21,
+                          decoration: BoxDecoration(
+                              image: DecorationImage(
+                            image: AssetImage(
+                                'assets/images/homeScreen_video_image_2.jpeg'),
+                          )),
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      width: 6,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          RichText(
+                            text: const TextSpan(
+                                text: 'Introducing',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 12),
+                                children: <TextSpan>[
+                                  TextSpan(
+                                      text: '\nThe Perfect Espresso',
+                                      style: TextStyle(
+                                          color: Colors.white, fontSize: 20)),
+                                  TextSpan(
+                                      text:
+                                          "\n\nSourced only from the World's Too\n3% Arabic Beans, served with love",
+                                      style: TextStyle(
+                                          color: Colors.white, fontSize: 13)),
+                                ]),
+                          ),
+                          SizedBox(
+                            height: 28,
+                          ),
+                          Container(
+                            width: w * 0.6,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                Container(
+                                  height: w * 0.095,
+                                  width: w * 0.27,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(20),
+                                      color: Colors.white),
+                                  child: Center(
+                                      child: Text(
+                                    'Know More',
+                                    style: TextStyle(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.bold),
+                                  )),
+                                )
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
+                    )
+                  ],
+                ),
               ),
               Align(
                 alignment: Alignment.centerLeft,
@@ -249,11 +434,16 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-              CircleAvatar(
-                radius: 45,
-                backgroundColor: Color(0xff006241),
-                backgroundImage: AssetImage('assets/images/homeScreen_video_image_2.jpeg'),
-              )
+              ...List.generate(
+                  CategoriesIconList.length,
+                  (index) => Container(
+                        height: h * 0.3,
+                        width: w * 0.3,
+                        decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            image: DecorationImage(
+                                image: AssetImage(CategoriesIconList[index]))),
+                      ))
             ],
           ),
         ),

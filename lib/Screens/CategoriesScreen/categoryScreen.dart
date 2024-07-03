@@ -13,7 +13,12 @@ class _CategoriesPageState extends State<CategoriesPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Mobile Order and Pay'),
-        actions: [IconButton(onPressed: () {}, icon: Icon(Icons.search),),],
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.search),
+          ),
+        ],
       ),
     );
   }
