@@ -29,7 +29,7 @@ class _SplashPageState extends State<SplashPage> {
               shape: BoxShape.circle,
               image: DecorationImage(
                 image: AssetImage(
-                    'assets/images/StarbucksLogos/StrabucksLogo.png'),
+                    'assets/images/StarBucks_Logos/StrabucksLogo.png'),
               ),
             ),
           )),
