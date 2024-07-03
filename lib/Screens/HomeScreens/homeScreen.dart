@@ -258,7 +258,7 @@ class _HomePageState extends State<HomePage> {
                           decoration: BoxDecoration(
                               image: DecorationImage(
                                   image:
-                                      AssetImage('assets/images/offersBg.jpeg'),
+                                      AssetImage('assets/images/offersBg2.png'),
                                   fit: BoxFit.fill)),
                         )
                       ],
