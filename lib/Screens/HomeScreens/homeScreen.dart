@@ -18,46 +18,7 @@ class _HomePageState extends State<HomePage> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
-        bottomNavigationBar: CurvedNavigationBar(
-          index: 2,
-          backgroundColor: Colors.transparent,
-          height: h * 0.065,
-          animationDuration: Duration(milliseconds: 300),
-          items: [
-            GestureDetector(
-              onTap: () {
-                setState(() {
-                  // HomePage();
-                });
-              },
-              child: Icon(
-                Icons.home,
-                size: 30,
-                color: Color(0xff00714E),
-              ),
-            ),
-            Icon(
-              Icons.card_giftcard_outlined,
-              size: 30,
-              color: Color(0xff00714E),
-            ),
-            CircleAvatar(
-              backgroundColor: Color(0xff00714E),
-              radius: 27,
-              backgroundImage: AssetImage('assets/images/center_button.jpg'),
-            ),
-            Icon(
-              Icons.payment,
-              size: 30,
-              color: Color(0xff00714E),
-            ),
-            Icon(
-              Icons.search,
-              size: 30,
-              color: Color(0xff00714E),
-            ),
-          ],
-        ),
+        bottomNavigationBar: buildCurvedNavigationBar(h),
         body: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -361,6 +322,7 @@ class _HomePageState extends State<HomePage> {
                           width: w * 0.21,
                           decoration: BoxDecoration(
                               image: DecorationImage(
+                            fit: BoxFit.scaleDown,
                             image: AssetImage(
                                 'assets/images/homeScreen_video_image_2.jpeg'),
                           )),
@@ -506,7 +468,7 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                     Container(
-                      height: h * 0.2,
+                      height: h * 0.25,
                       width: w * 0.800,
                       decoration: BoxDecoration(
                           color: Colors.white,
@@ -516,6 +478,7 @@ class _HomePageState extends State<HomePage> {
                           Column(
                             children: [
                               CircleAvatar(
+                                radius: 35,
                                 backgroundImage: AssetImage(
                                     'assets/images/brewed_coffee/bc(1).jpg'),
                               ),
@@ -532,6 +495,59 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
+    );
+  }
+
+  CurvedNavigationBar buildCurvedNavigationBar(double h) {
+    return CurvedNavigationBar(
+      index: 2,
+      backgroundColor: Colors.transparent,
+      height: h * 0.065,
+      animationDuration: Duration(milliseconds: 300),
+      items: [
+        GestureDetector(
+          onTap: () {
+            Navigator.of(context).pushNamed('/');
+          },
+          child: Icon(
+            Icons.home,
+            size: 30,
+            color: Color(0xff00714E),
+          ),
+        ),
+        GestureDetector(
+          onTap: () {},
+          child: Icon(
+            Icons.card_giftcard_outlined,
+            size: 30,
+            color: Color(0xff00714E),
+          ),
+        ),
+        GestureDetector(
+          onTap: () {},
+          child: CircleAvatar(
+            backgroundColor: Color(0xff00714E),
+            radius: 27,
+            backgroundImage: AssetImage('assets/images/center_button.jpg'),
+          ),
+        ),
+        GestureDetector(
+          onTap: () {},
+          child: Icon(
+            Icons.payment,
+            size: 30,
+            color: Color(0xff00714E),
+          ),
+        ),
+        GestureDetector(
+          onTap: () {},
+          child: Icon(
+            Icons.search,
+            size: 30,
+            color: Color(0xff00714E),
+          ),
+        ),
+      ],
     );
   }
 }
