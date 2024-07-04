@@ -17,6 +17,7 @@ class _HomePageState extends State<HomePage> {
     double w = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Scaffold(
+        extendBody: true,
         backgroundColor: Colors.white,
         // bottomNavigationBar: buildCurvedNavigationBar(h),
         body: SingleChildScrollView(
@@ -46,10 +47,15 @@ class _HomePageState extends State<HomePage> {
                           size: 27,
                         ),
                         Spacer(),
-                        Icon(
-                          Icons.person_outline_rounded,
-                          color: Colors.white,
-                          size: 27,
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).pushNamed('/profile');
+                          },
+                          child: Icon(
+                            Icons.person_outline_rounded,
+                            color: Colors.white,
+                            size: 27,
+                          ),
                         )
                       ],
                     ),

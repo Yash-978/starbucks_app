@@ -4,6 +4,7 @@ import '../Screens/BottomNavigationBar/bottomNavigationBar.dart';
 import '../Screens/CategoriesScreen/categoryScreen.dart';
 import '../Screens/HomeScreens/homeScreen.dart';
 import '../Screens/PaymentScreen/paymentScreen.dart';
+import '../Screens/ProfileScreen/profileScreen.dart';
 import '../Screens/SearchScreen/searchScreen.dart';
 import '../Screens/SplashScreen/splash.dart';
 
@@ -15,6 +16,7 @@ class AppRoutes {
     '/search': (context) => Searchscreen(),
     '/payment': (context) => Paymentscreen(),
     '/mainNavigation': (context) => MainBottomNavigation(),
+    '/profile': (context) => Profilescreen(),
     // '/quote':(context)=>QuotePage(),
     // '/profile':(context)=>ProfilePage(),
   };
