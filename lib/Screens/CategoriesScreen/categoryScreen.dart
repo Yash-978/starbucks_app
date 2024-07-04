@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import '../../Utils/GlobalList.dart';
@@ -25,7 +24,6 @@ class _CategoriesPageState extends State<CategoriesPage> {
       child: Scaffold(
         extendBody: true,
         appBar: AppBar(
-
           backgroundColor: Color(0xff1e3932),
           title: Text(
             'Mobile Order and Pay',
@@ -104,91 +102,90 @@ class _CategoriesPageState extends State<CategoriesPage> {
                       SizedBox(
                         height: 50,
                       ),
-                      SegmentedButton(
-                        // style: ButtonStyle(),
-                        showSelectedIcon: true,
-                        // selectedIcon: ,
-                        multiSelectionEnabled: false,
-                        style: ButtonStyle(
-                          // minimumSize: WidgetStatePropertyAll(),
-                          iconColor: WidgetStatePropertyAll(Colors.white),
-                          padding: WidgetStatePropertyAll(EdgeInsets.all(10)),
-                          backgroundColor: WidgetStateColor.resolveWith(
-                            (states) => Colors.white,
-                          ),
-                          shape: WidgetStatePropertyAll(
-                            ContinuousRectangleBorder(
-                              borderRadius: BorderRadius.circular(15),
-                            ),
-                          ),
-                        ),
-
-                        segments: [
-                          ButtonSegment<String>(
-                              value: 'Dine in',
-                              label: Text(
-                                'Dine in',
-                                style: TextStyle(fontSize: 12),
-                              ),
-                              icon: const Icon(
-                                Icons.list_alt,
-                                size: 18,
-                              )),
-                          ButtonSegment<String>(
-                            value: 'Takeaway',
-                            label: Text('Takeaway',
-                                style: TextStyle(fontSize: 12)),
-                            icon: const Icon(
-                              Icons.apps_rounded,
-                              size: 18,
-                            ),
-                          ),
-                        ],
-                        selected: _selected,
-                        onSelectionChanged: (Set<String> newselection) {
-                          setState(() {
-                            _selected = newselection;
-                            changeToggle = !changeToggle;
-                          });
-                        },
-                      ),
-                      // Row(
-                      //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      //   children: [
+                      // SegmentedButton(
+                      //   // style: ButtonStyle(),
+                      //   showSelectedIcon: true,
+                      //   // selectedIcon: ,
+                      //   multiSelectionEnabled: false,
+                      //   style: ButtonStyle(
+                      //     // minimumSize: WidgetStatePropertyAll(),
+                      //     iconColor: WidgetStatePropertyAll(Colors.white),
+                      //     padding: WidgetStatePropertyAll(EdgeInsets.all(10)),
+                      //     backgroundColor: WidgetStateColor.resolveWith(
+                      //       (states) => Colors.white,
+                      //     ),
+                      //     shape: WidgetStatePropertyAll(
+                      //       ContinuousRectangleBorder(
+                      //         borderRadius: BorderRadius.circular(15),
+                      //       ),
+                      //     ),
+                      //   ),
                       //
-                      //     Container(
-                      //       height: 50,
-                      //       width: 150,
-                      //       decoration: BoxDecoration(
-                      //           color: Colors.white,
-                      //           borderRadius: BorderRadius.circular(10)),
-                      //       child: Row(
-                      //         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      //         children: [
-                      //           Icon((Icons.dinner_dining)),
-                      //           Text('Dine In')
-                      //         ],
+                      //   segments: [
+                      //     ButtonSegment<String>(
+                      //         value: 'Dine in',
+                      //         label: Text(
+                      //           'Dine in',
+                      //           style: TextStyle(fontSize: 12),
+                      //         ),
+                      //         icon: const Icon(
+                      //           Icons.list_alt,
+                      //           size: 18,
+                      //         )),
+                      //     ButtonSegment<String>(
+                      //       value: 'Takeaway',
+                      //       label: Text('Takeaway',
+                      //           style: TextStyle(fontSize: 12)),
+                      //       icon: const Icon(
+                      //         Icons.apps_rounded,
+                      //         size: 18,
                       //       ),
                       //     ),
-                      //     SizedBox(
-                      //       width: 10,
-                      //     ),
-                      //     Container(
-                      //       height: 50,
-                      //       width: 150,
-                      //       decoration: BoxDecoration(
-                      //           color: Colors.white,
-                      //           borderRadius: BorderRadius.circular(10)),
-                      //       child: Row(
-                      //         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      //         children: [
-                      //           Icon((Icons.takeout_dining_outlined)),
-                      //           Text('Takeway')
-                      //         ],
-                      //       ),
-                      //     )
                       //   ],
-                      // )
+                      //   selected: _selected,
+                      //   onSelectionChanged: (Set<String> newselection) {
+                      //     setState(() {
+                      //       _selected = newselection;
+                      //       changeToggle = !changeToggle;
+                      //     });
+                      //   },
+                      // ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Container(
+                            height: 50,
+                            width: 150,
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(10)),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Icon((Icons.dinner_dining)),
+                                Text('Dine In')
+                              ],
+                            ),
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Container(
+                            height: 50,
+                            width: 150,
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(10)),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Icon((Icons.takeout_dining_outlined)),
+                                Text('Takeway')
+                              ],
+                            ),
+                          )
+                        ],
+                      )
                     ],
                   ),
                 ),
