@@ -20,6 +20,8 @@ class _CategoriesPageState extends State<CategoriesPage> {
     double w = MediaQuery.of(context).size.width;
     //   TabController _tabController=TabController(length: 2,vsync: this );
 
+
+
     return SafeArea(
       child: Scaffold(
         extendBody: true,
