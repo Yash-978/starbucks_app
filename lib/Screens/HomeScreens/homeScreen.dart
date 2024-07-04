@@ -18,7 +18,7 @@ class _HomePageState extends State<HomePage> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
-        bottomNavigationBar: buildCurvedNavigationBar(h),
+        // bottomNavigationBar: buildCurvedNavigationBar(h),
         body: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -170,7 +170,7 @@ class _HomePageState extends State<HomePage> {
                 height: h * 0.050,
               ),
               Container(
-                height: h * 0.5,
+                height: h * 0.55,
                 width: w * 0.9,
                 alignment: Alignment.bottomRight,
 
@@ -179,8 +179,8 @@ class _HomePageState extends State<HomePage> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
                   image: DecorationImage(
-                    opacity: 0.099 + 1,
-                    fit: BoxFit.cover,
+                    // opacity: 0.099 + 1,
+                    fit: BoxFit.values.first,
                     image: AssetImage(
                         'assets/images/homeScreen_video_image_2.jpeg'),
                   ),
@@ -322,9 +322,9 @@ class _HomePageState extends State<HomePage> {
                           width: w * 0.21,
                           decoration: BoxDecoration(
                               image: DecorationImage(
-                            fit: BoxFit.scaleDown,
+                            fit: BoxFit.none,
                             image: AssetImage(
-                                'assets/images/homeScreen_video_image_2.jpeg'),
+                                'assets/images/the_perfect_Espresso-removebg-preview.png'),
                           )),
                         )
                       ],
@@ -500,54 +500,40 @@ class _HomePageState extends State<HomePage> {
 
   CurvedNavigationBar buildCurvedNavigationBar(double h) {
     return CurvedNavigationBar(
+      onTap: (value) {
+
+      },
+      color: Color(0xffC0AEAD),
+
       index: 2,
       backgroundColor: Colors.transparent,
       height: h * 0.065,
       animationDuration: Duration(milliseconds: 300),
       items: [
-        GestureDetector(
-          onTap: () {
-            Navigator.of(context).pushNamed('/');
-          },
-          child: Icon(
-            Icons.home,
-            size: 30,
-            color: Color(0xff00714E),
-          ),
+        Icon(
+          Icons.home,
+          size: 30,
+          color: Color(0xff00714E),
         ),
-        GestureDetector(
-          onTap: () {},
-          child: Icon(
-            Icons.card_giftcard_outlined,
-            size: 30,
-            color: Color(0xff00714E),
-          ),
+        Icon(
+          Icons.card_giftcard_outlined,
+          size: 30,
+          color: Color(0xff00714E),
         ),
-        GestureDetector(
-          onTap: () {
-            Navigator.pushNamed(context, '/categories');
-          },
-          child: CircleAvatar(
-            backgroundColor: Color(0xff00714E),
-            radius: 27,
-            backgroundImage: AssetImage('assets/images/center_button.jpg'),
-          ),
+        CircleAvatar(
+          backgroundColor: Color(0xff00714E),
+          radius: 27,
+          backgroundImage: AssetImage('assets/images/center_button.jpg'),
         ),
-        GestureDetector(
-          onTap: () {},
-          child: Icon(
-            Icons.payment,
-            size: 30,
-            color: Color(0xff00714E),
-          ),
+        Icon(
+          Icons.payment,
+          size: 30,
+          color: Color(0xff00714E),
         ),
-        GestureDetector(
-          onTap: () {},
-          child: Icon(
-            Icons.search,
-            size: 30,
-            color: Color(0xff00714E),
-          ),
+        Icon(
+          Icons.search,
+          size: 30,
+          color: Color(0xff00714E),
         ),
       ],
     );

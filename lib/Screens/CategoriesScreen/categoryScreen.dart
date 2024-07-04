@@ -1,3 +1,4 @@
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
 import '../../Utils/GlobalList.dart';
@@ -12,10 +13,13 @@ class CategoriesPage extends StatefulWidget {
 class _CategoriesPageState extends State<CategoriesPage> {
   @override
   Widget build(BuildContext context) {
+    double h = MediaQuery.of(context).size.height;
+    double w = MediaQuery.of(context).size.width;
     //   TabController _tabController=TabController(length: 2,vsync: this );
 
     return SafeArea(
       child: Scaffold(
+
         appBar: AppBar(
           backgroundColor: Color(0xff1e3932),
           title: Text(
@@ -180,8 +184,8 @@ class _CategoriesPageState extends State<CategoriesPage> {
                               ),
                               child: Column(
                                 children: [
-                                  Text(
-                                      '${ProductDetail[index]['productName']}',maxLines: 1),
+                                  Text('${ProductDetail[index]['productName']}',
+                                      maxLines: 1),
                                 ],
                               ),
                             ),
@@ -230,7 +234,8 @@ class _CategoriesPageState extends State<CategoriesPage> {
                                             child: Column(
                                               children: [
                                                 Text(
-                                                  '${ProductDetail[index]['productName']}',maxLines: 1,
+                                                  '${ProductDetail[index]['productName']}',
+                                                  maxLines: 1,
                                                   style: TextStyle(
                                                       fontSize: 18,
                                                       fontWeight:

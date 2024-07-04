@@ -1,6 +1,7 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 
+import '../BottomNavigationBar/bottomNavigationBar.dart';
 import '../HomeScreens/homeScreen.dart';
 
 class SplashPage extends StatefulWidget {
@@ -17,14 +18,14 @@ class _SplashPageState extends State<SplashPage> {
     double w = MediaQuery.of(context).size.width;
     return Scaffold(
       body: AnimatedSplashScreen(
-          nextScreen: HomePage(),
+          nextScreen: MainBottomNavigation(),
           animationDuration: Duration(seconds: 3),
           backgroundColor: Colors.black,
           splashTransition: SplashTransition.rotationTransition,
           // curve: Curves.elasticOut,
           splash: Container(
-            height: h * 0.35,
-            width: w * 0.35,
+            height: h * 0.60,
+            width: w * 0.60,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               image: DecorationImage(
