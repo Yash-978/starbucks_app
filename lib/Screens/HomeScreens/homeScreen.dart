@@ -524,7 +524,9 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         GestureDetector(
-          onTap: () {},
+          onTap: () {
+            Navigator.pushNamed(context, '/categories');
+          },
           child: CircleAvatar(
             backgroundColor: Color(0xff00714E),
             radius: 27,
