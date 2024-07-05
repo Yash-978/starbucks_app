@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import '../../Utils/ImagesList.dart';
@@ -13,14 +12,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    double h = MediaQuery
-        .of(context)
-        .size
-        .height;
-    double w = MediaQuery
-        .of(context)
-        .size
-        .width;
+    double h = MediaQuery.of(context).size.height;
+    double w = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Scaffold(
         extendBody: true,
@@ -231,7 +224,7 @@ class _HomePageState extends State<HomePage> {
                           decoration: BoxDecoration(
                               image: DecorationImage(
                                   image:
-                                  AssetImage('assets/images/offersBg2.png'),
+                                      AssetImage('assets/images/offersBg2.png'),
                                   fit: BoxFit.fill)),
                         )
                       ],
@@ -256,7 +249,7 @@ class _HomePageState extends State<HomePage> {
                                           color: Colors.white, fontSize: 20)),
                                   TextSpan(
                                       text:
-                                      "\n\nIndulge in season's feasting! Make\nyour sips extra special!. Explore\nMenu",
+                                          "\n\nIndulge in season's feasting! Make\nyour sips extra special!. Explore\nMenu",
                                       style: TextStyle(
                                           color: Colors.white, fontSize: 13)),
                                 ]),
@@ -275,13 +268,13 @@ class _HomePageState extends State<HomePage> {
                                         style: TextStyle(
                                             color: Colors.white, fontSize: 13),
                                         children: <TextSpan>[
-                                          TextSpan(
-                                              text: "\nRs 250",
-                                              style: TextStyle(
-                                                  color: Colors.white,
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 15))
-                                        ])),
+                                      TextSpan(
+                                          text: "\nRs 250",
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 15))
+                                    ])),
                                 Container(
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.end,
@@ -291,15 +284,15 @@ class _HomePageState extends State<HomePage> {
                                         width: w * 0.27,
                                         decoration: BoxDecoration(
                                             borderRadius:
-                                            BorderRadius.circular(20),
+                                                BorderRadius.circular(20),
                                             color: Colors.white),
                                         child: Center(
                                             child: Text(
-                                              'Order now',
-                                              style: TextStyle(
-                                                  fontSize: 15,
-                                                  fontWeight: FontWeight.bold),
-                                            )),
+                                          'Order now',
+                                          style: TextStyle(
+                                              fontSize: 15,
+                                              fontWeight: FontWeight.bold),
+                                        )),
                                       )
                                     ],
                                   ),
@@ -334,10 +327,10 @@ class _HomePageState extends State<HomePage> {
                           width: w * 0.21,
                           decoration: BoxDecoration(
                               image: DecorationImage(
-                                fit: BoxFit.none,
-                                image: AssetImage(
-                                    'assets/images/the_perfect_Espresso-removebg-preview.png'),
-                              )),
+                            fit: BoxFit.none,
+                            image: AssetImage(
+                                'assets/images/the_perfect_Espresso-removebg-preview.png'),
+                          )),
                         )
                       ],
                     ),
@@ -361,7 +354,7 @@ class _HomePageState extends State<HomePage> {
                                           color: Colors.white, fontSize: 20)),
                                   TextSpan(
                                       text:
-                                      "\n\nSourced only from the World's Too\n3% Arabic Beans, served with love",
+                                          "\n\nSourced only from the World's Too\n3% Arabic Beans, served with love",
                                       style: TextStyle(
                                           color: Colors.white, fontSize: 13)),
                                 ]),
@@ -382,11 +375,11 @@ class _HomePageState extends State<HomePage> {
                                       color: Colors.white),
                                   child: Center(
                                       child: Text(
-                                        'Know More',
-                                        style: TextStyle(
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.bold),
-                                      )),
+                                    'Know More',
+                                    style: TextStyle(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.bold),
+                                  )),
                                 )
                               ],
                             ),
@@ -486,16 +479,43 @@ class _HomePageState extends State<HomePage> {
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(10)),
                       child: Row(
+                        // mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               CircleAvatar(
-                                radius: 35,
+                                radius: 40,
                                 backgroundImage: AssetImage(
                                     'assets/images/brewed_coffee/bc(1).jpg'),
                               ),
+
+                              Row(children:[
+                                Icon(Icons.currency_rupee,size: 20,),
+                                Text('283',style: TextStyle(fontSize: 20),),
+                                SizedBox(width: w*0.080,),
+                                Container(
+                                  height: h*0.045,
+                                  width: w*0.250,
+                                  decoration: BoxDecoration(
+                                    color: Color(0xff007347),
+                                    borderRadius: BorderRadius.circular(20)
+                                  ),
+                                )
+                              ] ),
+
                               // Container(height: h*0.1,)
                             ],
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 10,),
+                            child: Column(
+                              children: [
+
+                                Icon(Icons.currency_rupee,size: 20,),
+                                Text('Cappucino',style: TextStyle(fontSize: 20),),
+                              ],
+                            ),
                           )
                         ],
                       ),
@@ -510,45 +530,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-
-//   CurvedNavigationBar buildCurvedNavigationBar(double h) {
-//     return CurvedNavigationBar(
-//       onTap: (value) {
-//
-//       },
-//       color: Color(0xffC0AEAD),
-//
-//       index: 2,
-//       backgroundColor: Colors.transparent,
-//       height: h * 0.065,
-//       animationDuration: Duration(milliseconds: 300),
-//       items: [
-//         Icon(
-//           Icons.home,
-//           size: 30,
-//           color: Color(0xff00714E),
-//         ),
-//         Icon(
-//           Icons.card_giftcard_outlined,
-//           size: 30,
-//           color: Color(0xff00714E),
-//         ),
-//         CircleAvatar(
-//           backgroundColor: Color(0xff00714E),
-//           radius: 27,
-//           backgroundImage: AssetImage('assets/images/center_button.jpg'),
-//         ),
-//         Icon(
-//           Icons.payment,
-//           size: 30,
-//           color: Color(0xff00714E),
-//         ),
-//         Icon(
-//           Icons.search,
-//           size: 30,
-//           color: Color(0xff00714E),
-//         ),
-//       ],
-//     );
-//   }
-// }

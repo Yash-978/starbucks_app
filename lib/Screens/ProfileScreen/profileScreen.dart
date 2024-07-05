@@ -15,14 +15,19 @@ class _ProfilescreenState extends State<Profilescreen> {
       backgroundColor: const Color(0xff1D3631),
       appBar: AppBar(
         backgroundColor: const Color(0xff1D3631),
-        leading: const Padding(
-          padding: EdgeInsets.only(
-            left: 20,
-          ),
-          child: Icon(
-            Icons.arrow_back_ios_new_outlined,
-            color: Colors.white,
-            size: 23,
+        leading: GestureDetector(
+          onTap: () {
+            Navigator.of(context).pop();
+          },
+          child: const Padding(
+            padding: EdgeInsets.only(
+              left: 20,
+            ),
+            child: Icon(
+              Icons.arrow_back_ios_new_outlined,
+              color: Colors.white,
+              size: 23,
+            ),
           ),
         ),
         centerTitle: true,
