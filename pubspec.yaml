@@ -80,6 +80,16 @@ flutter:
     - assets/images/StarBucks_Logos/
     - assets/images/extraImages/
     - assets/Gif_videos/
+    - assets/images/Food/
+    - assets/images/Food/bakery/
+    - assets/images/Food/cakes/
+    - assets/images/Food/cookies_&_more/
+    - assets/images/Food/croissants_&_More/
+    - assets/images/Food/puffs_&_pies/
+    - assets/images/Food/Sandwiches_&_Wraps/
+    - assets/images/coffee_at_home/
+    - assets/images/merchandise/
+    - assets/images/Ready_to_eat/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
