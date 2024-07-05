@@ -18,22 +18,33 @@ class _SplashPageState extends State<SplashPage> {
     double w = MediaQuery.of(context).size.width;
     return Scaffold(
       body: AnimatedSplashScreen(
+        // splashIconSize: BorderSide.strokeAlignCenter,
+
+
           nextScreen: MainBottomNavigation(),
           animationDuration: Duration(seconds: 3),
           backgroundColor: Colors.black,
-          splashTransition: SplashTransition.rotationTransition,
+          splashTransition: SplashTransition.slideTransition,
+
+
           // curve: Curves.elasticOut,
-          splash: Container(
-            height: h * 0.60,
-            width: w * 0.60,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              image: DecorationImage(
-                image: AssetImage(
-                    'assets/images/StarBucks_Logos/StrabucksLogo.png'),
-              ),
-            ),
-          )),
+          splash: CircleAvatar(
+            radius: 60,
+            backgroundImage: AssetImage('assets/images/StarBucks_Logos/StrabucksLogo.png'),
+          )
+
+          // Container(
+          //   height: h * 0.60,
+          //   width: w * 0.60,
+          //   decoration: BoxDecoration(
+          //     shape: BoxShape.circle,
+          //     image: DecorationImage(
+          //       image: AssetImage(
+          //           'assets/images/StarBucks_Logos/StrabucksLogo.png'),
+          //     ),
+          //   ),
+          // )
+      ),
     );
   }
 }
