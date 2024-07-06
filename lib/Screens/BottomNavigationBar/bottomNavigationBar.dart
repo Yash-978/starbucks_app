@@ -86,25 +86,7 @@ class _MainBottomNavigationState extends State<MainBottomNavigation> {
         ],
       ),
 
-      // BottomNavigationBar(
-      //   backgroundColor: Colors.white,
-      //   onTap: _onItemTapped,
-      //   currentIndex: myIndex,
-      //   type: BottomNavigationBarType.fixed,
-      //   showUnselectedLabels: false,
-      //   unselectedItemColor: Colors.grey,
-      //   selectedItemColor: Colors.black,
-      //   items: const [
-      //     BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-      //     BottomNavigationBarItem(
-      //         icon: Icon(Icons.shopping_bag_outlined), label: 'Booking'),
-      //     BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
-      //     BottomNavigationBarItem(
-      //         icon: Icon(Icons.home_repair_service), label: 'Service'),
-      //     BottomNavigationBarItem(
-      //         icon: Icon(Icons.help_center_outlined), label: 'Need Help'),
-      //   ],
-      // ),
+
     );
   }
 }
