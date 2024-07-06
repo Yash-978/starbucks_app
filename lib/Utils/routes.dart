@@ -2,7 +2,9 @@ import 'package:flutter/cupertino.dart';
 
 import '../Screens/BottomNavigationBar/bottomNavigationBar.dart';
 import '../Screens/CategoriesScreen/categoryScreen.dart';
+import '../Screens/GreetingScreen/greeting.dart';
 import '../Screens/HomeScreens/homeScreen.dart';
+import '../Screens/Login&SignUp/signUp.dart';
 import '../Screens/PaymentScreen/paymentScreen.dart';
 import '../Screens/ProfileScreen/profileScreen.dart';
 import '../Screens/SearchScreen/searchScreen.dart';
@@ -17,6 +19,8 @@ class AppRoutes {
     '/payment': (context) => Paymentscreen(),
     '/mainNavigation': (context) => MainBottomNavigation(),
     '/profile': (context) => Profilescreen(),
+    '/signUp': (context) => SignUpPage(),
+    '/greeting': (context) => GreetingPage(),
     // '/quote':(context)=>QuotePage(),
     // '/profile':(context)=>ProfilePage(),
   };
