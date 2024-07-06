@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:starbucks_app/Screens/HomeScreens/homeScreen.dart';
+
 
 import 'package:starbucks_app/Utils/ColorList.dart';
 
+import '../BottomNavigationBar/bottomNavigationBar.dart';
 import '../Login&SignUp/Component/signUpVariables.dart';
 
 class GreetingPage extends StatefulWidget {
@@ -95,7 +96,7 @@ class _GreetingPageState extends State<GreetingPage> {
                 Navigator.push(
                     context,
                     PageTransition(
-                        child: HomePage(),
+                        child: MainBottomNavigation(),
                         duration: Duration(milliseconds: 600),
                         type: PageTransitionType.bottomToTop));
               },
