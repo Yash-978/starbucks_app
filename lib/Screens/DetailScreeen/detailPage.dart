@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:starbucks_app/Utils/ColorList.dart';
 
 class DetailPage extends StatefulWidget {
@@ -18,7 +19,6 @@ class _DetailPageState extends State<DetailPage> {
       bottomNavigationBar: BottomAppBar(
         color: primaryColor,
         // padding: EdgeInsets.only(top: 2,),
-
         child: Stack(
           children: [
             Container(
@@ -67,54 +67,83 @@ class _DetailPageState extends State<DetailPage> {
           )
         ],
       ),
-      body: Container(
-        height: h * 0.6,
-        width: w * 0.99 + 10,
-        decoration: BoxDecoration(
-          image: DecorationImage(
-              fit: BoxFit.cover,
-              image: AssetImage('assets/images/Poster/poster(2).jpg')),
-          color: Colors.white,
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(25),
-            topRight: Radius.circular(25),
-          ),
+      body: SlidingUpPanel(
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(20),
+          topRight: Radius.circular(20),
         ),
-        child: Column(mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Align(
-              alignment: Alignment.bottomRight,
-              child: IconButton(
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.fullscreen,
+        panelBuilder: (sc) {
+          return Column(
+            children: [
+              Container(
+                height: h * 0.1,
+                width: w * 0.99 + 10,
+                decoration: BoxDecoration(
+                  // color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(20),
+                    topRight: Radius.circular(20),
+                  ),
+                ),
+              ),
+            ],
+          );
+        },
+        body: Container(
+          height: h * 0.6,
+          width: w * 0.99 + 10,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+                fit: BoxFit.cover,
+                image: AssetImage('assets/images/Poster/poster(2).jpg')),
+            color: Colors.white,
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(25),
+              topRight: Radius.circular(25),
+            ),
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Align(
+                alignment: Alignment.bottomRight,
+                child: IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.fullscreen,
+                      color: Colors.white,
+                      size: 40,
+                    )),
+              ),
+              SizedBox(
+                height: h * 0.35,
+              ),
+              Text(
+                'VEGETERIAN - 0 KCAL',
+                textAlign: TextAlign.start,
+                style: TextStyle(color: Colors.white),
+              ),
+              Text(
+                'Caffe Ammericano',
+                style: TextStyle(
                     color: Colors.white,
-                    size: 40,
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold),
+              ),
+              SizedBox(
+                  width: w * 0.86,
+                  child: Text(
+                    'Rich in flavour, full-bodied expresso with hot water in true European style.',
+                    style: TextStyle(color: Colors.white),
                   )),
-            ),
-            SizedBox(height: h*0.35,),
-            Text(
-              'VEGETERIAN - 0 KCAL',
-              textAlign: TextAlign.start,
-              style: TextStyle(color: Colors.white),
-            ),
-            Text(
-              'Caffe Ammericano',
-              style:
-                  TextStyle(color: Colors.white,fontSize: 15, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(
-                width: w * 0.86,
-                child: Text(
-                  'Rich in flavour, full-bodied expresso with hot water in true European style.',
-                  style: TextStyle(color: Colors.white),
-                )),
-            Text(
-              'BREWED COFFEE',
-              style:
-              TextStyle(color: Colors.white,),
-            ),
-          ],
+              Text(
+                'BREWED COFFEE',
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

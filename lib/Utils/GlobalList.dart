@@ -1134,6 +1134,82 @@ List ProductDetail = [
   },
 ];
 
-List save=[ProductDetail];
+List save = [ProductDetail];
 
-List cartList=[];
+List cartList = [];
+List foodList = [
+  {
+    "productName": "Raisin Swirl",
+    'type': 'Sandwiches & Wraps',
+    //Sandwiches & Wraps,Croissants, Cookies & Desserts, Puffs & Pies, Bakery, Cakes
+
+    'like': false,
+    //Do not make any changes in this key or value [no change]
+    'image': '',
+    "category": "Cookie",
+    //Veg, Non veg, Contains, Egg, Bakery,Cake, Dessert, Spicy ,Sweet,Healthy,
+    "size": "Normal",
+    "celsius": "85g/288 Kcal",
+    "description":
+        "Indulge in our delicious raisin swirl, crafted with a rich buttery melt-in-your-mouth texture and intense flavor. Inside, you'll find a soft center filled with a delightful blend of naturally sweet raisins.",
+    "price": 367.50,
+    "productNo": 1,
+    "ingredients": "Milk Wheat Egg",
+    "veg_nonveg": "Non Veg",
+  },
+];
+List drinksList = [
+  {
+    "productName": "",
+    'type': 'Sandwiches & Wraps',
+    //Espresso , Frappuccino Blended Beverages, Other Beverages, Brewed Coffee, TEa, Cold Brew
+    'like': false,
+    //Do not make any changes in this key or value [no change]
+    'image': '',
+    "category": "Cookie",
+    //Hot , Cold Milkshake Black, Blended, Caffeine free, Nitro,On Tap, Ice Cream ,Cream, Brew,Juice, Ice cream
+    "size": "Normal",
+    "celsius": "85g/288 Kcal",
+    "description":
+        "Indulge in our delicious raisin swirl, crafted with a rich buttery melt-in-your-mouth texture and intense flavor. Inside, you'll find a soft center filled with a delightful blend of naturally sweet raisins.",
+    "price": 367.50,
+    "productNo": 1,
+    "ingredients": "Milk Wheat Egg",
+    "veg_nonveg": "Non Veg",
+  },
+];
+List merchandiseList = [
+  {
+    "productName": "",
+    'type': 'Core Essential',
+    //Core Essential , Seasonal Collection,Been There Series, Stainless Steel,Reusable Cups,Coaster,Cup
+    'like': false,
+    //Do not make any changes in this key or value [no change]
+    'image': '',
+    "category": "Mugs",
+    //Mugs, Cups, Tumbles , Water Bottles , Accessories
+    "size": "355ml",
+    //427ml,355ml
+    "celsius": "85g/288 Kcal",
+    "description":
+        "Indulge in our delicious raisin swirl, crafted with a rich buttery melt-in-your-mouth texture and intense flavor. Inside, you'll find a soft center filled with a delightful blend of naturally sweet raisins.",
+    "price": 367.50,
+    "productNo": 1,
+  },
+];
+List coffeeAtHomeList = [
+  {
+    "productName": "",
+    'like': false,
+    //Do not make any changes in this key or value [no change]
+    'image': '',
+    "category": "Blend",
+    //Blend , Blonde Roast, Dark Roast ,Medium Roast , Single Origin
+    "veg_nonveg": "Non Veg",
+
+    "description":
+        "Indulge in our delicious raisin swirl, crafted with a rich buttery melt-in-your-mouth texture and intense flavor. Inside, you'll find a soft center filled with a delightful blend of naturally sweet raisins.",
+    "price": 367.50,
+    "productNo": 1,
+  },
+];

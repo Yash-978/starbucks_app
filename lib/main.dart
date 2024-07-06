@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 
 import 'Screens/DetailScreeen/detailPage.dart';
+import 'Utils/routes.dart';
 
 
 void main() {
@@ -16,9 +17,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      // initialRoute: '/splash',
-      // routes: AppRoutes.routes,
-      home: DetailPage(),
+      initialRoute: '/splash',
+      routes: AppRoutes.routes,
+      // home: DetailPage(),
 
     );
   }
