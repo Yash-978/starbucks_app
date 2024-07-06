@@ -1126,7 +1126,7 @@ List ProductDetail = [
     "size": "SHORT",
     "celsius": "252 Kcal",
     "description":
-        "Our signature espresso meets white chocolate sauce and steamed milk, then is finished off with whipped vanilla topping in this white chocolate delight.",
+    "Our signature espresso meets white chocolate sauce and steamed milk, then is finished off with whipped vanilla topping in this white chocolate delight.",
     "price": 351.75,
     "productNo": 26,
     "ingredients": "MILK",

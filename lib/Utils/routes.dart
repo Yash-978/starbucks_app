@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:starbucks_app/Screens/cartPage/cartPage.dart';
 
 import '../Screens/BottomNavigationBar/bottomNavigationBar.dart';
 import '../Screens/CategoriesScreen/categoryScreen.dart';
@@ -22,7 +23,8 @@ class AppRoutes {
     '/profile': (context) => Profilescreen(),
     '/signUp': (context) => SignUpPage(),
     '/greeting': (context) => GreetingPage(),
-    '/detail': (context) => DetailPage(),
+   '/detail': (context) => DetailPage(),
+    '/cart':(context)=>cartPage()
     // '/quote':(context)=>QuotePage(),
     // '/profile':(context)=>ProfilePage(),
   };
