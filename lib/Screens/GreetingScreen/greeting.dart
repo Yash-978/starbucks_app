@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
+import 'package:starbucks_app/Screens/HomeScreens/homeScreen.dart';
 
 import 'package:starbucks_app/Utils/ColorList.dart';
 
@@ -88,11 +90,21 @@ class _GreetingPageState extends State<GreetingPage> {
             SizedBox(
               height: h * 0.35,
             ),
-            CircleAvatar(
-              backgroundColor: Colors.white,
-              child: Icon(
-                Icons.arrow_downward_rounded,
-                color: primaryColor,
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    PageTransition(
+                        child: HomePage(),
+                        duration: Duration(milliseconds: 600),
+                        type: PageTransitionType.bottomToTop));
+              },
+              child: CircleAvatar(
+                backgroundColor: Colors.white,
+                child: Icon(
+                  Icons.arrow_downward_rounded,
+                  color: primaryColor,
+                ),
               ),
             ),
           ],
