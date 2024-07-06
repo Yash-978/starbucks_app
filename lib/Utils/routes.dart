@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 
 import '../Screens/BottomNavigationBar/bottomNavigationBar.dart';
 import '../Screens/CategoriesScreen/categoryScreen.dart';
+import '../Screens/DetailScreeen/detailPage.dart';
 import '../Screens/GreetingScreen/greeting.dart';
 import '../Screens/HomeScreens/homeScreen.dart';
 import '../Screens/Login&SignUp/signUp.dart';
@@ -21,6 +22,7 @@ class AppRoutes {
     '/profile': (context) => Profilescreen(),
     '/signUp': (context) => SignUpPage(),
     '/greeting': (context) => GreetingPage(),
+    '/detail': (context) => DetailPage(),
     // '/quote':(context)=>QuotePage(),
     // '/profile':(context)=>ProfilePage(),
   };

@@ -2,6 +2,7 @@ import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'Screens/BottomNavigationBar/bottomNavigationBar.dart';
+import 'Screens/DetailScreeen/detailPage.dart';
 import 'Screens/HomeScreens/homeScreen.dart';
 import 'Utils/routes.dart';
 
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: '/splash',
       routes: AppRoutes.routes,
-      // home: MainBottomNavigation(),
+      // home: DetailPage(),
 
     );
   }
