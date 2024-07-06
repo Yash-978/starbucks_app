@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:starbucks_app/Screens/Login&SignUp/signUp.dart';
+
 import 'package:starbucks_app/Utils/ColorList.dart';
+
+import '../Login&SignUp/Component/signUpVariables.dart';
 
 class GreetingPage extends StatefulWidget {
   const GreetingPage({super.key});

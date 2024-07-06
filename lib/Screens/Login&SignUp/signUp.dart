@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:starbucks_app/Utils/ColorList.dart';
 
+import 'Component/signUpVariables.dart';
+
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});
 
@@ -11,17 +13,7 @@ class SignUpPage extends StatefulWidget {
   State<SignUpPage> createState() => _SignUpPageState();
 }
 
-TextEditingController txtEmail = TextEditingController();
-TextEditingController txtPass = TextEditingController();
-TextEditingController txtConfirmPass = TextEditingController();
-TextEditingController txtMobile = TextEditingController();
-TextEditingController txtFirstName = TextEditingController();
-TextEditingController txtLastName = TextEditingController();
-final signUpController = PageController();
-bool isLoading = false;
-bool isOTP = false;
-bool isSignUp = false;
-DateTime selectBirthDate = DateTime.now();
+
 
 class _SignUpPageState extends State<SignUpPage> {
   @override
