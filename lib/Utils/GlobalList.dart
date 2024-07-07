@@ -2487,7 +2487,7 @@ List drinksList = [
 
 ];
 
-List save = [ProductDetail];
+List save = [drinksList,FoodList];
 
 List cartList = [];
 List FoodList = [
@@ -2663,7 +2663,7 @@ List FoodList = [
     "productName": "Almond Butterscotch Cookie",
     "category": "Cookies & Desserts",
     "like": false,
-    'image': 'assets/images/Food/cookies_&_More/ce1.jpg',
+    'image': 'assets/images/Food/cookies_&_more/ce1.jpg',
     "size": "Normal",
     "celsius": "85g/370 Kcal",
     "description":
@@ -2677,7 +2677,7 @@ List FoodList = [
     "productName": "Red Velvet & Orange Cake",
     "category": "Cookies & Desserts",
     "like": false,
-    'image': 'assets/images/Food/cookies_&_More/ce2.jpg',
+    'image': 'assets/images/Food/cookies_&_more/ce2.jpg',
     "size": "Normal",
     "celsius": "100g/379 Kcal",
     "description":
@@ -2691,7 +2691,7 @@ List FoodList = [
     "productName": "Double Chocolate Chip Cookie",
     "category": "Cookies & Desserts",
     "like": false,
-    'image': 'assets/images/Food/cookies_&_More/ce3.jpg',
+    'image': 'assets/images/Food/cookies_&_more/ce3.jpg',
     "size": "Normal",
     "celsius": "80g/385 Kcal",
     "description":
@@ -2705,7 +2705,7 @@ List FoodList = [
     "productName": "Cold Brew Tiramisu",
     "category": "Cookies & Desserts",
     "like": false,
-    'image': 'assets/images/Food/cookies_&_More/ce4.png',
+    'image': 'assets/images/Food/cookies_&_more/ce4.png',
     "size": "Normal",
     "celsius": "467 Kcal",
     "description":
@@ -2719,7 +2719,7 @@ List FoodList = [
     "productName": "Red Velvet Cookie",
     "category": "Cookies & Desserts",
     "like": false,
-    'image': 'assets/images/Food/cookies_&_More/ce5.png',
+    'image': 'assets/images/Food/cookies_&_more/ce5.png',
     "size": "Normal",
     "celsius": " 95g/462 Kcal",
     "description":
@@ -2733,7 +2733,7 @@ List FoodList = [
     "productName": "Chocolate Chip Cookie",
     "category": "Cookies & Desserts",
     "like": false,
-    'image': 'assets/images/Food/cookies_&_More/ce6.jpg',
+    'image': 'assets/images/Food/cookies_&_more/ce6.jpg',
     "size": "Normal",
     "celsius": "95g/428 Kcal",
     "description":
@@ -2747,7 +2747,7 @@ List FoodList = [
     "productName": "Raisin Swirl",
     "category": "Cookies & Desserts",
     "like": false,
-    'image': 'assets/images/Food/cookies_&_More/ce7.jpg',
+    'image': 'assets/images/Food/cookies_&_more/ce7.jpg',
     "size": "Normal",
     "celsius": "85g/288 Kcal",
     "description":

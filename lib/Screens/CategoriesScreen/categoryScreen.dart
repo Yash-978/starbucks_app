@@ -25,6 +25,7 @@ class _CategoriesPageState extends State<CategoriesPage> {
 
     return SafeArea(
       child: Scaffold(
+        extendBody: true,
         appBar: AppBar(
           backgroundColor: Color(0xff1e3932),
           title: Text(
@@ -32,16 +33,24 @@ class _CategoriesPageState extends State<CategoriesPage> {
             style: TextStyle(color: Colors.white, fontSize: 18),
           ),
           centerTitle: true,
-          leading: Icon(
-            Icons.arrow_back_ios,
-            color: Colors.white,
-            size: 18,
-          ),
-          actions: [
-            Icon(
-              Icons.search_rounded,
+          leading: IconButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            icon: Icon(
+              Icons.arrow_back_ios_rounded,
               color: Colors.white,
               size: 18,
+            ),
+          ),
+          actions: [
+            IconButton(
+              onPressed: () {},
+              icon: Icon(
+                Icons.search_rounded,
+                color: Colors.white,
+                size: 18,
+              ),
             )
           ],
         ),
@@ -78,9 +87,10 @@ class _CategoriesPageState extends State<CategoriesPage> {
                             width: w * 0.66,
                             child: TextField(
                               decoration: InputDecoration(
-                                fillColor: Color(0xff798985),
-                                labelText: "No Store Found!",
-                              ),
+                                  fillColor: Color(0xff798985),
+                                  labelText: "No Store Found!",
+                                  labelStyle:
+                                      TextStyle(color: Color(0xff5F736F))),
                             ),
                           ),
                           SizedBox(
@@ -176,20 +186,10 @@ class _CategoriesPageState extends State<CategoriesPage> {
                   ),
                 ),
                 SizedBox(
-                  height: h*1,
-                  width: w*1,
+                  height: h * 1,
+                  width: w * 1,
                   child: TabBarView(
-                    children: [
-                      tabPage(),
-                      drinkPage(),
-                      foodPage()
-
-
-
-
-
-
-                    ],
+                    children: [tabPage(), drinkPage(), foodPage()],
                   ),
                 ),
               ],
@@ -201,13 +201,15 @@ class _CategoriesPageState extends State<CategoriesPage> {
   }
 }
 
+
+
 List<GlobalKey> ordKey = List.generate(
   save.length,
-      (index) => GlobalKey(),
+  (index) => GlobalKey(),
 );
 bool selectImg = true;
 int index2 = 0;
 
 int selIndex = 0;
 //String Si = '${save[selIndex][index2]['img']}';
-int index=0;
+int index = 0;
