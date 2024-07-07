@@ -54,9 +54,9 @@ class _GreetingPageState extends State<GreetingPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(
-              height: h * 0.2,
-            ),
+            // SizedBox(
+            //   height: h * 0.2,
+            // ),
             Container(
               height: h * 0.22,
               width: w * 0.22,

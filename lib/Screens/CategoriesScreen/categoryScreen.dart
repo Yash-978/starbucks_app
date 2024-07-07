@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:starbucks_app/Screens/bestseller/bestseller.dart';
 import 'package:starbucks_app/Screens/drinkPage/drinkPage.dart';
+import 'package:starbucks_app/Screens/foodScreen/foodScreen.dart';
 
 import '../../Utils/GlobalList.dart';
 
@@ -47,7 +48,7 @@ class _CategoriesPageState extends State<CategoriesPage> {
         body: SingleChildScrollView(
           scrollDirection: Axis.vertical,
           child: DefaultTabController(
-            length: 2,
+            length: 3,
             child: Column(
               children: [
                 Container(
@@ -162,15 +163,15 @@ class _CategoriesPageState extends State<CategoriesPage> {
                       Tab(
                         text: "Food",
                       ),
-                      Tab(
-                        text: "Merchandise",
-                      ),
-                      Tab(
-                        text: "Coffee At Home",
-                      ),
-                      Tab(
-                        text: "Ready to Eat",
-                      )
+                      // Tab(
+                      //   text: "Merchandise",
+                      // ),
+                      // Tab(
+                      //   text: "Coffee At Home",
+                      // ),
+                      // Tab(
+                      //   text: "Ready to Eat",
+                      // )
                     ],
                   ),
                 ),
@@ -180,7 +181,8 @@ class _CategoriesPageState extends State<CategoriesPage> {
                   child: TabBarView(
                     children: [
                       tabPage(),
-                      drinkPage()
+                      drinkPage(),
+                      foodPage()
 
 
 
