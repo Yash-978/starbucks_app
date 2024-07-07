@@ -25,10 +25,10 @@ class _drinkPageState extends State<drinkPage> {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.only(right: 270),
+              padding: const EdgeInsets.only(right: 230),
               child: Text(
-                "Food", style: TextStyle(
-                  fontSize: 22,
+                "All Drinks", style: TextStyle(
+                  fontSize: 20,
                   fontWeight: FontWeight.bold
               ),
               ),
@@ -92,10 +92,16 @@ class _drinkPageState extends State<drinkPage> {
                                                     borderRadius: BorderRadius
                                                         .circular(100),
                                                     color: Colors.pink,
+                                                    image: DecorationImage(
+                                                      fit: BoxFit.cover,
+                                                      image: AssetImage(
+                                                        '${drinksList[index]['image']}',
+                                                      )
+                                                    )
                                                     // image: DecorationImage(
                                                     //     fit: BoxFit.cover,
                                                     //     image: AssetImage(
-                                                    //       '${ProductDetail[index]['image']}',
+                                                    //       '${drinksList[index]['image']}',
                                                     //     ))),
                                               ),
                                             ),
@@ -126,7 +132,7 @@ class _drinkPageState extends State<drinkPage> {
                                                   top: 20),
                                               child: Text(
                                                 //   "${save[selIndex][index]['productName']}",
-                                                '${ProductDetail[index]['productName']}',
+                                                '${drinksList[index]['productName']}',
 
                                                 maxLines: 1,
                                                 style: TextStyle(
@@ -143,7 +149,7 @@ class _drinkPageState extends State<drinkPage> {
                                                   right: 190),
                                               child: Text(
                                                 // "${save[selIndex][index]['size']}",
-                                                '${ProductDetail[index]['size']}',
+                                                '${drinksList[index]['size']}',
 
                                                 maxLines: 1,
                                                 style: TextStyle(
@@ -160,7 +166,7 @@ class _drinkPageState extends State<drinkPage> {
                                                   right: 10),
                                               child: Text(
                                                 //"${save[selIndex][index]['description']}",
-                                                '${ProductDetail[index]['description']}',
+                                                '${drinksList[index]['description']}',
 
                                                 maxLines: 2,
                                                 style: TextStyle(
@@ -181,7 +187,7 @@ class _drinkPageState extends State<drinkPage> {
                                                       20),
                                                   child: Text(
                                                     // "${save[selIndex][index]['price']}",
-                                                    '${ProductDetail[index]['price']}',
+                                                    '${drinksList[index]['price']}',
 
                                                     style: TextStyle(
                                                         color: Colors
