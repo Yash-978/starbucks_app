@@ -111,9 +111,11 @@ class _DetailPageState extends State<DetailPage> {
                               height: h * 0.04,
                               width: w * 0.04,
                               decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                      image: AssetImage(
-                                          'assets/images/StarBucks_Logos/vegIcon.jpg'))),
+                                image: DecorationImage(
+                                  image: AssetImage(
+                                      'assets/images/StarBucks_Logos/vegIcon.jpg'),
+                                ),
+                              ),
                             ),
                             SizedBox(
                               width: w * 0.02,
@@ -296,13 +298,18 @@ class _DetailPageState extends State<DetailPage> {
                         ),
                       ],
                     ),
-                    Text(
-                      textAlign: TextAlign.center,
-                      '241.50',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontWeight: FontWeight.w500),
+                    Row(
+                      children: [
+                        Icon(Icons.currency_rupee,color: Colors.white,size: 19,),
+                        Text(
+                          textAlign: TextAlign.center,
+                          '241.50',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontWeight: FontWeight.w500),
+                        ),
+                      ],
                     ),
                   ],
                 ),
