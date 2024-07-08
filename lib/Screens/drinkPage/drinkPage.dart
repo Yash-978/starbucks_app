@@ -38,7 +38,9 @@ class _drinkPageState extends State<drinkPage> {
                             children: [
                               GestureDetector(
                                 onTap : (){
-                                  selectProduct=index;
+                                  productDisplayList.clear();
+                                  productDisplayList.add(drinksList[index]);
+                                  // selectProduct=index;
                                   Navigator.of(context).pushNamed('/detail');
                                 },
                                 child: Container(

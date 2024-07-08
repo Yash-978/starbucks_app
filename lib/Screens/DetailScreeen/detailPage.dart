@@ -76,7 +76,7 @@ class _DetailPageState extends State<DetailPage> {
                 decoration: BoxDecoration(
                   image: DecorationImage(
                       fit: BoxFit.cover,
-                      image: AssetImage(drinksList[selectProduct]['image'])),
+                      image: AssetImage(productDisplayList[0]['image'])),
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(25),
@@ -133,7 +133,7 @@ class _DetailPageState extends State<DetailPage> {
                               width: w * 0.035,
                             ),
                             Text(
-                              drinksList[selectProduct]['productName'],
+                              productDisplayList[0]['productName'],
                               style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 22,
@@ -149,7 +149,7 @@ class _DetailPageState extends State<DetailPage> {
                             SizedBox(
                                 width: w * 0.86,
                                 child: Text(
-                                  drinksList[selectProduct]['description'],
+                                  productDisplayList[0]['description'],
                                   style: TextStyle(color: Colors.white),
                                 )),
                           ],
@@ -160,7 +160,7 @@ class _DetailPageState extends State<DetailPage> {
                               width: w * 0.035,
                             ),
                             Text(
-                              drinksList[selectProduct]['category'],
+                              productDisplayList[0]['category'],
                               style: TextStyle(
                                 color: Colors.white,
                               ),

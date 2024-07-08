@@ -2486,7 +2486,7 @@ List drinksList = [
 
 
 ];
-
+List productDisplayList=[];
 List save = [drinksList,FoodList];
 
 List cartList = [];
