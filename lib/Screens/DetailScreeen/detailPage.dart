@@ -26,22 +26,25 @@ class _DetailPageState extends State<DetailPage> {
         // padding: EdgeInsets.only(top: 2,),
         child: GestureDetector(
           onTap: () {
-            // bool status = false;
-            // int index = 0;
-            // for (int i = 0; i < cartList.length; i++) {
-            //   if (cartList[i]['productName'] ==
-            //       productDisplayList[0]['productName']) {
-            //     index = i;
-            //     status = true;
-            //   }
-            // }
-            // if (status == true) {
-            //   cartList.add(productDisplayList[0]);
-            //   // cartList[index]['member']++;
-            // } else {
+            bool status = false;
+            int index = 0;
+            for (int i = 0; i < cartList.length; i++) {
+              if (cartList[i]['productName'] ==
+                  productDisplayList[0]['productName']) {
+                index = i;
+                status = true;
+              }
+            }
+            if (status == true)
+            {
+              cartList.add(productDisplayList[0]);
+              // cartList[index]['member']++;
+            }
+            // else
+            // {
             //   // cartList.add(productDisplayList[0]);
             // }
-            // Navigator.pushNamed(context, '/cart');
+            Navigator.pushNamed(context, '/cart');
           },
           child: Container(
             height: h * 0.1,

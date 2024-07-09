@@ -37,7 +37,7 @@ class _drinkPageState extends State<drinkPage> {
                           child: Column(
                             children: [
                               GestureDetector(
-                                onTap : (){
+                                onTap: () {
                                   productDisplayList.clear();
                                   productDisplayList.add(drinksList[index]);
                                   // selectProduct=index;
@@ -67,25 +67,29 @@ class _drinkPageState extends State<drinkPage> {
                                                 width: w * 0.32,
                                                 decoration: BoxDecoration(
                                                   color: Colors.white,
-                                                  borderRadius: BorderRadius.only(
-                                                      topLeft:
-                                                          Radius.circular(10),
-                                                      bottomLeft:
-                                                          Radius.circular(10)),
+                                                  borderRadius:
+                                                      BorderRadius.only(
+                                                          topLeft:
+                                                              Radius.circular(
+                                                                  10),
+                                                          bottomLeft:
+                                                              Radius.circular(
+                                                                  10)),
                                                 ),
                                                 child: Padding(
-                                                  padding: const EdgeInsets.only(
-                                                      bottom: 60,
-                                                      top: 20,
-                                                      left: 10,
-                                                      right: 10),
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          bottom: 60,
+                                                          top: 20,
+                                                          left: 10,
+                                                          right: 10),
                                                   child: Container(
                                                     width: w * 0.1,
                                                     height: h * 0.1,
                                                     decoration: BoxDecoration(
                                                         borderRadius:
-                                                            BorderRadius.circular(
-                                                                100),
+                                                            BorderRadius
+                                                                .circular(100),
                                                         color: Colors.pink,
                                                         image: DecorationImage(
                                                             fit: BoxFit.cover,
@@ -109,14 +113,16 @@ class _drinkPageState extends State<drinkPage> {
                                             decoration: BoxDecoration(
                                                 color: Colors.white,
                                                 borderRadius: BorderRadius.only(
-                                                    topRight: Radius.circular(10),
+                                                    topRight:
+                                                        Radius.circular(10),
                                                     bottomRight:
                                                         Radius.circular(10))),
                                             child: Column(
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsets.only(
-                                                      right: 35, top: 20),
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          right: 35, top: 20),
                                                   child: Text(
                                                     //   "${save[selIndex][index]['productName']}",
                                                     '${drinksList[index]['productName']}',
@@ -129,8 +135,9 @@ class _drinkPageState extends State<drinkPage> {
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsets.only(
-                                                      right: 190),
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          right: 190),
                                                   child: Text(
                                                     // "${save[selIndex][index]['size']}",
                                                     '${drinksList[index]['size']}',
@@ -144,8 +151,9 @@ class _drinkPageState extends State<drinkPage> {
                                                   height: h * 0.0050,
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsets.only(
-                                                      right: 10),
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          right: 10),
                                                   child: Text(
                                                     //"${save[selIndex][index]['description']}",
                                                     '${drinksList[index]['description']}',
@@ -173,7 +181,8 @@ class _drinkPageState extends State<drinkPage> {
                                                             color: Colors.black,
                                                             fontSize: 18,
                                                             fontWeight:
-                                                                FontWeight.bold),
+                                                                FontWeight
+                                                                    .bold),
                                                       ),
                                                     ),
                                                     SizedBox(
@@ -182,14 +191,15 @@ class _drinkPageState extends State<drinkPage> {
                                                     GestureDetector(
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsets.only(
+                                                            const EdgeInsets
+                                                                .only(
                                                                 right: 10),
                                                         child: Container(
                                                           height: h * 0.050,
                                                           width: w * 0.250,
                                                           decoration: BoxDecoration(
-                                                              color: Colors
-                                                                  .grey.shade400,
+                                                              color: Colors.grey
+                                                                  .shade400,
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
@@ -198,8 +208,8 @@ class _drinkPageState extends State<drinkPage> {
                                                             child: Text(
                                                               'Add item',
                                                               style: TextStyle(
-                                                                color:
-                                                                    Colors.white,
+                                                                color: Colors
+                                                                    .white,
                                                               ),
                                                             ),
                                                           ),
@@ -232,4 +242,5 @@ class _drinkPageState extends State<drinkPage> {
     );
   }
 }
-int selectProduct=0;
+
+int selectProduct = 0;
