@@ -141,10 +141,15 @@ class _ProfilescreenState extends State<Profilescreen> {
                 children: [
                   const SizedBox(height: 35,),
                   ListTile(
-                    leading: Icon(
-                      Icons.star_border_sharp,
-                      size: 30,
-                      color: Colors.green.shade400,
+                    leading: GestureDetector(
+                      onDoubleTap: () {
+
+                      },
+                      child: Icon(
+                        Icons.star_border_sharp,
+                        size: 30,
+                        color: Colors.green.shade400,
+                      ),
                     ),
                     title: const Text(
                       "STARBUCKS REWARDS",
