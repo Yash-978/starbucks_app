@@ -24,16 +24,38 @@ class _DetailPageState extends State<DetailPage> {
       bottomNavigationBar: BottomAppBar(
         color: Color(0xff016140),
         // padding: EdgeInsets.only(top: 2,),
-        child: Container(
-          height: h * 0.1,
-          width: w * 0.86,
-          alignment: Alignment.center,
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30), color: Colors.white),
-          child: Text(
-            'Add to cart',
-            style: TextStyle(
-                color: Colors.black, fontWeight: FontWeight.bold, fontSize: 20),
+        child: GestureDetector(
+          onTap: () {
+            // bool status = false;
+            // int index = 0;
+            // for (int i = 0; i < cartList.length; i++) {
+            //   if (cartList[i]['productName'] ==
+            //       productDisplayList[0]['productName']) {
+            //     index = i;
+            //     status = true;
+            //   }
+            // }
+            // if (status == true) {
+            //   cartList.add(productDisplayList[0]);
+            //   // cartList[index]['member']++;
+            // } else {
+            //   // cartList.add(productDisplayList[0]);
+            // }
+            // Navigator.pushNamed(context, '/cart');
+          },
+          child: Container(
+            height: h * 0.1,
+            width: w * 0.86,
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30), color: Colors.white),
+            child: Text(
+              'Add to cart',
+              style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20),
+            ),
           ),
         ),
       ),
@@ -49,7 +71,7 @@ class _DetailPageState extends State<DetailPage> {
           ),
         ),
         title: Text(
-          drinksList[selectProduct]['productName'],
+          productDisplayList[0]['productName'],
           style: TextStyle(color: Colors.white),
         ),
         backgroundColor: Colors.black,
@@ -121,7 +143,8 @@ class _DetailPageState extends State<DetailPage> {
                               width: w * 0.02,
                             ),
                             Text(
-                              'VEGETERIAN - 0 KCAL',
+                              'VEGETERIAN' +
+                                  '  ${productDisplayList[0]['celsius']}',
                               textAlign: TextAlign.start,
                               style: TextStyle(color: Colors.white),
                             ),
@@ -136,7 +159,7 @@ class _DetailPageState extends State<DetailPage> {
                               productDisplayList[0]['productName'],
                               style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 22,
+                                  // fontSize: 20,
                                   fontWeight: FontWeight.bold),
                             ),
                           ],
@@ -208,7 +231,8 @@ class _DetailPageState extends State<DetailPage> {
                             width: w * 0.06,
                           ),
                           Text(
-                            'SHORT,No Miik',
+                            'SHORT,' +
+                                '  ${productDisplayList[0]['ingredients']}',
                             style: TextStyle(
                                 fontSize: 10, fontWeight: FontWeight.w400),
                           ),
@@ -290,20 +314,24 @@ class _DetailPageState extends State<DetailPage> {
                         ),
                         Text(
                           textAlign: TextAlign.center,
-                          'Caffe Americano',
+                          productDisplayList[0]['productName'],
                           style: TextStyle(
                               color: Colors.white,
-                              fontSize: 20,
+                              // fontSize: 20,
                               fontWeight: FontWeight.w500),
                         ),
                       ],
                     ),
                     Row(
                       children: [
-                        Icon(Icons.currency_rupee,color: Colors.white,size: 19,),
+                        Icon(
+                          Icons.currency_rupee,
+                          color: Colors.white,
+                          size: 19,
+                        ),
                         Text(
                           textAlign: TextAlign.center,
-                          '241.50',
+                          productDisplayList[0]['price'].toString(),
                           style: TextStyle(
                               color: Colors.white,
                               fontSize: 20,
