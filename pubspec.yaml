@@ -98,6 +98,7 @@ flutter:
     - assets/images/Ready_to_eat/
     - assets/images/Poster/
     - assets/images/gift2/
+    - assets/images/bestseller/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

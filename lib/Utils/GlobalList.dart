@@ -2920,3 +2920,18 @@ List coffeeAtHomeList = [
     "productNo": 1,
   },
 ];
+List BestSellerList = [
+{
+"productName": "Tandoori Soya Chaap Wrap",
+"category": "Sandwiches & Wraps",
+"like": false,
+'image': 'assets/images/Food/Sandwiches_&_Wraps/sw(7).jpg',
+"size": "Normal",
+"celsius": "484 Kcal",
+"description":
+"Soft succulent soya chaap in tandoori marinade, cooked to a juicy perfection. Encased in a spinach wrap with assorted bell peppers in makhni gravy.",
+"price": 357.00,
+"productNo": 1,
+"ingredients": "Milk Nut Soy Wheat",
+"veg_nonveg": "veg",
+},];

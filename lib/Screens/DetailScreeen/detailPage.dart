@@ -40,10 +40,10 @@ class _DetailPageState extends State<DetailPage> {
               cartList.add(productDisplayList[0]);
               // cartList[index]['member']++;
             }
-            // else
-            // {
-            //   // cartList.add(productDisplayList[0]);
-            // }
+            else
+            {
+              cartList.add(productDisplayList[0]);
+            }
             Navigator.pushNamed(context, '/cart');
           },
           child: Container(
@@ -349,7 +349,137 @@ class _DetailPageState extends State<DetailPage> {
           ),
           SlidingUpPanel(
             controller: _customizeController,
-            panel: _buildCustomizePanel(),
+            color: primaryColor,
+            panel: Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    RichText(text: TextSpan(
+                      text: 'CUSTOMISE YOUR ORDER ',
+                      style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.white),
+                      children: const <TextSpan>[
+                        TextSpan(text: '(Default)',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 15),),
+                      ],
+                    )),
+                    Divider(height: h * 0.1,thickness: 2,),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text('SIZE',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15,color: Colors.white),),
+                        Text('Select any one',style: TextStyle(fontSize: 13,fontWeight: FontWeight.w400,color: Colors.white),),
+                      ],
+                    ),
+                    SizedBox(height: h * 0.05,),
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Column(
+                            children: [
+                              Container(
+                                height: h * 0.09,
+                                width: w * 0.15,
+                                color: Colors.green,
+                              ),SizedBox(height: h * 0.02,),
+                              ElevatedButton(onPressed: () {
+                
+                              },
+                                  child: Text('SHORT',style: TextStyle(color: Colors.teal),)),
+                              Text('237Ml-₹0.00',style: TextStyle(color: Colors.white,fontSize: 10,fontWeight: FontWeight.bold),)
+                            ],
+                          ),
+                          SizedBox(width: w * 0.05,),
+                          Column(
+                            children: [
+                              Container(
+                                height: h * 0.09,
+                                width: w * 0.15,
+                                color: Colors.green,
+                              ),SizedBox(height: h * 0.02,),
+                              SizedBox(
+                                width: w * 0.2,
+                                child: TextButton(style: buttonStyleCircle,onPressed: () {
+                
+                                },
+                                    child: Text('TALL',style: TextStyle(color: Colors.white),)),
+                              ),
+                              Text('354Ml-₹36.75',style: TextStyle(color: Colors.white,fontSize: 10,fontWeight: FontWeight.bold),)
+                            ],
+                          ),
+                          SizedBox(width: w * 0.05,),
+                          Column(
+                            children: [
+                              Container(
+                                height: h * 0.09,
+                                width: w * 0.15,
+                                color: Colors.green,
+                              ),SizedBox(height: h * 0.02,),
+                              SizedBox(
+                                width: w * 0.25,
+                                child: TextButton(style: buttonStyleCircle,onPressed: () {
+                
+                                },
+                                    child: Text('GRANDE',style: TextStyle(color: Colors.white),)),
+                              ),
+                              Text('473Ml-₹78.75',style: TextStyle(color: Colors.white,fontSize: 10,fontWeight: FontWeight.bold),)
+                            ],
+                          ),
+                          SizedBox(width: w * 0.05,),
+                          Column(
+                            children: [
+                              Container(
+                                height: h * 0.09,
+                                width: w * 0.15,
+                                color: Colors.green,
+                              ),SizedBox(height: h * 0.02,),
+                              SizedBox(
+                                width: w * 0.2,
+                                child: TextButton(style: buttonStyleCircle,onPressed: () {
+                
+                                },
+                                    child: Text('VENTI',style: TextStyle(color: Colors.white),)),
+                              ),
+                              Text('473Ml-₹78.75',style: TextStyle(color: Colors.white,fontSize: 10,fontWeight: FontWeight.bold),)
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                    Divider(
+                      height: h * 0.1,thickness: 2,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text('MILK',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15,color: Colors.white),),
+                        Text('Select any one',style: TextStyle(fontSize: 13,fontWeight: FontWeight.w400,color: Colors.white),),
+                      ],
+                    ),
+                    SizedBox(height: h * 0.05,),
+                    Row(
+                      children: [
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            ElevatedButton(onPressed: () {
+                
+                            },
+                                child: Text('No Milk',style: TextStyle(color: Colors.teal),)),
+                            Text('+₹0.00',style: TextStyle(color: Colors.white,fontSize: 10,fontWeight: FontWeight.bold),)
+                          ],
+                        ),
+                      ],
+                    ),
+                    Divider(
+                      height: h * 0.1,thickness: 2,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+
             minHeight: 0,
             maxHeight: 400,
             backdropEnabled: true,
@@ -370,43 +500,45 @@ class _DetailPageState extends State<DetailPage> {
   }
 }
 
-Widget _buildCustomizePanel() {
-  return ListView(
-    padding: EdgeInsets.all(16.0),
-    children: [
-      Container(),
-      Text('Customize Your Order',
-          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-      ListTile(
-        title: Text('Size'),
-        trailing: DropdownButton<String>(
-          items: [
-            DropdownMenuItem(value: 'Short', child: Text('Short')),
-            DropdownMenuItem(value: 'Tall', child: Text('Tall')),
-            DropdownMenuItem(value: 'Grande', child: Text('Grande')),
-            DropdownMenuItem(value: 'Venti', child: Text('Venti')),
-          ],
-          onChanged: (value) {},
-          hint: Text('Select Size'),
-        ),
-      ),
-      ListTile(
-        title: Text('Milk'),
-        trailing: DropdownButton<String>(
-          items: [
-            DropdownMenuItem(value: 'No Milk', child: Text('No Milk')),
-            DropdownMenuItem(
-                value: 'Regular Milk', child: Text('Regular Milk')),
-            DropdownMenuItem(value: 'Soy Milk', child: Text('Soy Milk')),
-            DropdownMenuItem(value: 'Almond Milk', child: Text('Almond Milk')),
-          ],
-          onChanged: (value) {},
-          hint: Text('Select Milk'),
-        ),
-      ),
-    ],
-  );
-}
+// Widget _buildCustomizePanel() {
+//   return
+//
+//     ListView(
+//     padding: EdgeInsets.all(16.0),
+//     children: [
+//       Container(),
+//       Text('Customize Your Order',
+//           style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+//       ListTile(
+//         title: Text('Size'),
+//         trailing: DropdownButton<String>(
+//           items: [
+//             DropdownMenuItem(value: 'Short', child: Text('Short')),
+//             DropdownMenuItem(value: 'Tall', child: Text('Tall')),
+//             DropdownMenuItem(value: 'Grande', child: Text('Grande')),
+//             DropdownMenuItem(value: 'Venti', child: Text('Venti')),
+//           ],
+//           onChanged: (value) {},
+//           hint: Text('Select Size'),
+//         ),
+//       ),
+//       ListTile(
+//         title: Text('Milk'),
+//         trailing: DropdownButton<String>(
+//           items: [
+//             DropdownMenuItem(value: 'No Milk', child: Text('No Milk')),
+//             DropdownMenuItem(
+//                 value: 'Regular Milk', child: Text('Regular Milk')),
+//             DropdownMenuItem(value: 'Soy Milk', child: Text('Soy Milk')),
+//             DropdownMenuItem(value: 'Almond Milk', child: Text('Almond Milk')),
+//           ],
+//           onChanged: (value) {},
+//           hint: Text('Select Milk'),
+//         ),
+//       ),
+//     ],
+//   );
+// }
 
 Widget _buildAddOnsPanel() {
   return ListView(
@@ -431,3 +563,23 @@ Widget _buildAddOnsPanel() {
     ],
   );
 }
+
+final ButtonStyle buttonStyleCircle = ButtonStyle(
+
+  // padding: MaterialStateProperty.all<EdgeInsets>(const EdgeInsets.all(15)),
+
+  foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+
+  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+
+    RoundedRectangleBorder(
+
+      borderRadius: BorderRadius.circular(25.0),
+
+      side: const BorderSide(color: Colors.white),
+
+    ),
+
+  ),
+
+);

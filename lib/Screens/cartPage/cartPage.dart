@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:starbucks_app/Utils/GlobalList.dart';
 
 class cartPage extends StatefulWidget {
   const cartPage({super.key});
@@ -17,9 +18,10 @@ class _cartPageState extends State<cartPage> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          leading: GestureDetector(onTap: () {
-            Navigator.of(context).pop();
-          },
+          leading: GestureDetector(
+              onTap: () {
+                Navigator.of(context).pop();
+              },
               child: Icon(Icons.arrow_back_ios)),
           centerTitle: true,
           title: Text('Cart'),
@@ -76,115 +78,200 @@ class _cartPageState extends State<cartPage> {
                 SizedBox(
                   height: h * 0.030,
                 ),
-                Container(
-                  height: h * 0.2,
-                  width: w * 0.999,
-                  decoration: BoxDecoration(color: Colors.white, boxShadow: [
-                    BoxShadow(
-                        color: Colors.grey,
-                        spreadRadius: 2,
-                        blurRadius: 2,
-                        offset: Offset(0, 2))
-                  ]),
-                  // Container(
-                  //   height: h*0.1,
-                  //   width: w*0.3,
-                  //   color: Colors.pink,
-                  // ),
-                  child: Column(
-                    children: [
-                      Row(
-                        children: [
-                          Padding(
-                            padding:
-                                const EdgeInsets.only(bottom: 40, left: 20),
-                            child: Container(
-                              height: h * 0.110,
-                              width: w * 0.240,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20),
-                                  color: Colors.pink),
-                            ),
+                // ListTile(
+                //   leading: Row(
+                //     children: [
+                //       Container(
+                //         height: h * 0.8,
+                //         width: w * 0.13,
+                //         decoration: BoxDecoration(
+                //           color: Colors.red,
+                //           borderRadius: BorderRadius.circular(10),
+                //         ),
+                //       ),
+                //       // SizedBox(
+                //       //   width: w * 0.02,
+                //       // ),
+                //       Column(
+                //         children: [
+                //           Container(
+                //             height: h * 0.0455,
+                //             width: w * 0.0455,
+                //             decoration: BoxDecoration(
+                //               // color: Colors.green,
+                //               image: DecorationImage(
+                //                   image: AssetImage(
+                //                       'assets/images/StarBucks_Logos/vegIcon.jpg')),
+                //               borderRadius: BorderRadius.circular(10),
+                //             ),
+                //           ),
+                //           Text(
+                //             'Caffe Americano',
+                //             style: TextStyle(
+                //               color: Colors.black,
+                //               fontWeight: FontWeight.w600,
+                //             ),
+                //           ),
+                //           Text(
+                //             'Short, No Milk, NO Whipped Topping',
+                //             style: TextStyle(
+                //               color: Colors.black,
+                //
+                //             ),
+                //           ),
+                //         ],
+                //       )
+                //     ],
+                //   ),
+                //   title: Text('', style: TextStyle(fontSize: 15)),
+                //   subtitle: Text('', style: TextStyle(fontSize: 15)),
+                //   trailing: Text(
+                //     '',
+                //     style: TextStyle(fontSize: 15),
+                //   ),
+                //   iconColor: Colors.red,
+                // ),
+                ...List.generate(
+                  cartList.length,
+                  (index) {
+                    return Container(
+                      height: h * 0.21,
+                      width: w * 1,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey,
+                            spreadRadius: 2,
+                            blurRadius: 2,
+                            offset: Offset(0, 2),
                           ),
-                          SizedBox(
-                            width: w * 0.030,
-                          ),
-                          SingleChildScrollView(
-                            scrollDirection: Axis.horizontal,
-                            child: Container(
-                              height: h * 0.2,
-                              width: w * 0.700,
-                              color: Colors.white,
-                              child: Row(
-                                children: [
-                                  Column(
-                                    children: [
-                                      SizedBox(
-                                        height: h * 0.040,
-                                      ),
-                                      Padding(
-                                        padding:
-                                            const EdgeInsets.only(right: 50),
-                                        child: Text(
-                                          "Caffe Americano",
-                                          style: TextStyle(
-                                            fontSize: 16,
-                                            color: Color(0xff1e3932),
-                                          ),
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        height: h * 0.010,
-                                      ),
-                                      Padding(
-                                        padding:
-                                            const EdgeInsets.only(right: 30),
-                                        child: Text(
-                                          "Short,no milk, whipped topping",
-                                          style: TextStyle(
-                                            fontSize: 10,
-                                            color: Color(0xff1e3932),
-                                          ),
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                  Column(
-                                    children: [
-                                      SizedBox(
-                                        height: h * 0.040,
-                                      ),
-                                      Text(
-                                        "241.30",
-                                        style: TextStyle(
-                                          fontSize: 12,
-                                          color: Color(0xff1e3932),
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        height: h * 0.010,
-                                      ),
-                                      // Padding(
-                                      //   padding:
-                                      //       const EdgeInsets.only(top: 40, right: 50),
-                                      //   child: Text(
-                                      //     "Customise",
-                                      //     style: TextStyle(
-                                      //       fontSize: 16,
-                                      //       color: Color(0xff1e3932),
-                                      //     ),
-                                      //   ),
-                                      // )
-                                    ],
-                                  )
-                                ],
-                              ),
-                            ),
-                          )
                         ],
-                      )
-                    ],
-                  ),
+                      ),
+                      // Container(
+                      //   height: h*0.1,
+                      //   width: w*0.3,
+                      //   color: Colors.pink,
+                      // ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                            height: h * 0.08,
+                            width: w * 0.14,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                fit: BoxFit.cover,
+                                image: AssetImage(
+                                  cartList[index]['image'],
+                                ),
+                              ),
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                          ),
+                          // SizedBox(
+                          //   width: w * 0.030,
+                          // ),
+                          Container(
+                            height: h * 0.2,
+                            width: w * 0.8,
+                            color: Colors.white,
+                            child: Row(
+                              children: [
+                                Column(
+                                  children: [
+                                    SizedBox(
+                                      height: h * 0.040,
+                                    ),
+                                    Text(
+                                      cartList[index]['productName'],
+                                      style: TextStyle(
+                                        // fontSize: 16,
+                                        color: Color(0xff1e3932),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: h * 0.010,
+                                    ),
+                                    Text(
+                                      cartList[index]['category'],
+                                      style: TextStyle(
+                                        // fontSize: 10,
+                                        color: Color(0xff1e3932),
+                                      ),
+                                    )
+                                  ],
+                                ),
+                                Spacer(),
+                                Column(
+                                  children: [
+                                    SizedBox(
+                                      height: h * 0.040,
+                                    ),
+                                    Text(
+                                      cartList[index]['price'].toString(),
+                                      style: TextStyle(
+                                        // fontSize: 12,
+                                        fontWeight: FontWeight.w700,
+                                        color: Color(0xff1e3932),
+                                      ),
+                                    ),
+                                    IconButton.outlined(
+                                        color: Color(0xff529C86),
+                                        onPressed: () {},
+                                        icon: Icon(
+                                          Icons.delete,
+                                          size: 30,
+                                        ))
+                                    // Container(
+                                    //   height: h * 0.05,
+                                    //   width: w * 0.2,
+                                    //   alignment: Alignment.center,
+                                    //   decoration: BoxDecoration(
+                                    //     borderRadius: BorderRadius.circular(8),
+                                    //     border: Border.all(color: Colors.black),
+                                    //   ),
+                                    //   child: Row(
+                                    //     children: [
+                                    //       IconButton(
+                                    //           onPressed: () {},
+                                    //           icon: Icon(
+                                    //             Icons.add,
+                                    //             size: 8,
+                                    //           )),
+                                    //       IconButton(
+                                    //           onPressed: () {},
+                                    //           icon: Icon(
+                                    //             Icons.remove,
+                                    //             size: 8,
+                                    //           )),
+                                    //     ],
+                                    //   ),
+                                    // ),
+
+                                    // SizedBox(
+                                    //   height: h * 0.010,
+                                    // ),
+                                    // Padding(
+                                    //   padding:
+                                    //       const EdgeInsets.only(top: 40, right: 50),
+                                    //   child: Text(
+                                    //     "Customise",
+                                    //     style: TextStyle(
+                                    //       fontSize: 16,
+                                    //       color: Color(0xff1e3932),
+                                    //     ),
+                                    //   ),
+                                    // )
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    );
+                  },
                 ),
                 SizedBox(
                   height: h * 0.030,
