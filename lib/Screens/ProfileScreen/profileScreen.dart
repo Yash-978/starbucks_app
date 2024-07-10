@@ -5,6 +5,7 @@ class Profilescreen extends StatefulWidget {
   @override
   State<Profilescreen> createState() => _ProfilescreenState();
 }
+bool show=false;
 
 class _ProfilescreenState extends State<Profilescreen> {
   @override
@@ -156,11 +157,36 @@ class _ProfilescreenState extends State<Profilescreen> {
                       style:
                       TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
                     ),
-                    trailing: Icon(
-                      Icons.arrow_forward_ios_sharp,
-                      color: Colors.green.shade400,
+
+                      trailing: IconButton(
+                        onPressed: () {
+                          setState(() {
+                            show = !show;
+                          });
+                        },
+                        icon: (show == false)
+                            ? Icon(
+                          Icons.arrow_forward_ios_sharp,
+                          color: Colors.green.shade400,
+                          size: 30,
+                        )
+                            : Icon(
+                          Icons.keyboard_arrow_up_sharp,
+                          size: 30,
+                        ),
+
+
+
                     ),
                   ),
+                  (show == false)
+                      ? SizedBox(
+                    height: 0,
+                  )
+                      : Text(
+                      'krypa'),
+
+
                   const Divider(
                     indent: 20,
                     endIndent: 22,
@@ -176,11 +202,33 @@ class _ProfilescreenState extends State<Profilescreen> {
                       style:
                       TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
                     ),
-                    trailing: Icon(
-                      Icons.arrow_forward_ios_sharp,
-                      color: Colors.green.shade400,
+                    trailing: IconButton(
+                      onPressed: () {
+                        setState(() {
+                          show = !show;
+                        });
+                      },
+                      icon: (show == false)
+                          ? Icon(
+                        Icons.arrow_forward_ios_sharp,
+                        color: Colors.green.shade400,
+                        size: 30,
+                      )
+                          : Icon(
+                        Icons.keyboard_arrow_up_sharp,
+                        size: 30,
+                      ),
+
+
+
                     ),
                   ),
+                  (show == false)
+                      ? SizedBox(
+                    height: 0,
+                  )
+                      : Text(
+                      'krypa'),
                   const Divider(
                     indent: 20,
                     endIndent: 22,
@@ -196,11 +244,33 @@ class _ProfilescreenState extends State<Profilescreen> {
                       style:
                       TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
                     ),
-                    trailing: Icon(
-                      Icons.arrow_forward_ios_sharp,
-                      color: Colors.green.shade400,
+                    trailing: IconButton(
+                      onPressed: () {
+                        setState(() {
+                          show = !show;
+                        });
+                      },
+                      icon: (show == false)
+                          ? Icon(
+                        Icons.arrow_forward_ios_sharp,
+                        color: Colors.green.shade400,
+                        size: 30,
+                      )
+                          : Icon(
+                        Icons.keyboard_arrow_up_sharp,
+                        size: 30,
+                      ),
+
+
+
                     ),
                   ),
+                  (show == false)
+                      ? SizedBox(
+                    height: 0,
+                  )
+                      : Text(
+                      'krypa'),
                   const Divider(
                     indent: 20,
                     endIndent: 22,
@@ -216,11 +286,33 @@ class _ProfilescreenState extends State<Profilescreen> {
                       style:
                       TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
                     ),
-                    trailing: Icon(
-                      Icons.arrow_forward_ios_sharp,
-                      color: Colors.green.shade400,
+                    trailing: IconButton(
+                      onPressed: () {
+                        setState(() {
+                          show = !show;
+                        });
+                      },
+                      icon: (show == false)
+                          ? Icon(
+                        Icons.arrow_forward_ios_sharp,
+                        color: Colors.green.shade400,
+                        size: 30,
+                      )
+                          : Icon(
+                        Icons.keyboard_arrow_up_sharp,
+                        size: 30,
+                      ),
+
+
+
                     ),
                   ),
+                  (show == false)
+                      ? SizedBox(
+                    height: 0,
+                  )
+                      : Text(
+                      'krypa'),
                   const Divider(
                     indent: 20,
                     endIndent: 22,
@@ -236,11 +328,33 @@ class _ProfilescreenState extends State<Profilescreen> {
                       style:
                       TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
                     ),
-                    trailing: Icon(
-                      Icons.arrow_forward_ios_sharp,
-                      color: Colors.green.shade400,
+                    trailing: IconButton(
+                      onPressed: () {
+                        setState(() {
+                          show = !show;
+                        });
+                      },
+                      icon: (show == false)
+                          ? Icon(
+                        Icons.arrow_forward_ios_sharp,
+                        color: Colors.green.shade400,
+                        size: 30,
+                      )
+                          : Icon(
+                        Icons.keyboard_arrow_up_sharp,
+                        size: 30,
+                      ),
+
+
+
                     ),
                   ),
+                  (show == false)
+                      ? SizedBox(
+                    height: 0,
+                  )
+                      : Text(
+                      'krypa'),
                   const Divider(
                     indent: 20,
                     endIndent: 22,
@@ -256,11 +370,33 @@ class _ProfilescreenState extends State<Profilescreen> {
                       style:
                       TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
                     ),
-                    trailing: Icon(
-                      Icons.arrow_forward_ios_sharp,
-                      color: Colors.green.shade400,
+                    trailing: IconButton(
+                      onPressed: () {
+                        setState(() {
+                          show = !show;
+                        });
+                      },
+                      icon: (show == false)
+                          ? Icon(
+                        Icons.arrow_forward_ios_sharp,
+                        color: Colors.green.shade400,
+                        size: 30,
+                      )
+                          : Icon(
+                        Icons.keyboard_arrow_up_sharp,
+                        size: 30,
+                      ),
+
+
+
                     ),
                   ),
+                  (show == false)
+                      ? SizedBox(
+                    height: 0,
+                  )
+                      : Text(
+                      'krypa'),
                   const Divider(
                     indent: 20,
                     endIndent: 22,
@@ -276,11 +412,33 @@ class _ProfilescreenState extends State<Profilescreen> {
                       style:
                       TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
                     ),
-                    trailing: Icon(
-                      Icons.arrow_forward_ios_sharp,
-                      color: Colors.green.shade400,
+                    trailing: IconButton(
+                      onPressed: () {
+                        setState(() {
+                          show = !show;
+                        });
+                      },
+                      icon: (show == false)
+                          ? Icon(
+                        Icons.arrow_forward_ios_sharp,
+                        color: Colors.green.shade400,
+                        size: 30,
+                      )
+                          : Icon(
+                        Icons.keyboard_arrow_up_sharp,
+                        size: 30,
+                      ),
+
+
+
                     ),
                   ),
+                  (show == false)
+                      ? SizedBox(
+                    height: 0,
+                  )
+                      : Text(
+                      'krypa'),
                   const Divider(
                     indent: 20,
                     endIndent: 22,
@@ -296,11 +454,33 @@ class _ProfilescreenState extends State<Profilescreen> {
                       style:
                       TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
                     ),
-                    trailing: Icon(
-                      Icons.arrow_forward_ios_sharp,
-                      color: Colors.green.shade400,
+                    trailing: IconButton(
+                      onPressed: () {
+                        setState(() {
+                          show = !show;
+                        });
+                      },
+                      icon: (show == false)
+                          ? Icon(
+                        Icons.arrow_forward_ios_sharp,
+                        color: Colors.green.shade400,
+                        size: 30,
+                      )
+                          : Icon(
+                        Icons.keyboard_arrow_up_sharp,
+                        size: 30,
+                      ),
+
+
+
                     ),
                   ),
+                  (show == false)
+                      ? SizedBox(
+                    height: 0,
+                  )
+                      : Text(
+                      'krypa'),
                   const Divider(
                     indent: 20,
                     endIndent: 22,
@@ -316,11 +496,33 @@ class _ProfilescreenState extends State<Profilescreen> {
                       style:
                       TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
                     ),
-                    trailing: Icon(
-                      Icons.arrow_forward_ios_sharp,
-                      color: Colors.green.shade400,
+                    trailing: IconButton(
+                      onPressed: () {
+                        setState(() {
+                          show = !show;
+                        });
+                      },
+                      icon: (show == false)
+                          ? Icon(
+                        Icons.arrow_forward_ios_sharp,
+                        color: Colors.green.shade400,
+                        size: 30,
+                      )
+                          : Icon(
+                        Icons.keyboard_arrow_up_sharp,
+                        size: 30,
+                      ),
+
+
+
                     ),
                   ),
+                  (show == false)
+                      ? SizedBox(
+                    height: 0,
+                  )
+                      : Text(
+                      'krypa'),
                   const Divider(
                     indent: 20,
                     endIndent: 22,
