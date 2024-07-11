@@ -6,7 +6,14 @@ class Profilescreen extends StatefulWidget {
   State<Profilescreen> createState() => _ProfilescreenState();
 }
 bool show=false;
-
+bool order=false;
+bool event=false;
+bool pay=false;
+bool mode=false;
+bool add=false;
+bool help=false;
+bool news=false;
+bool rate=false;
 class _ProfilescreenState extends State<Profilescreen> {
   @override
   Widget build(BuildContext context) {
@@ -205,10 +212,10 @@ class _ProfilescreenState extends State<Profilescreen> {
                     trailing: IconButton(
                       onPressed: () {
                         setState(() {
-                          show = !show;
+                          order = !order;
                         });
                       },
-                      icon: (show == false)
+                      icon: (order == false)
                           ? Icon(
                         Icons.arrow_forward_ios_sharp,
                         color: Colors.green.shade400,
@@ -223,7 +230,7 @@ class _ProfilescreenState extends State<Profilescreen> {
 
                     ),
                   ),
-                  (show == false)
+                  (order == false)
                       ? SizedBox(
                     height: 0,
                   )
@@ -247,10 +254,10 @@ class _ProfilescreenState extends State<Profilescreen> {
                     trailing: IconButton(
                       onPressed: () {
                         setState(() {
-                          show = !show;
+                          event = !event;
                         });
                       },
-                      icon: (show == false)
+                      icon: (event == false)
                           ? Icon(
                         Icons.arrow_forward_ios_sharp,
                         color: Colors.green.shade400,
@@ -265,7 +272,7 @@ class _ProfilescreenState extends State<Profilescreen> {
 
                     ),
                   ),
-                  (show == false)
+                  (event == false)
                       ? SizedBox(
                     height: 0,
                   )
@@ -289,10 +296,10 @@ class _ProfilescreenState extends State<Profilescreen> {
                     trailing: IconButton(
                       onPressed: () {
                         setState(() {
-                          show = !show;
+                          pay = !pay;
                         });
                       },
-                      icon: (show == false)
+                      icon: (pay == false)
                           ? Icon(
                         Icons.arrow_forward_ios_sharp,
                         color: Colors.green.shade400,
@@ -307,7 +314,7 @@ class _ProfilescreenState extends State<Profilescreen> {
 
                     ),
                   ),
-                  (show == false)
+                  (pay == false)
                       ? SizedBox(
                     height: 0,
                   )
@@ -331,10 +338,10 @@ class _ProfilescreenState extends State<Profilescreen> {
                     trailing: IconButton(
                       onPressed: () {
                         setState(() {
-                          show = !show;
+                          mode = !mode;
                         });
                       },
-                      icon: (show == false)
+                      icon: (mode == false)
                           ? Icon(
                         Icons.arrow_forward_ios_sharp,
                         color: Colors.green.shade400,
@@ -349,7 +356,7 @@ class _ProfilescreenState extends State<Profilescreen> {
 
                     ),
                   ),
-                  (show == false)
+                  (mode == false)
                       ? SizedBox(
                     height: 0,
                   )
@@ -373,10 +380,10 @@ class _ProfilescreenState extends State<Profilescreen> {
                     trailing: IconButton(
                       onPressed: () {
                         setState(() {
-                          show = !show;
+                          add = !add;
                         });
                       },
-                      icon: (show == false)
+                      icon: (add == false)
                           ? Icon(
                         Icons.arrow_forward_ios_sharp,
                         color: Colors.green.shade400,
@@ -391,7 +398,7 @@ class _ProfilescreenState extends State<Profilescreen> {
 
                     ),
                   ),
-                  (show == false)
+                  (add == false)
                       ? SizedBox(
                     height: 0,
                   )
@@ -415,10 +422,10 @@ class _ProfilescreenState extends State<Profilescreen> {
                     trailing: IconButton(
                       onPressed: () {
                         setState(() {
-                          show = !show;
+                          help = !help;
                         });
                       },
-                      icon: (show == false)
+                      icon: (help == false)
                           ? Icon(
                         Icons.arrow_forward_ios_sharp,
                         color: Colors.green.shade400,
@@ -433,7 +440,7 @@ class _ProfilescreenState extends State<Profilescreen> {
 
                     ),
                   ),
-                  (show == false)
+                  (help == false)
                       ? SizedBox(
                     height: 0,
                   )
@@ -457,10 +464,10 @@ class _ProfilescreenState extends State<Profilescreen> {
                     trailing: IconButton(
                       onPressed: () {
                         setState(() {
-                          show = !show;
+                          news = !news;
                         });
                       },
-                      icon: (show == false)
+                      icon: (news == false)
                           ? Icon(
                         Icons.arrow_forward_ios_sharp,
                         color: Colors.green.shade400,
@@ -475,7 +482,7 @@ class _ProfilescreenState extends State<Profilescreen> {
 
                     ),
                   ),
-                  (show == false)
+                  (news == false)
                       ? SizedBox(
                     height: 0,
                   )
@@ -499,10 +506,10 @@ class _ProfilescreenState extends State<Profilescreen> {
                     trailing: IconButton(
                       onPressed: () {
                         setState(() {
-                          show = !show;
+                          rate = !rate;
                         });
                       },
-                      icon: (show == false)
+                      icon: (rate == false)
                           ? Icon(
                         Icons.arrow_forward_ios_sharp,
                         color: Colors.green.shade400,
@@ -517,7 +524,7 @@ class _ProfilescreenState extends State<Profilescreen> {
 
                     ),
                   ),
-                  (show == false)
+                  (rate == false)
                       ? SizedBox(
                     height: 0,
                   )
