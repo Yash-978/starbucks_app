@@ -190,8 +190,11 @@ class _ProfilescreenState extends State<Profilescreen> {
                       ? SizedBox(
                     height: 0,
                   )
-                      : Text(
-                      'krypa'),
+                      : Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: Text(
+                        "Joining the Starbucks Rewards™ is everyone's cup of coffee. Simply sign up and earn stars as you spend via your Starbucks card, Cash, Debit/Credit Card, or UPI. There are three levels in the program: Welcome, Green, Gold. For more details, click here : https://www.starbucks.in/rewards/reward-detail to check benefits that the member will receive at the respective levels."),
+                      ),
 
 
                   const Divider(
@@ -234,8 +237,11 @@ class _ProfilescreenState extends State<Profilescreen> {
                       ? SizedBox(
                     height: 0,
                   )
-                      : Text(
-                      'krypa'),
+                      : Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: Text(
+                        "Open the app, join Starbucks® Rewards, order and pay. We'll tell you how long until your order is ready and let you save your favourites for next time."),
+                      ),
                   const Divider(
                     indent: 20,
                     endIndent: 22,
@@ -276,8 +282,11 @@ class _ProfilescreenState extends State<Profilescreen> {
                       ? SizedBox(
                     height: 0,
                   )
-                      : Text(
-                      'krypa'),
+                      : Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: Text(
+                        "You will receive only one birthday reward in the month of your birthday as long as you have spent Rs 600 since you became a member. Any unused Birthday Reward will not be carried forward to the following yea"),
+                      ),
                   const Divider(
                     indent: 20,
                     endIndent: 22,
@@ -318,8 +327,11 @@ class _ProfilescreenState extends State<Profilescreen> {
                       ? SizedBox(
                     height: 0,
                   )
-                      : Text(
-                      'krypa'),
+                      : Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: Text(
+                        "Download the latest Starbucks India mobile app for iPhone® and Android™ on the Apple App store or Google Play store. If you are an existing user of the Starbucks® India app, check the App Store or Play Store to ensure the app has been updated to the latest version. Ensure location or GPS services are turned on to allow the app to display the eligible stores. 'To use Mobile Order & Pay, users must first register to become a Starbucks Rewards™ member along with a mobile number. If you’re an existing member, log into your account to start using Mobile Order & Pay. Existing members will be asked to provide their mobile number before placing an order if no mobile number is available on their SR account.'Click on the Order option at the bottom of the screen and you are ready to use Mobile Order & Pay."),
+                      ),
                   const Divider(
                     indent: 20,
                     endIndent: 22,
@@ -360,8 +372,11 @@ class _ProfilescreenState extends State<Profilescreen> {
                       ? SizedBox(
                     height: 0,
                   )
-                      : Text(
-                      'krypa'),
+                      : Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: Text(
+                        'Download the latest Starbucks India mobile app for iPhone® and Android™ on the Apple App store or Google Play store. If you are an existing user of the Starbucks® India app, check the App Store or Play Store to ensure the app has been updated to the latest version. Ensure location or GPS services are turned on to allow the app to display the eligible stores. "To use Mobile Order & Pay, users must first register to become a Starbucks Rewards™ member along with a mobile number. If you’re an existing member, log into your account to start using Mobile Order & Pay. Existing members will be asked to provide their mobile number before placing an order if no mobile number is available on their SR account." Click on the Order option at the bottom of the screen and you are ready to use Mobile Order & Pay.'),
+                      ),
                   const Divider(
                     indent: 20,
                     endIndent: 22,
@@ -402,8 +417,11 @@ class _ProfilescreenState extends State<Profilescreen> {
                       ? SizedBox(
                     height: 0,
                   )
-                      : Text(
-                      'krypa'),
+                      : Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: Text(
+                        "To join Starbucks Rewards™, you must register through WhatsApp or the Starbucks India app. This allows us to reward you with benefits and special offers using your contact details. Registration also provides balance protection if your card is lost or stolen. A registered card lets you manage your account online and on the Starbucks India app for convenience."),
+                      ),
                   const Divider(
                     indent: 20,
                     endIndent: 22,
@@ -414,10 +432,13 @@ class _ProfilescreenState extends State<Profilescreen> {
                       size: 30,
                       color: Colors.green.shade400,
                     ),
-                    title: const Text(
-                      "HELP CENTER",
-                      style:
-                      TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
+                    title: Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: const Text(
+                        "HELP CENTER -Reset account username and password.",
+                        style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
+                      ),
                     ),
                     trailing: IconButton(
                       onPressed: () {
@@ -444,8 +465,11 @@ class _ProfilescreenState extends State<Profilescreen> {
                       ? SizedBox(
                     height: 0,
                   )
-                      : Text(
-                      'krypa'),
+                      : Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: Text(
+                        "You can visit our site www.starbucks.in or use your Starbucks India mobile app and click on Get Help.Enter your EmailID or Mobile No and Date Of Birth and click on Reset Password.OTP will be sent to your registered mobile number and email id. you can use that to reset your password. Alternatively, call us at 18602660010 and we will help you get access to your account."),
+                      ),
                   const Divider(
                     indent: 20,
                     endIndent: 22,
@@ -456,10 +480,13 @@ class _ProfilescreenState extends State<Profilescreen> {
                       size: 30,
                       color: Colors.green.shade400,
                     ),
-                    title: const Text(
-                      "SAVED ARTICLES AND NEWS",
-                      style:
-                      TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
+                    title: Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: const Text(
+                        "SAVED ARTICLES AND NEWS",
+                        style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
+                      ),
                     ),
                     trailing: IconButton(
                       onPressed: () {
@@ -486,8 +513,11 @@ class _ProfilescreenState extends State<Profilescreen> {
                       ? SizedBox(
                     height: 0,
                   )
-                      : Text(
-                      'krypa'),
+                      : Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: Text(
+                        "Once you reach the Gold level, you will be at that level for a full year from the date you qualified. Simply earn 25 additional stars before your anniversary date (the date you earned Gold) and you will continue to enjoy Gold level benefits for another year. If you do not earn the necessary stars you will move back to the Green level and your stars will be reset to 0."),
+                      ),
                   const Divider(
                     indent: 20,
                     endIndent: 22,
@@ -528,8 +558,11 @@ class _ProfilescreenState extends State<Profilescreen> {
                       ? SizedBox(
                     height: 0,
                   )
-                      : Text(
-                      'krypa'),
+                      : Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: Text(
+                        "It drives around 50% of its business. Generation-wise, 31-40% of millennials, 24% of Gen-X, and 14% of baby boomers use the Starbucks app. Thanks to the feature-rich, user-friendly app, active Starbucks reward members in the USA have increased by 13% to 18% yearly. And this number reached around 27.4 million in 2022."),
+                      ),
                   const Divider(
                     indent: 20,
                     endIndent: 22,
