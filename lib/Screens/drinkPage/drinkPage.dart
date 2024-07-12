@@ -18,7 +18,7 @@ class _drinkPageState extends State<drinkPage> {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.only(right: 230),
+              padding: const EdgeInsets.only(right: 230,top: 20),
               child: Text(
                 "All Drinks",
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),

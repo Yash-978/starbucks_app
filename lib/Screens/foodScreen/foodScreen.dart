@@ -18,7 +18,7 @@ class _foodPageState extends State<foodPage> {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.only(right: 270),
+              padding: const EdgeInsets.only(right: 270,top: 20),
               child: Text(
                 "Food",
                 style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
