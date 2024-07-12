@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:starbucks_app/Utils/GlobalList.dart';
 
 class Giftscreen extends StatefulWidget {
   const Giftscreen({super.key});
@@ -203,87 +204,100 @@ class _GiftscreenState extends State<Giftscreen> {
                   ),
                 ],
               ),
-              Stack(children: [
-                Container(
-                  margin: EdgeInsets.only(left: 50),
-                  alignment: Alignment.centerRight,
-                  height: h * 0.25,
-                  width: w * 0.99,
-                  decoration: BoxDecoration(
-                    borderRadius: const BorderRadius.only(
-                        topLeft: Radius.circular(10),
-                        bottomLeft: Radius.circular(10)),
-                    boxShadow: [
-                      BoxShadow(
-                          color: Colors.grey.shade300,
-                          blurRadius: 3,
-                          spreadRadius: 1,
-                          offset: const Offset(2, 3))
-                    ],
-                    color: Colors.white,
-                  ),
-                ),
-                Row(
-                  children: [
-                    Container(
-                      margin: const EdgeInsets.only(right: 10, left: 18),
-                      height: h * 0.15,
-                      width: w * 0.45,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          image: const DecorationImage(
-                              fit: BoxFit.fill,
-                              image:
-                                  AssetImage('assets/images/gift2/g(1).jpg')),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey.shade300,
-                              blurRadius: 1,
-                              spreadRadius: -1,
-                              offset: const Offset(0, 5),
-                            )
-                          ]),
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+              SizedBox(height: h*0.02,),
+              SizedBox(
+                height: h * 1,
+                child: ListView.builder(
+                  itemCount: GiftList.length,
+                  itemBuilder: (context, index) {
+                    return Column(
                       children: [
-                        const Text(
-                          '\nCongrats',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 20),
-                        ),
-                        const SizedBox(
-                          height: 4,
-                        ),
-                        const Text(
-                          'Coffee. Cheer. Celebrate.\nEnjoy each of your\nspecial moments with S...\n',
-                          style: TextStyle(fontSize: 14),
-                        ),
-                        ElevatedButton(
-                          onPressed: () {},
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color(0xff2a7f62),
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 8, vertical: 8),
-                            minimumSize: const Size(100, 10),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(30),
+                        Stack(children: [
+                          Container(
+                            margin: EdgeInsets.only(left: 50),
+                            alignment: Alignment.centerRight,
+                            height: h * 0.25,
+                            width: w * 0.99,
+                            decoration: BoxDecoration(
+                              borderRadius: const BorderRadius.only(
+                                  topLeft: Radius.circular(10),
+                                  bottomLeft: Radius.circular(10)),
+                              boxShadow: [
+                                BoxShadow(
+                                    color: Colors.grey.shade300,
+                                    blurRadius: 3,
+                                    spreadRadius: 1,
+                                    offset: const Offset(2, 3))
+                              ],
+                              color: Colors.white,
                             ),
                           ),
-                          child: const Text(
-                            'Add Item',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 15,
-                                letterSpacing: .75),
-                          ), // Button ka text
-                        )
+                          Row(
+                            children: [
+                              Container(
+                                margin: const EdgeInsets.only(right: 10, left: 18),
+                                height: h * 0.15,
+                                width: w * 0.45,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    image:  DecorationImage(
+                                        fit: BoxFit.fill,
+                                        image: AssetImage(
+                                            GiftList[index]['image'])),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Colors.grey.shade300,
+                                        blurRadius: 1,
+                                        spreadRadius: -1,
+                                        offset: const Offset(0, 5),
+                                      )
+                                    ]),
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                   Text(
+                                    '${GiftList[index]['name']}',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold, ),
+                                  ),
+
+                                   Text(
+                                     softWrap: true,
+                                    '${GiftList[index]['content']}',
+
+                                  ),
+                                  ElevatedButton(
+                                    onPressed: () {},
+                                    style: ElevatedButton.styleFrom(
+                                      backgroundColor: const Color(0xff2a7f62),
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 8, vertical: 8),
+                                      minimumSize: const Size(100, 10),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(30),
+                                      ),
+                                    ),
+                                    child: const Text(
+                                      'Add Item',
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 15,
+                                          letterSpacing: .75),
+                                    ), // Button ka text
+                                  )
+                                ],
+                              )
+                            ],
+                          )
+                        ]),
+                        SizedBox(height: h*0.02,),
                       ],
-                    )
-                  ],
-                )
-              ]),
+                    );
+                  },
+                ),
+              ),
             ],
           ),
         ),

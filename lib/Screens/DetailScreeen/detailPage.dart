@@ -3,7 +3,8 @@ import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:starbucks_app/Screens/drinkPage/drinkPage.dart';
 import 'package:starbucks_app/Utils/ColorList.dart';
 import 'package:starbucks_app/Utils/GlobalList.dart';
-
+bool isLiked=false;
+bool isHeartAnimating=false;
 final PanelController _customizeController = PanelController();
 final PanelController _addOnsController = PanelController();
 
@@ -35,13 +36,10 @@ class _DetailPageState extends State<DetailPage> {
                 status = true;
               }
             }
-            if (status == true)
-            {
+            if (status == true) {
               cartList.add(productDisplayList[0]);
               // cartList[index]['member']++;
-            }
-            else
-            {
+            } else {
               cartList.add(productDisplayList[0]);
             }
             Navigator.pushNamed(context, '/cart');
@@ -95,107 +93,116 @@ class _DetailPageState extends State<DetailPage> {
         children: [
           ListView(
             children: [
-              Container(
-                height: h * 0.6,
-                width: w * 0.99 + 10,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                      fit: BoxFit.cover,
-                      image: AssetImage(productDisplayList[0]['image'])),
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(25),
-                    topRight: Radius.circular(25),
+              GestureDetector(
+                onDoubleTap: () {
+                  setState(() {
+                    isHeartAnimating=true;
+                    isLiked=true;
+                  });
+                },
+                child: Container(
+                  height: h * 0.6,
+                  width: w * 0.99 + 10,
+                  decoration: BoxDecoration( 
+                    image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: AssetImage(productDisplayList[0]['image'])),
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(25),
+                      topRight: Radius.circular(25),
+                    ),
                   ),
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Align(
-                      alignment: Alignment.bottomRight,
-                      child: IconButton(
-                          onPressed: () {},
-                          icon: Icon(
-                            Icons.fullscreen,
-                            color: Colors.white,
-                            size: 40,
-                          )),
-                    ),
-                    SizedBox(
-                      height: h * 0.27,
-                    ),
-                    Column(
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            SizedBox(
-                              width: w * 0.035,
-                            ),
-                            Container(
-                              height: h * 0.04,
-                              width: w * 0.04,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: AssetImage(
-                                      'assets/images/StarBucks_Logos/vegIcon.jpg'),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      // Icon(Icons.favorite ,size: 50,color: Colors.white,),
+                      Align(
+                        alignment: Alignment.bottomRight,
+                        child: IconButton(
+                            onPressed: () {},
+                            icon: Icon(
+                              Icons.fullscreen,
+                              color: Colors.white,
+                              size: 40,
+                            )),
+                      ),
+                      SizedBox(
+                        height: h * 0.27,
+                      ),
+                      Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              SizedBox(
+                                width: w * 0.035,
+                              ),
+                              Container(
+                                height: h * 0.04,
+                                width: w * 0.04,
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    image: AssetImage(
+                                        'assets/images/StarBucks_Logos/vegIcon.jpg'),
+                                  ),
                                 ),
                               ),
-                            ),
-                            SizedBox(
-                              width: w * 0.02,
-                            ),
-                            Text(
-                              'VEGETERIAN' +
-                                  '  ${productDisplayList[0]['celsius']}',
-                              textAlign: TextAlign.start,
-                              style: TextStyle(color: Colors.white),
-                            ),
-                          ],
-                        ),
-                        Row(
-                          children: [
-                            SizedBox(
-                              width: w * 0.035,
-                            ),
-                            Text(
-                              productDisplayList[0]['productName'],
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  // fontSize: 20,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ],
-                        ),
-                        Row(
-                          children: [
-                            SizedBox(
-                              width: w * 0.035,
-                            ),
-                            SizedBox(
-                                width: w * 0.86,
-                                child: Text(
-                                  productDisplayList[0]['description'],
-                                  style: TextStyle(color: Colors.white),
-                                )),
-                          ],
-                        ),
-                        Row(
-                          children: [
-                            SizedBox(
-                              width: w * 0.035,
-                            ),
-                            Text(
-                              productDisplayList[0]['category'],
-                              style: TextStyle(
-                                color: Colors.white,
+                              SizedBox(
+                                width: w * 0.02,
                               ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ],
+                              Text(
+                                'VEGETERIAN' +
+                                    '  ${productDisplayList[0]['celsius']}',
+                                textAlign: TextAlign.start,
+                                style: TextStyle(color: Colors.white),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              SizedBox(
+                                width: w * 0.035,
+                              ),
+                              Text(
+                                productDisplayList[0]['productName'],
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    // fontSize: 20,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              SizedBox(
+                                width: w * 0.035,
+                              ),
+                              SizedBox(
+                                  width: w * 0.86,
+                                  child: Text(
+                                    productDisplayList[0]['description'],
+                                    style: TextStyle(color: Colors.white),
+                                  )),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              SizedBox(
+                                width: w * 0.035,
+                              ),
+                              Text(
+                                productDisplayList[0]['category'],
+                                style: TextStyle(
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ),
               GestureDetector(
@@ -253,6 +260,14 @@ class _DetailPageState extends State<DetailPage> {
                   height: h * 0.07,
                   width: w * 1,
                   decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black45,
+                          blurRadius: 4,
+                          spreadRadius: 4,
+                          // offset: Offset(1,)
+                        )
+                      ],
                       color: Colors.white,
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(20),
@@ -355,22 +370,47 @@ class _DetailPageState extends State<DetailPage> {
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    RichText(text: TextSpan(
+                    RichText(
+                        text: TextSpan(
                       text: 'CUSTOMISE YOUR ORDER ',
-                      style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.white),
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white),
                       children: const <TextSpan>[
-                        TextSpan(text: '(Default)',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 15),),
+                        TextSpan(
+                          text: '(Default)',
+                          style: TextStyle(
+                              fontWeight: FontWeight.w400, fontSize: 15),
+                        ),
                       ],
                     )),
-                    Divider(height: h * 0.1,thickness: 2,),
+                    Divider(
+                      height: h * 0.1,
+                      thickness: 2,
+                    ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text('SIZE',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15,color: Colors.white),),
-                        Text('Select any one',style: TextStyle(fontSize: 13,fontWeight: FontWeight.w400,color: Colors.white),),
+                        Text(
+                          'SIZE',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                              color: Colors.white),
+                        ),
+                        Text(
+                          'Select any one',
+                          style: TextStyle(
+                              fontSize: 13,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.white),
+                        ),
                       ],
                     ),
-                    SizedBox(height: h * 0.05,),
+                    SizedBox(
+                      height: h * 0.05,
+                    ),
                     SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
                       child: Row(
@@ -382,104 +422,180 @@ class _DetailPageState extends State<DetailPage> {
                                 height: h * 0.09,
                                 width: w * 0.15,
                                 color: Colors.green,
-                              ),SizedBox(height: h * 0.02,),
-                              ElevatedButton(onPressed: () {
-                
-                              },
-                                  child: Text('SHORT',style: TextStyle(color: Colors.teal),)),
-                              Text('237Ml-₹0.00',style: TextStyle(color: Colors.white,fontSize: 10,fontWeight: FontWeight.bold),)
+                              ),
+                              SizedBox(
+                                height: h * 0.02,
+                              ),
+                              ElevatedButton(
+                                  onPressed: () {},
+                                  child: Text(
+                                    'SHORT',
+                                    style: TextStyle(color: Colors.teal),
+                                  )),
+                              Text(
+                                '237Ml-₹0.00',
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 10,
+                                    fontWeight: FontWeight.bold),
+                              )
                             ],
                           ),
-                          SizedBox(width: w * 0.05,),
+                          SizedBox(
+                            width: w * 0.05,
+                          ),
                           Column(
                             children: [
                               Container(
                                 height: h * 0.09,
                                 width: w * 0.15,
                                 color: Colors.green,
-                              ),SizedBox(height: h * 0.02,),
+                              ),
+                              SizedBox(
+                                height: h * 0.02,
+                              ),
                               SizedBox(
                                 width: w * 0.2,
-                                child: TextButton(style: buttonStyleCircle,onPressed: () {
-                
-                                },
-                                    child: Text('TALL',style: TextStyle(color: Colors.white),)),
+                                child: TextButton(
+                                    style: buttonStyleCircle,
+                                    onPressed: () {},
+                                    child: Text(
+                                      'TALL',
+                                      style: TextStyle(color: Colors.white),
+                                    )),
                               ),
-                              Text('354Ml-₹36.75',style: TextStyle(color: Colors.white,fontSize: 10,fontWeight: FontWeight.bold),)
+                              Text(
+                                '354Ml-₹36.75',
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 10,
+                                    fontWeight: FontWeight.bold),
+                              )
                             ],
                           ),
-                          SizedBox(width: w * 0.05,),
+                          SizedBox(
+                            width: w * 0.05,
+                          ),
                           Column(
                             children: [
                               Container(
                                 height: h * 0.09,
                                 width: w * 0.15,
                                 color: Colors.green,
-                              ),SizedBox(height: h * 0.02,),
+                              ),
+                              SizedBox(
+                                height: h * 0.02,
+                              ),
                               SizedBox(
                                 width: w * 0.25,
-                                child: TextButton(style: buttonStyleCircle,onPressed: () {
-                
-                                },
-                                    child: Text('GRANDE',style: TextStyle(color: Colors.white),)),
+                                child: TextButton(
+                                    style: buttonStyleCircle,
+                                    onPressed: () {},
+                                    child: Text(
+                                      'GRANDE',
+                                      style: TextStyle(color: Colors.white),
+                                    )),
                               ),
-                              Text('473Ml-₹78.75',style: TextStyle(color: Colors.white,fontSize: 10,fontWeight: FontWeight.bold),)
+                              Text(
+                                '473Ml-₹78.75',
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 10,
+                                    fontWeight: FontWeight.bold),
+                              )
                             ],
                           ),
-                          SizedBox(width: w * 0.05,),
+                          SizedBox(
+                            width: w * 0.05,
+                          ),
                           Column(
                             children: [
                               Container(
                                 height: h * 0.09,
                                 width: w * 0.15,
                                 color: Colors.green,
-                              ),SizedBox(height: h * 0.02,),
+                              ),
+                              SizedBox(
+                                height: h * 0.02,
+                              ),
                               SizedBox(
                                 width: w * 0.2,
-                                child: TextButton(style: buttonStyleCircle,onPressed: () {
-                
-                                },
-                                    child: Text('VENTI',style: TextStyle(color: Colors.white),)),
+                                child: TextButton(
+                                    style: buttonStyleCircle,
+                                    onPressed: () {},
+                                    child: Text(
+                                      'VENTI',
+                                      style: TextStyle(color: Colors.white),
+                                    )),
                               ),
-                              Text('473Ml-₹78.75',style: TextStyle(color: Colors.white,fontSize: 10,fontWeight: FontWeight.bold),)
+                              Text(
+                                '473Ml-₹78.75',
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 10,
+                                    fontWeight: FontWeight.bold),
+                              )
                             ],
                           ),
                         ],
                       ),
                     ),
                     Divider(
-                      height: h * 0.1,thickness: 2,
+                      height: h * 0.1,
+                      thickness: 2,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text('MILK',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15,color: Colors.white),),
-                        Text('Select any one',style: TextStyle(fontSize: 13,fontWeight: FontWeight.w400,color: Colors.white),),
+                        Text(
+                          'MILK',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                              color: Colors.white),
+                        ),
+                        Text(
+                          'Select any one',
+                          style: TextStyle(
+                              fontSize: 13,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.white),
+                        ),
                       ],
                     ),
-                    SizedBox(height: h * 0.05,),
+                    SizedBox(
+                      height: h * 0.05,
+                    ),
                     Row(
                       children: [
                         Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            ElevatedButton(onPressed: () {
-                
-                            },
-                                child: Text('No Milk',style: TextStyle(color: Colors.teal),)),
-                            Text('+₹0.00',style: TextStyle(color: Colors.white,fontSize: 10,fontWeight: FontWeight.bold),)
+                            ElevatedButton(
+                                onPressed: () {},
+                                child: Text(
+                                  'No Milk',
+                                  style: TextStyle(color: Colors.teal),
+                                )),
+                            Text(
+                              '+₹0.00',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.bold),
+                            )
                           ],
                         ),
                       ],
                     ),
                     Divider(
-                      height: h * 0.1,thickness: 2,
+                      height: h * 0.1,
+                      thickness: 2,
                     ),
                   ],
                 ),
               ),
             ),
-
             minHeight: 0,
             maxHeight: 400,
             backdropEnabled: true,
@@ -499,46 +615,6 @@ class _DetailPageState extends State<DetailPage> {
     );
   }
 }
-
-// Widget _buildCustomizePanel() {
-//   return
-//
-//     ListView(
-//     padding: EdgeInsets.all(16.0),
-//     children: [
-//       Container(),
-//       Text('Customize Your Order',
-//           style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-//       ListTile(
-//         title: Text('Size'),
-//         trailing: DropdownButton<String>(
-//           items: [
-//             DropdownMenuItem(value: 'Short', child: Text('Short')),
-//             DropdownMenuItem(value: 'Tall', child: Text('Tall')),
-//             DropdownMenuItem(value: 'Grande', child: Text('Grande')),
-//             DropdownMenuItem(value: 'Venti', child: Text('Venti')),
-//           ],
-//           onChanged: (value) {},
-//           hint: Text('Select Size'),
-//         ),
-//       ),
-//       ListTile(
-//         title: Text('Milk'),
-//         trailing: DropdownButton<String>(
-//           items: [
-//             DropdownMenuItem(value: 'No Milk', child: Text('No Milk')),
-//             DropdownMenuItem(
-//                 value: 'Regular Milk', child: Text('Regular Milk')),
-//             DropdownMenuItem(value: 'Soy Milk', child: Text('Soy Milk')),
-//             DropdownMenuItem(value: 'Almond Milk', child: Text('Almond Milk')),
-//           ],
-//           onChanged: (value) {},
-//           hint: Text('Select Milk'),
-//         ),
-//       ),
-//     ],
-//   );
-// }
 
 Widget _buildAddOnsPanel() {
   return ListView(
@@ -565,21 +641,14 @@ Widget _buildAddOnsPanel() {
 }
 
 final ButtonStyle buttonStyleCircle = ButtonStyle(
-
   // padding: MaterialStateProperty.all<EdgeInsets>(const EdgeInsets.all(15)),
 
   foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
 
   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-
     RoundedRectangleBorder(
-
       borderRadius: BorderRadius.circular(25.0),
-
       side: const BorderSide(color: Colors.white),
-
     ),
-
   ),
-
 );

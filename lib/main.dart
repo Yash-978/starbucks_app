@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 
 import 'Screens/DetailScreeen/detailPage.dart';
+import 'Screens/FavoriteScreen/favoriteScreen.dart';
 import 'Utils/routes.dart';
 
 
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: '/splash',
       routes: AppRoutes.routes,
-      // home: DetailPage(),
+      // home: FavoritePage(),
 
     );
   }

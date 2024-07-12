@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:starbucks_app/Utils/ColorList.dart';
 import 'package:starbucks_app/Utils/GlobalList.dart';
 
 class cartPage extends StatefulWidget {
@@ -78,195 +79,179 @@ class _cartPageState extends State<cartPage> {
                 SizedBox(
                   height: h * 0.030,
                 ),
-                // ListTile(
-                //   leading: Row(
-                //     children: [
-                //       Container(
-                //         height: h * 0.8,
-                //         width: w * 0.13,
-                //         decoration: BoxDecoration(
-                //           color: Colors.red,
-                //           borderRadius: BorderRadius.circular(10),
-                //         ),
-                //       ),
-                //       // SizedBox(
-                //       //   width: w * 0.02,
-                //       // ),
-                //       Column(
-                //         children: [
-                //           Container(
-                //             height: h * 0.0455,
-                //             width: w * 0.0455,
-                //             decoration: BoxDecoration(
-                //               // color: Colors.green,
-                //               image: DecorationImage(
-                //                   image: AssetImage(
-                //                       'assets/images/StarBucks_Logos/vegIcon.jpg')),
-                //               borderRadius: BorderRadius.circular(10),
-                //             ),
-                //           ),
-                //           Text(
-                //             'Caffe Americano',
-                //             style: TextStyle(
-                //               color: Colors.black,
-                //               fontWeight: FontWeight.w600,
-                //             ),
-                //           ),
-                //           Text(
-                //             'Short, No Milk, NO Whipped Topping',
-                //             style: TextStyle(
-                //               color: Colors.black,
-                //
-                //             ),
-                //           ),
-                //         ],
-                //       )
-                //     ],
-                //   ),
-                //   title: Text('', style: TextStyle(fontSize: 15)),
-                //   subtitle: Text('', style: TextStyle(fontSize: 15)),
-                //   trailing: Text(
-                //     '',
-                //     style: TextStyle(fontSize: 15),
-                //   ),
-                //   iconColor: Colors.red,
-                // ),
                 ...List.generate(
                   cartList.length,
                   (index) {
-                    return Container(
-                      height: h * 0.21,
-                      width: w * 1,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey,
-                            spreadRadius: 2,
-                            blurRadius: 2,
-                            offset: Offset(0, 2),
-                          ),
-                        ],
-                      ),
-                      // Container(
-                      //   height: h*0.1,
-                      //   width: w*0.3,
-                      //   color: Colors.pink,
-                      // ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                    return SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Column(
                         children: [
-                          Container(
-                            height: h * 0.08,
-                            width: w * 0.14,
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                fit: BoxFit.cover,
-                                image: AssetImage(
-                                  cartList[index]['image'],
+                          Row(
+                            children: [
+                              Container(
+                                height: h * 0.21,
+                                width: w * 1,
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.grey,
+                                      spreadRadius: 2,
+                                      blurRadius: 2,
+                                      offset: Offset(0, 2),
+                                    ),
+                                  ],
+                                ),
+                                // Container(
+                                //   height: h*0.1,
+                                //   width: w*0.3,
+                                //   color: Colors.pink,
+                                // ),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Container(
+                                      height: h * 0.08,
+                                      width: w * 0.14,
+                                      decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                          fit: BoxFit.cover,
+                                          image: AssetImage(
+                                            cartList[index]['image'],
+                                          ),
+                                        ),
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                    ),
+                                    // SizedBox(
+                                    //   width: w * 0.030,
+                                    // ),
+                                    Container(
+                                      height: h * 0.2,
+                                      width: w * 0.8,
+                                      color: Colors.white,
+                                      child: Row(
+                                        children: [
+                                          Column(
+                                            children: [
+                                              SizedBox(
+                                                height: h * 0.040,
+                                              ),
+                                              Text(
+                                                cartList[index]['productName'],
+                                                style: TextStyle(
+                                                  // fontSize: 16,
+                                                  color: Color(0xff1e3932),
+                                                ),
+                                              ),
+                                              SizedBox(
+                                                height: h * 0.010,
+                                              ),
+                                              Text(
+                                                cartList[index]['category'],
+                                                style: TextStyle(
+                                                  // fontSize: 10,
+                                                  color: Color(0xff1e3932),
+                                                ),
+                                              )
+                                            ],
+                                          ),
+                                          Spacer(),
+                                          Column(
+                                            children: [
+                                              SizedBox(
+                                                height: h * 0.040,
+                                              ),
+                                              Text(
+                                                cartList[index]['price']
+                                                    .toString(),
+                                                style: TextStyle(
+                                                  // fontSize: 12,
+                                                  fontWeight: FontWeight.w700,
+                                                  color: Color(0xff1e3932),
+                                                ),
+                                              ),
+
+                                              // Container(
+                                              //   height: h * 0.05,
+                                              //   width: w * 0.2,
+                                              //   alignment: Alignment.center,
+                                              //   decoration: BoxDecoration(
+                                              //     borderRadius: BorderRadius.circular(8),
+                                              //     border: Border.all(color: Colors.black),
+                                              //   ),
+                                              //   child: Row(
+                                              //     children: [
+                                              //       IconButton(
+                                              //           onPressed: () {},
+                                              //           icon: Icon(
+                                              //             Icons.add,
+                                              //             size: 8,
+                                              //           )),
+                                              //       IconButton(
+                                              //           onPressed: () {},
+                                              //           icon: Icon(
+                                              //             Icons.remove,
+                                              //             size: 8,
+                                              //           )),
+                                              //     ],
+                                              //   ),
+                                              // ),
+
+                                              // SizedBox(
+                                              //   height: h * 0.010,
+                                              // ),
+                                              // Padding(
+                                              //   padding:
+                                              //       const EdgeInsets.only(top: 40, right: 50),
+                                              //   child: Text(
+                                              //     "Customise",
+                                              //     style: TextStyle(
+                                              //       fontSize: 16,
+                                              //       color: Color(0xff1e3932),
+                                              //     ),
+                                              //   ),
+                                              // )
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
-                              borderRadius: BorderRadius.circular(10),
-                            ),
+                              SizedBox(
+                                width: w * 0.03,
+                              ),
+                              GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    qty = 0;
+                                    amount = 0;
+                                    total = 0;
+                                    cartList.removeAt(index);
+                                  });
+                                },
+                                child: Container(
+                                  height: h * 0.22,
+                                  width: w * 0.2,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(20),
+                                    color: Color(0xff529C86),
+                                  ),
+                                  child: Center(
+                                    child: Icon(
+                                      Icons.delete,
+                                      color: Colors.white,
+                                      size: 40,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
-                          // SizedBox(
-                          //   width: w * 0.030,
-                          // ),
-                          Container(
-                            height: h * 0.2,
-                            width: w * 0.8,
-                            color: Colors.white,
-                            child: Row(
-                              children: [
-                                Column(
-                                  children: [
-                                    SizedBox(
-                                      height: h * 0.040,
-                                    ),
-                                    Text(
-                                      cartList[index]['productName'],
-                                      style: TextStyle(
-                                        // fontSize: 16,
-                                        color: Color(0xff1e3932),
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      height: h * 0.010,
-                                    ),
-                                    Text(
-                                      cartList[index]['category'],
-                                      style: TextStyle(
-                                        // fontSize: 10,
-                                        color: Color(0xff1e3932),
-                                      ),
-                                    )
-                                  ],
-                                ),
-                                Spacer(),
-                                Column(
-                                  children: [
-                                    SizedBox(
-                                      height: h * 0.040,
-                                    ),
-                                    Text(
-                                      cartList[index]['price'].toString(),
-                                      style: TextStyle(
-                                        // fontSize: 12,
-                                        fontWeight: FontWeight.w700,
-                                        color: Color(0xff1e3932),
-                                      ),
-                                    ),
-                                    IconButton.outlined(
-                                        color: Color(0xff529C86),
-                                        onPressed: () {},
-                                        icon: Icon(
-                                          Icons.delete,
-                                          size: 30,
-                                        ))
-                                    // Container(
-                                    //   height: h * 0.05,
-                                    //   width: w * 0.2,
-                                    //   alignment: Alignment.center,
-                                    //   decoration: BoxDecoration(
-                                    //     borderRadius: BorderRadius.circular(8),
-                                    //     border: Border.all(color: Colors.black),
-                                    //   ),
-                                    //   child: Row(
-                                    //     children: [
-                                    //       IconButton(
-                                    //           onPressed: () {},
-                                    //           icon: Icon(
-                                    //             Icons.add,
-                                    //             size: 8,
-                                    //           )),
-                                    //       IconButton(
-                                    //           onPressed: () {},
-                                    //           icon: Icon(
-                                    //             Icons.remove,
-                                    //             size: 8,
-                                    //           )),
-                                    //     ],
-                                    //   ),
-                                    // ),
-
-                                    // SizedBox(
-                                    //   height: h * 0.010,
-                                    // ),
-                                    // Padding(
-                                    //   padding:
-                                    //       const EdgeInsets.only(top: 40, right: 50),
-                                    //   child: Text(
-                                    //     "Customise",
-                                    //     style: TextStyle(
-                                    //       fontSize: 16,
-                                    //       color: Color(0xff1e3932),
-                                    //     ),
-                                    //   ),
-                                    // )
-                                  ],
-                                ),
-                              ],
-                            ),
+                          SizedBox(
+                            height: h * 0.0071,
                           ),
                         ],
                       ),
@@ -368,75 +353,76 @@ class _cartPageState extends State<cartPage> {
                 SizedBox(
                   height: h * 0.050,
                 ),
-                Container(
-                  height: h * 0.280,
-                  width: w * 1,
-                  decoration: BoxDecoration(
-                    color: Colors.grey.shade200,
-                  ),
-                  child: Padding(
-                    padding:
-                        const EdgeInsets.only(top: 20, right: 20, left: 20),
-                    child: Column(
-                      children: [
-                        Row(
-                          children: [
-                            Text(
-                              "BILL DETAIL",
-                              style: TextStyle(
-                                  fontSize: 16, fontWeight: FontWeight.bold),
-                            )
-                          ],
-                        ),
-                        SizedBox(
-                          height: h * 0.020,
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [Text("Sub Total"), Text("230.00")],
-                        ),
-                        SizedBox(
-                          height: h * 0.010,
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text("Discount"),
-                            Text("0.0"),
-                          ],
-                        ),
-                        SizedBox(
-                          height: h * 0.010,
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text("TAXES"),
-                            Text("11.50"),
-                          ],
-                        ),
-                        SizedBox(
-                          height: h * 0.010,
-                        ),
-                        Divider(
-                          height: 2,
-                          indent: w * 0.001,
-                          color: Colors.grey,
-                        ),
-                        SizedBox(
-                          height: h * 0.010,
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text("Total"),
-                            Text("242.00"),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+                // Container(
+                //   height: h * 0.280,
+                //   width: w * 1,
+                //   decoration: BoxDecoration(
+                //     color: Colors.grey.shade200,
+                //   ),
+                //   child: Padding(
+                //     padding:
+                //         const EdgeInsets.only(top: 20, right: 20, left: 20),
+                //     child: Column(
+                //       children: [
+                //         Row(
+                //           children: [
+                //             Text(
+                //               "BILL DETAIL",
+                //               style: TextStyle(
+                //                   fontSize: 16, fontWeight: FontWeight.bold),
+                //             )
+                //           ],
+                //         ),
+                //         SizedBox(
+                //           height: h * 0.020,
+                //         ),
+                //         Row(
+                //           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //           children: [Text("Sub Total"), Text("$amount")],
+                //         ),
+                //         SizedBox(
+                //           height: h * 0.010,
+                //         ),
+                //         Row(
+                //           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //           children: [
+                //             Text("Discount"),
+                //             Text("0.0"),
+                //           ],
+                //         ),
+                //         SizedBox(
+                //           height: h * 0.010,
+                //         ),
+                //         Row(
+                //           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //           children: [
+                //             Text("TAXES"),
+                //             Text("18%"),
+                //           ],
+                //         ),
+                //         SizedBox(
+                //           height: h * 0.010,
+                //         ),
+                //         Divider(
+                //           height: 2,
+                //           indent: w * 0.001,
+                //           color: Colors.grey,
+                //         ),
+                //         SizedBox(
+                //           height: h * 0.010,
+                //         ),
+                //         Row(
+                //           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //           children: [
+                //             Text("Total"),
+                //             Text("$total"),
+                //           ],
+                //         ),
+                //       ],
+                //     ),
+                //   ),
+                // ),
+                SizedBox(height: h*0.121,),
                 Stack(
                   children: [
                     Container(
@@ -450,11 +436,11 @@ class _cartPageState extends State<cartPage> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              "1 ITEM ADDED",
+                              " ITEM ADDED",
                               style: TextStyle(color: Colors.grey.shade100),
                             ),
                             Text(
-                              "242.00",
+                              'Congratulations     Love From Barista',
                               style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold),
@@ -497,18 +483,35 @@ class _cartPageState extends State<cartPage> {
                                     color: Colors.grey.shade100,
                                     size: 26,
                                   ),
-                                  Container(
-                                    height: h * 0.050,
-                                    width: w * 0.350,
-                                    decoration: BoxDecoration(
-                                        color: Color(0xff4d917a),
-                                        borderRadius:
-                                            BorderRadius.circular(20)),
-                                    child: Center(
-                                      child: Text(
-                                        "Place Order",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold),
+                                  GestureDetector(
+                                    onTap: () {
+                                      setState(() {
+                                        for (int i = 0;
+                                            i < cartList.length;
+                                            i++) {
+                                          qty = qty +
+                                              cartList[i]['price'].toInt();
+                                          amount = amount +
+                                              cartList[i][
+                                                  'price']; //*cartList[i]['member'];
+                                        }
+                                        total = (amount * 18) / 100 + amount;
+                                      });
+                                      Navigator.of(context).pushNamed('/check');
+                                    },
+                                    child: Container(
+                                      height: h * 0.050,
+                                      width: w * 0.350,
+                                      decoration: BoxDecoration(
+                                          color: Color(0xff4d917a),
+                                          borderRadius:
+                                              BorderRadius.circular(20)),
+                                      child: Center(
+                                        child: Text(
+                                          "Place Order",
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold),
+                                        ),
                                       ),
                                     ),
                                   )
@@ -525,6 +528,7 @@ class _cartPageState extends State<cartPage> {
             ),
           ),
         ),
+
       ),
     );
   }

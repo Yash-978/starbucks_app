@@ -3,6 +3,7 @@ import 'package:starbucks_app/Screens/cartPage/cartPage.dart';
 
 import '../Screens/BottomNavigationBar/bottomNavigationBar.dart';
 import '../Screens/CategoriesScreen/categoryScreen.dart';
+import '../Screens/Checkout/checkOut.dart';
 import '../Screens/DetailScreeen/detailPage.dart';
 import '../Screens/GreetingScreen/greeting.dart';
 import '../Screens/HomeScreens/homeScreen.dart';
@@ -24,7 +25,8 @@ class AppRoutes {
     '/signUp': (context) => SignUpPage(),
     '/greeting': (context) => GreetingPage(),
    '/detail': (context) => DetailPage(),
-    '/cart':(context)=>cartPage()
+    '/cart':(context)=>cartPage(),
+    '/check':(context)=>Checkout()
     // '/quote':(context)=>QuotePage(),
     // '/profile':(context)=>ProfilePage(),
   };
