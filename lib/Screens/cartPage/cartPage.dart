@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:starbucks_app/Utils/ColorList.dart';
+
 import 'package:starbucks_app/Utils/GlobalList.dart';
 
 class cartPage extends StatefulWidget {
@@ -19,6 +19,7 @@ class _cartPageState extends State<cartPage> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          scrolledUnderElevation: 0.1,
           leading: GestureDetector(
               onTap: () {
                 Navigator.of(context).pop();
@@ -27,6 +28,24 @@ class _cartPageState extends State<cartPage> {
           centerTitle: true,
           title: Text('Cart'),
           backgroundColor: Colors.white,
+          actions: [
+            Padding(
+              padding: const EdgeInsets.only(right: 10),
+              child: IconButton(
+                onPressed: () {
+                  // Navigator.of(context).pushNamed('/favorite');
+                },
+                icon: Badge(
+                  label: Text(cartList.length.toString()),
+                  backgroundColor: Color(0xff529C86),
+                  child: Icon(
+                    Icons.shopping_bag_outlined,
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+            )
+          ],
         ),
         body: Form(
           child: SingleChildScrollView(
@@ -79,6 +98,7 @@ class _cartPageState extends State<cartPage> {
                 SizedBox(
                   height: h * 0.030,
                 ),
+
                 ...List.generate(
                   cartList.length,
                   (index) {
@@ -89,130 +109,142 @@ class _cartPageState extends State<cartPage> {
                           Row(
                             children: [
                               Container(
-                                height: h * 0.21,
+                                height: h * 0.260,
                                 width: w * 1,
                                 decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.grey,
-                                      spreadRadius: 2,
-                                      blurRadius: 2,
-                                      offset: Offset(0, 2),
-                                    ),
-                                  ],
-                                ),
-
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
+                                    borderRadius: BorderRadius.circular(10),
+                                    color: Colors.white,
+                                    boxShadow: [
+                                      BoxShadow(
+                                          color: Colors.grey.shade400,
+                                          offset: Offset(0, 2),
+                                          blurRadius: 2,
+                                          spreadRadius: 2)
+                                    ]),
+                                child: Column(
                                   children: [
-                                    Container(
-                                      height: h * 0.08,
-                                      width: w * 0.14,
-                                      decoration: BoxDecoration(
-                                        image: DecorationImage(
-                                          fit: BoxFit.cover,
-                                          image: AssetImage(
-                                            cartList[index]['image'],
-                                          ),
+                                    Row(
+                                      children: [
+                                        Stack(
+                                          children: [
+                                            Container(
+                                              height: h * 0.260,
+                                              width: w * 0.32,
+                                              decoration: BoxDecoration(
+                                                color: Colors.white,
+                                                borderRadius: BorderRadius.only(
+                                                    topLeft:
+                                                        Radius.circular(10),
+                                                    bottomLeft:
+                                                        Radius.circular(10)),
+                                              ),
+                                              child: Padding(
+                                                padding: const EdgeInsets.only(
+                                                    bottom: 60,
+                                                    top: 20,
+                                                    left: 10,
+                                                    right: 10),
+                                                child: Container(
+                                                  width: w * 0.1,
+                                                  height: h * 0.1,
+                                                  decoration: BoxDecoration(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              100),
+                                                      color: Colors.pink,
+                                                      image: DecorationImage(
+                                                          fit: BoxFit.cover,
+                                                          image: AssetImage(
+                                                            '${cartList[index]['image']}',
+                                                          ))),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
                                         ),
-                                        borderRadius: BorderRadius.circular(10),
-                                      ),
-                                    ),
-                                    // SizedBox(
-                                    //   width: w * 0.030,
-                                    // ),
-                                    Container(
-                                      height: h * 0.2,
-                                      width: w * 0.8,
-                                      color: Colors.white,
-                                      child: Row(
-                                        children: [
-                                          Column(
+                                        Container(
+                                          height: h * 0.260,
+                                          width: w * 0.595,
+                                          decoration: BoxDecoration(
+                                              color: Colors.white,
+                                              borderRadius: BorderRadius.only(
+                                                  topRight: Radius.circular(10),
+                                                  bottomRight:
+                                                      Radius.circular(10))),
+                                          child: Column(
                                             children: [
-                                              SizedBox(
-                                                height: h * 0.040,
+                                              Padding(
+                                                padding: const EdgeInsets.only(
+                                                    right: 35, top: 20),
+                                                child: Text(
+                                                  //   "${save[selIndex][index]['productName']}",
+                                                  '${cartList[index]['productName']}',
+
+                                                  maxLines: 1,
+                                                  style: TextStyle(
+                                                      fontSize: 18,
+                                                      fontWeight:
+                                                          FontWeight.bold),
+                                                ),
                                               ),
-                                              Text(
-                                                cartList[index]['productName'],
-                                                style: TextStyle(
-                                                  // fontSize: 16,
-                                                  color: Color(0xff1e3932),
+                                              Padding(
+                                                padding: const EdgeInsets.only(
+                                                    right: 190),
+                                                child: Text(
+                                                  // "${save[selIndex][index]['size']}",
+                                                  '${cartList[index]['size']}',
+
+                                                  maxLines: 1,
+                                                  style:
+                                                      TextStyle(fontSize: 12),
                                                 ),
                                               ),
                                               SizedBox(
-                                                height: h * 0.010,
+                                                height: h * 0.0050,
                                               ),
-                                              Text(
-                                                cartList[index]['category'],
-                                                style: TextStyle(
-                                                  // fontSize: 10,
-                                                  color: Color(0xff1e3932),
+                                              Padding(
+                                                padding: const EdgeInsets.only(
+                                                    right: 10),
+                                                child: Text(
+                                                  //"${save[selIndex][index]['description']}",
+                                                  '${cartList[index]['description']}',
+
+                                                  maxLines: 2,
+                                                  style:
+                                                      TextStyle(fontSize: 12),
                                                 ),
+                                              ),
+                                              SizedBox(
+                                                height: h * 0.03,
+                                              ),
+                                              Row(
+                                                //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                                children: [
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsets.only(
+                                                            right: 20),
+                                                    child: Text(
+                                                      // "${save[selIndex][index]['price']}",
+                                                      '${cartList[index]['price']}',
+
+                                                      style: TextStyle(
+                                                          color: Colors.black,
+                                                          fontSize: 18,
+                                                          fontWeight:
+                                                              FontWeight.bold),
+                                                    ),
+                                                  ),
+                                                  SizedBox(
+                                                    width: w * 0.10,
+                                                  ),
+                                                ],
                                               )
                                             ],
                                           ),
-                                          Spacer(),
-                                          Column(
-                                            children: [
-                                              SizedBox(
-                                                height: h * 0.040,
-                                              ),
-                                              Text(
-                                                cartList[index]['price']
-                                                    .toString(),
-                                                style: TextStyle(
-                                                  // fontSize: 12,
-                                                  fontWeight: FontWeight.w700,
-                                                  color: Color(0xff1e3932),
-                                                ),
-                                              ),
-
-                                              // Container(
-                                              //   height: h * 0.05,
-                                              //   width: w * 0.2,
-                                              //   alignment: Alignment.center,
-                                              //   decoration: BoxDecoration(
-                                              //     borderRadius: BorderRadius.circular(8),
-                                              //     border: Border.all(color: Colors.black),
-                                              //   ),
-                                              //   child: Row(
-                                              //     children: [
-                                              //       IconButton(
-                                              //           onPressed: () {},
-                                              //           icon: Icon(
-                                              //             Icons.add,
-                                              //             size: 8,
-                                              //           )),
-                                              //       IconButton(
-                                              //           onPressed: () {},
-                                              //           icon: Icon(
-                                              //             Icons.remove,
-                                              //             size: 8,
-                                              //           )),
-                                              //     ],
-                                              //   ),
-                                              // ),
-
-                                              // SizedBox(
-                                              //   height: h * 0.010,
-                                              // ),
-                                              // Padding(
-                                              //   padding:
-                                              //       const EdgeInsets.only(top: 40, right: 50),
-                                              //   child: Text(
-                                              //     "Customise",
-                                              //     style: TextStyle(
-                                              //       fontSize: 16,
-                                              //       color: Color(0xff1e3932),
-                                              //     ),
-                                              //   ),
-                                              // )
-                                            ],
-                                          ),
-                                        ],
-                                      ),
-                                    ),
+                                        )
+                                      ],
+                                    )
                                   ],
                                 ),
                               ),
@@ -418,7 +450,9 @@ class _cartPageState extends State<cartPage> {
                 //     ),
                 //   ),
                 // ),
-                SizedBox(height: h*0.121,),
+                SizedBox(
+                  height: h * 0.121,
+                ),
                 Stack(
                   children: [
                     Container(
@@ -524,7 +558,6 @@ class _cartPageState extends State<cartPage> {
             ),
           ),
         ),
-
       ),
     );
   }

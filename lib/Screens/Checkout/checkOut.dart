@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 import '../../Utils/GlobalList.dart';
 
@@ -86,6 +87,11 @@ class _CheckoutState extends State<Checkout> {
                       Text("$total"),
                     ],
                   ),
+                  ElevatedButton(
+                      onPressed: () {
+                        showPaymentTimeDialog(context);
+                      },
+                      child: Text('Pay Now'))
                 ],
               ),
             ),
@@ -94,4 +100,44 @@ class _CheckoutState extends State<Checkout> {
       ),
     );
   }
+}
+
+void showPaymentTimeDialog(BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return Dialog(
+          backgroundColor: Colors.transparent,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Spacer(),
+              LottieBuilder.asset(
+                'assets/likeButton/paymentComplete.json',
+              ),
+              Row(
+                children: [
+                  // SizedBox(width: 5,),
+                  Text(
+                    '     Payment \n    Successfull\n     Completed',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 40,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
+              Spacer(),
+            ],
+          ));
+    },
+  );
+
+  Future.delayed(
+      Duration(
+        seconds: 1,
+        milliseconds: 500,
+      ), () {
+    Navigator.of(context).pop();
+  });
 }

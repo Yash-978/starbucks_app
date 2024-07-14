@@ -97,7 +97,20 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
       appBar: AppBar(
         centerTitle: true,
         scrolledUnderElevation: 0.1,
-        title: Text('Your Favorite'),
+        title: Text(
+          'Your Favorite',
+          style: TextStyle(color: Colors.white),
+        ),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(
+            Icons.arrow_back_ios_rounded,
+            color: Colors.white,
+          ),
+        ),
+        backgroundColor: Colors.black,
       ),
       body: ListView.builder(
         itemCount: favoriteList.length,
@@ -128,29 +141,18 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                               width: w * 0.32,
                               decoration: BoxDecoration(
                                 color: Colors.white,
-                                borderRadius:
-                                BorderRadius.only(
-                                    topLeft:
-                                    Radius.circular(
-                                        10),
-                                    bottomLeft:
-                                    Radius.circular(
-                                        10)),
+                                borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(10),
+                                    bottomLeft: Radius.circular(10)),
                               ),
                               child: Padding(
-                                padding:
-                                const EdgeInsets.only(
-                                    bottom: 60,
-                                    top: 20,
-                                    left: 10,
-                                    right: 10),
+                                padding: const EdgeInsets.only(
+                                    bottom: 60, top: 20, left: 10, right: 10),
                                 child: Container(
                                   width: w * 0.1,
                                   height: h * 0.1,
                                   decoration: BoxDecoration(
-                                      borderRadius:
-                                      BorderRadius
-                                          .circular(100),
+                                      borderRadius: BorderRadius.circular(100),
                                       color: Colors.pink,
                                       image: DecorationImage(
                                           fit: BoxFit.cover,
@@ -168,16 +170,13 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                           decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.only(
-                                  topRight:
-                                  Radius.circular(10),
-                                  bottomRight:
-                                  Radius.circular(10))),
+                                  topRight: Radius.circular(10),
+                                  bottomRight: Radius.circular(10))),
                           child: Column(
                             children: [
                               Padding(
                                 padding:
-                                const EdgeInsets.only(
-                                    right: 35, top: 20),
+                                    const EdgeInsets.only(right: 35, top: 20),
                                 child: Text(
                                   //   "${save[selIndex][index]['productName']}",
                                   '${favoriteList[index]['productName']}',
@@ -185,37 +184,30 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                                   maxLines: 1,
                                   style: TextStyle(
                                       fontSize: 18,
-                                      fontWeight:
-                                      FontWeight.bold),
+                                      fontWeight: FontWeight.bold),
                                 ),
                               ),
                               Padding(
-                                padding:
-                                const EdgeInsets.only(
-                                    right: 190),
+                                padding: const EdgeInsets.only(right: 190),
                                 child: Text(
                                   // "${save[selIndex][index]['size']}",
                                   '${favoriteList[index]['size']}',
 
                                   maxLines: 1,
-                                  style:
-                                  TextStyle(fontSize: 12),
+                                  style: TextStyle(fontSize: 12),
                                 ),
                               ),
                               SizedBox(
                                 height: h * 0.0050,
                               ),
                               Padding(
-                                padding:
-                                const EdgeInsets.only(
-                                    right: 10),
+                                padding: const EdgeInsets.only(right: 10),
                                 child: Text(
                                   //"${save[selIndex][index]['description']}",
                                   '${favoriteList[index]['description']}',
 
                                   maxLines: 2,
-                                  style:
-                                  TextStyle(fontSize: 12),
+                                  style: TextStyle(fontSize: 12),
                                 ),
                               ),
                               SizedBox(
@@ -225,9 +217,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                                 //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                 children: [
                                   Padding(
-                                    padding:
-                                    const EdgeInsets.only(
-                                        right: 20),
+                                    padding: const EdgeInsets.only(right: 20),
                                     child: Text(
                                       // "${save[selIndex][index]['price']}",
                                       '${favoriteList[index]['price']}',
@@ -235,9 +225,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                                       style: TextStyle(
                                           color: Colors.black,
                                           fontSize: 18,
-                                          fontWeight:
-                                          FontWeight
-                                              .bold),
+                                          fontWeight: FontWeight.bold),
                                     ),
                                   ),
                                   SizedBox(
@@ -245,25 +233,19 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                                   ),
                                   GestureDetector(
                                     child: Padding(
-                                      padding:
-                                      const EdgeInsets
-                                          .only(
-                                          right: 10),
+                                      padding: const EdgeInsets.only(right: 10),
                                       child: Container(
                                         height: h * 0.050,
                                         width: w * 0.250,
                                         decoration: BoxDecoration(
                                             color: Color(0xff007347),
                                             borderRadius:
-                                            BorderRadius
-                                                .circular(
-                                                20)),
+                                                BorderRadius.circular(20)),
                                         child: Center(
                                           child: Text(
                                             'My favorite',
                                             style: TextStyle(
-                                              color: Colors
-                                                  .white,
+                                              color: Colors.white,
                                             ),
                                           ),
                                         ),

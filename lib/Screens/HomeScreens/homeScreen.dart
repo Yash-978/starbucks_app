@@ -187,7 +187,7 @@ class _HomePageState extends State<HomePage> {
                     // opacity: 0.099 + 1,
                     fit: BoxFit.values.first,
                     image: AssetImage(
-                        'assets/images/homeScreen_video_image_2.jpeg'),
+                        'assets/Gif_videos/splashScreen/starbuckspromo_video_(1).gif'),
                   ),
                 ),
                 child: Container(
@@ -490,30 +490,44 @@ class _HomePageState extends State<HomePage> {
                                     'assets/images/brewed_coffee/bc(1).jpg'),
                               ),
 
-                              Row(children:[
-                                Icon(Icons.currency_rupee,size: 20,),
-                                Text('283',style: TextStyle(fontSize: 20),),
-                                SizedBox(width: w*0.080,),
+                              Row(children: [
+                                Icon(
+                                  Icons.currency_rupee,
+                                  size: 20,
+                                ),
+                                Text(
+                                  '283',
+                                  style: TextStyle(fontSize: 20),
+                                ),
+                                SizedBox(
+                                  width: w * 0.080,
+                                ),
                                 Container(
-                                  height: h*0.045,
-                                  width: w*0.250,
+                                  height: h * 0.045,
+                                  width: w * 0.250,
                                   decoration: BoxDecoration(
-                                    color: Color(0xff007347),
-                                    borderRadius: BorderRadius.circular(20)
-                                  ),
+                                      color: Color(0xff007347),
+                                      borderRadius: BorderRadius.circular(20)),
                                 )
-                              ] ),
+                              ]),
 
                               // Container(height: h*0.1,)
                             ],
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(top: 10,),
+                            padding: const EdgeInsets.only(
+                              top: 10,
+                            ),
                             child: Column(
                               children: [
-
-                                Icon(Icons.currency_rupee,size: 20,),
-                                Text('Cappucino',style: TextStyle(fontSize: 20),),
+                                Icon(
+                                  Icons.currency_rupee,
+                                  size: 20,
+                                ),
+                                Text(
+                                  'Cappucino',
+                                  style: TextStyle(fontSize: 20),
+                                ),
                               ],
                             ),
                           )

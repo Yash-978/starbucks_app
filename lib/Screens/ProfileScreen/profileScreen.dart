@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:starbucks_app/Screens/Login&SignUp/Component/signUpVariables.dart';
 class Profilescreen extends StatefulWidget {
   const Profilescreen({super.key});
 
@@ -76,7 +77,7 @@ class _ProfilescreenState extends State<Profilescreen> {
                   ),
                   Stack(
                     children: [
-                      const CircleAvatar(
+                       CircleAvatar(
                         backgroundColor: Colors.white,
                         radius: 110,
                       ),
@@ -108,10 +109,17 @@ class _ProfilescreenState extends State<Profilescreen> {
                             color: Colors.green.shade400,
                             borderRadius: BorderRadius.circular(50),
                           ),
-                          child: const Icon(
-                            Icons.edit_outlined,
-                            color: Colors.white,
-                            size: 24,
+                          child:  GestureDetector(
+                            onTap: () {
+                              setState(() {
+
+                              });
+                            },
+                            child: Icon(
+                              Icons.edit_outlined,
+                              color: Colors.white,
+                              size: 24,
+                            ),
                           ),
                         ),
                       ),
@@ -120,8 +128,8 @@ class _ProfilescreenState extends State<Profilescreen> {
                   const SizedBox(
                     height: 30,
                   ),
-                  const Text(
-                    "Ravi Narayan Behera",
+                   Text(
+                    "${txtFirstName.text}",
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 30,

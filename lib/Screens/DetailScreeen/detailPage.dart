@@ -37,8 +37,6 @@ class _DetailPageState extends State<DetailPage> {
       //   favoriteList.add(productDisplayList[index]);
       // }
 
-
-
       // Navigator.pushNamed(context, '/cart');
       // productDisplayList[index]['like'] = !productDisplayList[index]['like'];
       // if (productDisplayList[index]['like']) {
@@ -134,7 +132,8 @@ class _DetailPageState extends State<DetailPage> {
                     bool likestatus = false;
                     int index = 0;
                     for (int i = 0; i < favoriteList.length; i++) {
-                      if (favoriteList[i]['productName'] == favoriteList[0]['productName']) {
+                      if (favoriteList[i]['productName'] ==
+                          favoriteList[0]['productName']) {
                         index = i;
                         likestatus = true;
                       }
@@ -206,7 +205,9 @@ class _DetailPageState extends State<DetailPage> {
                                   Text(
                                     'VEGETARIAN  ${productDisplayList[0]['celsius']}',
                                     textAlign: TextAlign.start,
-                                    style: TextStyle(color: Colors.white),
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                    ),
                                   ),
                                 ],
                               ),
@@ -250,16 +251,6 @@ class _DetailPageState extends State<DetailPage> {
                         ],
                       ),
                     ),
-
-                    // Positioned.fill(
-                    //   child: Center(
-                    //     child: Icon(
-                    //       Icons.favorite,
-                    //       size: 120,
-                    //       color: Colors.white,
-                    //     ),
-                    //   ),
-                    // ),
                   ],
                 ),
               ),
@@ -856,8 +847,6 @@ final ButtonStyle buttonStyleCircle = ButtonStyle(
     ),
   ),
 );
-
-
 
 void showLimitedTimeDialog(BuildContext context) {
   showDialog(
