@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:starbucks_app/Utils/ColorList.dart';
 
 import '../../Utils/GlobalList.dart';
 
@@ -16,9 +17,45 @@ class _CheckoutState extends State<Checkout> {
     double h = MediaQuery.of(context).size.height;
     double w = MediaQuery.of(context).size.width;
     return Scaffold(
+      bottomNavigationBar: BottomAppBar(
+        child: GestureDetector(
+          onTap: () {
+            showPaymentTimeDialog(context);
+          },
+          child: Container(
+            height: h * 0.1,
+            width: w * 0.86,
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(30),
+              color: Color(0xff2a7f62),
+            ),
+            child: Text(
+              'Pay Now',
+              style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20),
+            ),
+          ),
+        ),
+      ),
       appBar: AppBar(
+        backgroundColor: primaryColor,
         centerTitle: true,
-        title: Text('Your Bill'),
+        title: Text(
+          'Your Bill',
+          style: TextStyle(color: Colors.white),
+        ),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(
+            Icons.arrow_back_ios_rounded,
+            color: Colors.white,
+          ),
+        ),
       ),
       body: Column(
         // mainAxisAlignment: MainAxisAlignment.center,
@@ -87,11 +124,6 @@ class _CheckoutState extends State<Checkout> {
                       Text("$total"),
                     ],
                   ),
-                  ElevatedButton(
-                      onPressed: () {
-                        showPaymentTimeDialog(context);
-                      },
-                      child: Text('Pay Now'))
                 ],
               ),
             ),
