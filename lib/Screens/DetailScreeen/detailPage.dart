@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
+import 'package:starbucks_app/Screens/FavoriteScreen/favoriteScreen.dart';
 import 'package:starbucks_app/Screens/drinkPage/drinkPage.dart';
 import 'package:starbucks_app/Utils/ColorList.dart';
 import 'package:starbucks_app/Utils/GlobalList.dart';
-bool isLiked=false;
-bool isHeartAnimating=false;
+
+List favoriteList = [];
+bool isLiked = false;
+bool isHeartAnimating = false;
 final PanelController _customizeController = PanelController();
 final PanelController _addOnsController = PanelController();
 
@@ -16,6 +20,37 @@ class DetailPage extends StatefulWidget {
 }
 
 class _DetailPageState extends State<DetailPage> {
+  // late AnimationController likeController;
+
+  void addToFavorites(int index) {
+    setState(() {
+      // bool likestatus = false;
+      // int index = 0;
+      // for (int i = 0; i < favoriteList.length; i++) {
+      //   if (favoriteList[i]['productName'] == favoriteList[index]['productName']) {
+      //     index = i;
+      //     likestatus = true;
+      //   }
+      // }
+      // if (likestatus == true) {
+      //   favoriteList.add(productDisplayList[index]);
+      //   // cartList[index]['member']++;
+      // } else {
+      //   favoriteList.add(productDisplayList[index]);
+      // }
+
+
+
+      // Navigator.pushNamed(context, '/cart');
+      // productDisplayList[index]['like'] = !productDisplayList[index]['like'];
+      // if (productDisplayList[index]['like']) {
+      //   favoriteList.add(productDisplayList[index]);
+      // } else {
+      //   favoriteList.remove(productDisplayList[index]);
+      // }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     double h = MediaQuery.of(context).size.height;
@@ -80,7 +115,9 @@ class _DetailPageState extends State<DetailPage> {
           Padding(
             padding: const EdgeInsets.only(right: 10),
             child: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushNamed('/favorite');
+              },
               icon: Icon(
                 Icons.favorite_border,
                 color: Colors.white,
@@ -96,115 +133,284 @@ class _DetailPageState extends State<DetailPage> {
               GestureDetector(
                 onDoubleTap: () {
                   setState(() {
-                    isHeartAnimating=true;
-                    isLiked=true;
+                    bool likestatus = false;
+                    int index = 0;
+                    for (int i = 0; i < favoriteList.length; i++) {
+                      if (favoriteList[i]['productName'] == favoriteList[0]['productName']) {
+                        index = i;
+                        likestatus = true;
+                      }
+                    }
+                    if (likestatus == true) {
+                      favoriteList.add(productDisplayList[0]);
+                      // cartList[index]['member']++;
+                    } else {
+                      favoriteList.add(productDisplayList[0]);
+                    }
+                    showLimitedTimeDialog(context);
                   });
+
+                  // return  Lottie.asset('assets/LottieLogo1.json'),
+                  // isHeartAnimating = true;
+                  // isLiked = true;
+                  // print('add to favorite');
                 },
-                child: Container(
-                  height: h * 0.6,
-                  width: w * 0.99 + 10,
-                  decoration: BoxDecoration( 
-                    image: DecorationImage(
-                        fit: BoxFit.cover,
-                        image: AssetImage(productDisplayList[0]['image'])),
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(25),
-                      topRight: Radius.circular(25),
-                    ),
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      // Icon(Icons.favorite ,size: 50,color: Colors.white,),
-                      Align(
-                        alignment: Alignment.bottomRight,
-                        child: IconButton(
-                            onPressed: () {},
-                            icon: Icon(
-                              Icons.fullscreen,
-                              color: Colors.white,
-                              size: 40,
-                            )),
+                child: Stack(
+                  children: [
+                    Container(
+                      height: h * 0.6,
+                      width: w * 0.99 + 10,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: AssetImage(productDisplayList[0]['image']),
+                        ),
+                        color: Colors.white,
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(25),
+                          topRight: Radius.circular(25),
+                        ),
                       ),
-                      SizedBox(
-                        height: h * 0.27,
-                      ),
-                      Column(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              SizedBox(
-                                width: w * 0.035,
+                          Align(
+                            alignment: Alignment.bottomRight,
+                            child: IconButton(
+                              onPressed: () {},
+                              icon: Icon(
+                                Icons.fullscreen,
+                                color: Colors.white,
+                                size: 40,
                               ),
-                              Container(
-                                height: h * 0.04,
-                                width: w * 0.04,
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    image: AssetImage(
-                                        'assets/images/StarBucks_Logos/vegIcon.jpg'),
+                            ),
+                          ),
+                          SizedBox(
+                            height: h * 0.27,
+                          ),
+                          Column(
+                            children: [
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  SizedBox(width: w * 0.035),
+                                  Container(
+                                    height: h * 0.04,
+                                    width: w * 0.04,
+                                    decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                        image: AssetImage(
+                                            'assets/images/StarBucks_Logos/vegIcon.jpg'),
+                                      ),
+                                    ),
                                   ),
-                                ),
-                              ),
-                              SizedBox(
-                                width: w * 0.02,
-                              ),
-                              Text(
-                                'VEGETERIAN' +
-                                    '  ${productDisplayList[0]['celsius']}',
-                                textAlign: TextAlign.start,
-                                style: TextStyle(color: Colors.white),
-                              ),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              SizedBox(
-                                width: w * 0.035,
-                              ),
-                              Text(
-                                productDisplayList[0]['productName'],
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    // fontSize: 20,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              SizedBox(
-                                width: w * 0.035,
-                              ),
-                              SizedBox(
-                                  width: w * 0.86,
-                                  child: Text(
-                                    productDisplayList[0]['description'],
+                                  SizedBox(width: w * 0.02),
+                                  Text(
+                                    'VEGETARIAN  ${productDisplayList[0]['celsius']}',
+                                    textAlign: TextAlign.start,
                                     style: TextStyle(color: Colors.white),
-                                  )),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              SizedBox(
-                                width: w * 0.035,
+                                  ),
+                                ],
                               ),
-                              Text(
-                                productDisplayList[0]['category'],
-                                style: TextStyle(
-                                  color: Colors.white,
-                                ),
+                              Row(
+                                children: [
+                                  SizedBox(width: w * 0.035),
+                                  Text(
+                                    productDisplayList[0]['productName'],
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  SizedBox(width: w * 0.035),
+                                  SizedBox(
+                                    width: w * 0.86,
+                                    child: Text(
+                                      productDisplayList[0]['description'],
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  SizedBox(width: w * 0.035),
+                                  Text(
+                                    productDisplayList[0]['category'],
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ],
                           ),
                         ],
                       ),
-                    ],
-                  ),
+                    ),
+
+                    // Positioned.fill(
+                    //   child: Center(
+                    //     child: Icon(
+                    //       Icons.favorite,
+                    //       size: 120,
+                    //       color: Colors.white,
+                    //     ),
+                    //   ),
+                    // ),
+                  ],
                 ),
               ),
+
+              // GestureDetector(
+              //   onDoubleTap: () {
+              //     setState(() {
+              //       isHeartAnimating = true;
+              //       isLiked = true;
+              //       print('add to favorite ');
+              //     });
+              //   },
+              //   child: Stack(
+              //     children: [
+              //       Container(
+              //         height: h * 0.6,
+              //         width: w * 0.99 + 10,
+              //         decoration: BoxDecoration(
+              //           image: DecorationImage(
+              //               fit: BoxFit.cover,
+              //               image: AssetImage(productDisplayList[0]['image'])),
+              //           color: Colors.white,
+              //           borderRadius: BorderRadius.only(
+              //             topLeft: Radius.circular(25),
+              //             topRight: Radius.circular(25),
+              //           ),
+              //         ),
+              //         child: Column(
+              //           mainAxisAlignment: MainAxisAlignment.center,
+              //           children: [
+              //             // Opacity(
+              //             //   opacity: isHeartAnimating ? 1 : 0,
+              //             //   child: HeartAnimationWidget(
+              //             //     isAnimating: isHeartAnimating,
+              //             //     child: Icon(
+              //             //       Icons.favorite,
+              //             //       size: 100,
+              //             //       color: Colors.white,
+              //             //     ),
+              //             //   ),
+              //             // ),
+              //             Align(
+              //               alignment: Alignment.bottomRight,
+              //               child: IconButton(
+              //                   onPressed: () {},
+              //                   icon: Icon(
+              //                     Icons.fullscreen,
+              //                     color: Colors.white,
+              //                     size: 40,
+              //                   )),
+              //             ),
+              //             SizedBox(
+              //               height: h * 0.27,
+              //             ),
+              //             Column(
+              //               children: [
+              //                 Row(
+              //                   mainAxisAlignment: MainAxisAlignment.start,
+              //                   children: [
+              //                     SizedBox(
+              //                       width: w * 0.035,
+              //                     ),
+              //                     Container(
+              //                       height: h * 0.04,
+              //                       width: w * 0.04,
+              //                       decoration: BoxDecoration(
+              //                         image: DecorationImage(
+              //                           image: AssetImage(
+              //                               'assets/images/StarBucks_Logos/vegIcon.jpg'),
+              //                         ),
+              //                       ),
+              //                     ),
+              //                     SizedBox(
+              //                       width: w * 0.02,
+              //                     ),
+              //                     Text(
+              //                       'VEGETERIAN' +
+              //                           '  ${productDisplayList[0]['celsius']}',
+              //                       textAlign: TextAlign.start,
+              //                       style: TextStyle(color: Colors.white),
+              //                     ),
+              //                   ],
+              //                 ),
+              //                 Row(
+              //                   children: [
+              //                     SizedBox(
+              //                       width: w * 0.035,
+              //                     ),
+              //                     Text(
+              //                       productDisplayList[0]['productName'],
+              //                       style: TextStyle(
+              //                           color: Colors.white,
+              //                           // fontSize: 20,
+              //                           fontWeight: FontWeight.bold),
+              //                     ),
+              //                   ],
+              //                 ),
+              //                 Row(
+              //                   children: [
+              //                     SizedBox(
+              //                       width: w * 0.035,
+              //                     ),
+              //                     SizedBox(
+              //                         width: w * 0.86,
+              //                         child: Text(
+              //                           productDisplayList[0]['description'],
+              //                           style: TextStyle(color: Colors.white),
+              //                         )),
+              //                   ],
+              //                 ),
+              //                 Row(
+              //                   children: [
+              //                     SizedBox(
+              //                       width: w * 0.035,
+              //                     ),
+              //                     Text(
+              //                       productDisplayList[0]['category'],
+              //                       style: TextStyle(
+              //                         color: Colors.white,
+              //                       ),
+              //                     ),
+              //                   ],
+              //                 ),
+              //               ],
+              //             ),
+              //           ],
+              //         ),
+              //       ),
+              //       Opacity(
+              //         opacity: isHeartAnimating ? 1 : 0,
+              //         child: HeartAnimationWidget(
+              //           onEnd: ()=> setState(() {
+              //
+              //           }),
+              //           isAnimating: isHeartAnimating,
+              //           child: Positioned(
+              //             height: 502,
+              //             left: 130,
+              //             child: Icon(
+              //               Icons.favorite,
+              //               size: 120,
+              //               color: Colors.white,
+              //             ),
+              //           ),
+              //         ),
+              //       )
+              //     ],
+              //   ),
+              // ),
               GestureDetector(
                 onTap: () {
                   _customizeController.open();
@@ -652,3 +858,24 @@ final ButtonStyle buttonStyleCircle = ButtonStyle(
     ),
   ),
 );
+
+void showLimitedTimeDialog(BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return Dialog(
+        backgroundColor: Colors.transparent,
+        child: LottieBuilder.asset(
+          'assets/likeButton/like.json',
+        ),
+      );
+    },
+  );
+
+  Future.delayed(
+      Duration(
+        seconds: 1,
+      ), () {
+    Navigator.of(context).pop();
+  });
+}

@@ -184,7 +184,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         isLoading = true;
 
                         signUpController.nextPage(
-                            duration: Duration(seconds: 2),
+                            duration: Duration(seconds: 1),
                             curve: Curves.easeInOut);
 
                         // Navigator.of(context).pushNamed('/');
@@ -318,7 +318,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         isOTP = true;
 
                         signUpController.nextPage(
-                            duration: Duration(seconds: 2),
+                            duration: Duration(seconds: 1),
                             curve: Curves.easeInOut);
 
                         // Navigator.of(context).pushNamed('/');

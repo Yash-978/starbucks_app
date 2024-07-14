@@ -20,7 +20,7 @@ class _SplashPageState extends State<SplashPage> {
       body: AnimatedSplashScreen(
         // splashIconSize: BorderSide.strokeAlignCenter,
         nextScreen: SignUpPage(),
-        animationDuration: Duration(seconds: 2),
+        animationDuration: Duration(seconds: 1),
         backgroundColor: Colors.black,
         splashTransition: SplashTransition.rotationTransition,
 
@@ -38,18 +38,6 @@ class _SplashPageState extends State<SplashPage> {
             ),
           ),
         ),
-
-        // Container(
-        //   height: h * 0.60,
-        //   width: w * 0.60,
-        //   decoration: BoxDecoration(
-        //     shape: BoxShape.circle,
-        //     image: DecorationImage(
-        //       image: AssetImage(
-        //           'assets/images/StarBucks_Logos/StrabucksLogo.png'),
-        //     ),
-        //   ),
-        // )
       ),
     );
   }

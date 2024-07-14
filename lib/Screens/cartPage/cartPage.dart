@@ -102,11 +102,7 @@ class _cartPageState extends State<cartPage> {
                                     ),
                                   ],
                                 ),
-                                // Container(
-                                //   height: h*0.1,
-                                //   width: w*0.3,
-                                //   color: Colors.pink,
-                                // ),
+
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [

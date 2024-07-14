@@ -42,6 +42,20 @@ dependencies:
   page_transition: ^2.1.0
   sliding_up_panel: ^2.0.0+1
   shimmer: ^2.0.0
+  lottie: ^3.1.2
+  flutter_launcher_icons: "^0.13.1"
+
+
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/StarBucks_Logos/StrabucksLogo.png"
+  adaptive_icon_background: "#ffffff"
+  adaptive_icon_foreground: "assets/images/StarBucks_Logos/starbucksLogo3.png"
+
+
+
 
 
 
@@ -100,6 +114,7 @@ flutter:
     - assets/images/Poster/
     - assets/images/gift2/
     - assets/images/bestseller/
+    - assets/likeButton/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

@@ -198,8 +198,7 @@ class _drinkPageState extends State<drinkPage> {
                                                           height: h * 0.050,
                                                           width: w * 0.250,
                                                           decoration: BoxDecoration(
-                                                              color: Colors.grey
-                                                                  .shade400,
+                                                              color: Color(0xff007347),
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(

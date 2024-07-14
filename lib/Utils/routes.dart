@@ -5,6 +5,7 @@ import '../Screens/BottomNavigationBar/bottomNavigationBar.dart';
 import '../Screens/CategoriesScreen/categoryScreen.dart';
 import '../Screens/Checkout/checkOut.dart';
 import '../Screens/DetailScreeen/detailPage.dart';
+import '../Screens/FavoriteScreen/favoriteScreen.dart';
 import '../Screens/GreetingScreen/greeting.dart';
 import '../Screens/HomeScreens/homeScreen.dart';
 import '../Screens/Login&SignUp/signUp.dart';
@@ -26,7 +27,8 @@ class AppRoutes {
     '/greeting': (context) => GreetingPage(),
    '/detail': (context) => DetailPage(),
     '/cart':(context)=>cartPage(),
-    '/check':(context)=>Checkout()
+    '/check':(context)=>Checkout(),
+    '/favorite':(context)=>FavoriteScreen(),
     // '/quote':(context)=>QuotePage(),
     // '/profile':(context)=>ProfilePage(),
   };
