@@ -105,87 +105,178 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
           return Column(
             children: [
               Container(
-                height: h * 0.21,
+                height: h * 0.260,
                 width: w * 1,
                 decoration: BoxDecoration(
-                  color: Colors.white,
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey,
-                      spreadRadius: 2,
-                      blurRadius: 2,
-                      offset: Offset(0, 2),
-                    ),
-                  ],
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.white,
+                    boxShadow: [
+                      BoxShadow(
+                          color: Colors.grey.shade400,
+                          offset: Offset(0, 2),
+                          blurRadius: 2,
+                          spreadRadius: 2)
+                    ]),
+                child: Column(
                   children: [
-                    Container(
-                      height: h * 0.08,
-                      width: w * 0.14,
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          fit: BoxFit.cover,
-                          image: AssetImage(
-                            favoriteList[index]['image'],
-                          ),
+                    Row(
+                      children: [
+                        Stack(
+                          children: [
+                            Container(
+                              height: h * 0.260,
+                              width: w * 0.32,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius:
+                                BorderRadius.only(
+                                    topLeft:
+                                    Radius.circular(
+                                        10),
+                                    bottomLeft:
+                                    Radius.circular(
+                                        10)),
+                              ),
+                              child: Padding(
+                                padding:
+                                const EdgeInsets.only(
+                                    bottom: 60,
+                                    top: 20,
+                                    left: 10,
+                                    right: 10),
+                                child: Container(
+                                  width: w * 0.1,
+                                  height: h * 0.1,
+                                  decoration: BoxDecoration(
+                                      borderRadius:
+                                      BorderRadius
+                                          .circular(100),
+                                      color: Colors.pink,
+                                      image: DecorationImage(
+                                          fit: BoxFit.cover,
+                                          image: AssetImage(
+                                            '${favoriteList[index]['image']}',
+                                          ))),
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-                    // SizedBox(
-                    //   width: w * 0.030,
-                    // ),
-                    Container(
-                      height: h * 0.2,
-                      width: w * 0.8,
-                      color: Colors.white,
-                      child: Row(
-                        children: [
-                          Column(
+                        Container(
+                          height: h * 0.260,
+                          width: w * 0.595,
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.only(
+                                  topRight:
+                                  Radius.circular(10),
+                                  bottomRight:
+                                  Radius.circular(10))),
+                          child: Column(
                             children: [
-                              SizedBox(
-                                height: h * 0.040,
+                              Padding(
+                                padding:
+                                const EdgeInsets.only(
+                                    right: 35, top: 20),
+                                child: Text(
+                                  //   "${save[selIndex][index]['productName']}",
+                                  '${favoriteList[index]['productName']}',
+
+                                  maxLines: 1,
+                                  style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight:
+                                      FontWeight.bold),
+                                ),
                               ),
-                              Text(
-                                favoriteList[index]['productName'],
-                                style: TextStyle(
-                                  // fontSize: 16,
-                                  color: Color(0xff1e3932),
+                              Padding(
+                                padding:
+                                const EdgeInsets.only(
+                                    right: 190),
+                                child: Text(
+                                  // "${save[selIndex][index]['size']}",
+                                  '${favoriteList[index]['size']}',
+
+                                  maxLines: 1,
+                                  style:
+                                  TextStyle(fontSize: 12),
                                 ),
                               ),
                               SizedBox(
-                                height: h * 0.010,
+                                height: h * 0.0050,
                               ),
-                              Text(
-                                favoriteList[index]['category'],
-                                style: TextStyle(
-                                  // fontSize: 10,
-                                  color: Color(0xff1e3932),
+                              Padding(
+                                padding:
+                                const EdgeInsets.only(
+                                    right: 10),
+                                child: Text(
+                                  //"${save[selIndex][index]['description']}",
+                                  '${favoriteList[index]['description']}',
+
+                                  maxLines: 2,
+                                  style:
+                                  TextStyle(fontSize: 12),
                                 ),
+                              ),
+                              SizedBox(
+                                height: h * 0.03,
+                              ),
+                              Row(
+                                //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Padding(
+                                    padding:
+                                    const EdgeInsets.only(
+                                        right: 20),
+                                    child: Text(
+                                      // "${save[selIndex][index]['price']}",
+                                      '${favoriteList[index]['price']}',
+
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 18,
+                                          fontWeight:
+                                          FontWeight
+                                              .bold),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: w * 0.10,
+                                  ),
+                                  GestureDetector(
+                                    child: Padding(
+                                      padding:
+                                      const EdgeInsets
+                                          .only(
+                                          right: 10),
+                                      child: Container(
+                                        height: h * 0.050,
+                                        width: w * 0.250,
+                                        decoration: BoxDecoration(
+                                            color: Color(0xff007347),
+                                            borderRadius:
+                                            BorderRadius
+                                                .circular(
+                                                20)),
+                                        child: Center(
+                                          child: Text(
+                                            'My favorite',
+                                            style: TextStyle(
+                                              color: Colors
+                                                  .white,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  )
+                                ],
                               )
                             ],
                           ),
-                          Spacer(),
-                          Column(
-                            children: [
-                              SizedBox(
-                                height: h * 0.040,
-                              ),
-                              Text(
-                                favoriteList[index]['price'].toString(),
-                                style: TextStyle(
-                                  // fontSize: 12,
-                                  fontWeight: FontWeight.w700,
-                                  color: Color(0xff1e3932),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
+                        )
+                      ],
+                    )
                   ],
                 ),
               ),
