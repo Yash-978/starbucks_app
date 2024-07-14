@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
-import 'package:starbucks_app/Screens/FavoriteScreen/favoriteScreen.dart';
-import 'package:starbucks_app/Screens/drinkPage/drinkPage.dart';
 import 'package:starbucks_app/Utils/ColorList.dart';
 import 'package:starbucks_app/Utils/GlobalList.dart';
 
