@@ -205,7 +205,6 @@ class _SearchscreenState extends State<Searchscreen> {
                                   child: Text(
                                     //"${save[selIndex][index]['description']}",
                                     '${filteredList[index]['description']}',
-
                                     maxLines: 2,
                                     style: TextStyle(fontSize: 12),
                                   ),
