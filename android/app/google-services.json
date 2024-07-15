@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "874597781108",
+    "project_id": "starbucks-b1c4e",
+    "storage_bucket": "starbucks-b1c4e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:874597781108:android:82faffb2d3354c9e2f8b21",
+        "android_client_info": {
+          "package_name": "com.example.starbucks_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNs2nXbCoHvf_jHaKvLP47a9cC1Qo_28I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
