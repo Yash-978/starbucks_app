@@ -43,10 +43,10 @@ class _SplashVideoPageState extends State<SplashVideoPage> {
       body: Center(
         child: Container(
           height: h * 1 + 10,
-          width: w * 1 + 20,
+          width: w * 0.99+10,
           decoration: BoxDecoration(
               color: Colors.transparent,
-              image: DecorationImage(
+              image: DecorationImage(fit: BoxFit.fill,
                 image: AssetImage(selectSplash),
               )),
         ),
