@@ -254,253 +254,218 @@ class _DetailPageState extends State<DetailPage> {
                   ],
                 ),
               ),
-
-              // GestureDetector(
-              //   onDoubleTap: () {
-              //     setState(() {
-              //       isHeartAnimating = true;
-              //       isLiked = true;
-              //       print('add to favorite ');
-              //     });
-              //   },
-              //   child: Stack(
-              //     children: [
-              //       Container(
-              //         height: h * 0.6,
-              //         width: w * 0.99 + 10,
-              //         decoration: BoxDecoration(
-              //           image: DecorationImage(
-              //               fit: BoxFit.cover,
-              //               image: AssetImage(productDisplayList[0]['image'])),
-              //           color: Colors.white,
-              //           borderRadius: BorderRadius.only(
-              //             topLeft: Radius.circular(25),
-              //             topRight: Radius.circular(25),
+              // Stack(children: [
+              //   Container(
+              //     height: 240,
+              //     width: double.infinity,
+              //     decoration: BoxDecoration(
+              //         color: Colors.white,
+              //         borderRadius: BorderRadius.only(
+              //             topLeft: Radius.circular(30),
+              //             topRight: Radius.circular(30))),
+              //     child: Column(children: [
+              //       Padding(
+              //         padding:
+              //         const EdgeInsets.only(top: 20, left: 20, right: 20),
+              //         child: SizedBox(
+              //           height: 105,
+              //           child: Column(
+              //             crossAxisAlignment: CrossAxisAlignment.start,
+              //             children: [
+              //               Text(
+              //                 'CUSTOMISE YOUR ORDER',
+              //                 style: TextStyle(
+              //                     fontSize: 20, fontWeight: FontWeight.bold),
+              //               ),
+              //               Text(
+              //                 'SHORT,No Milk',
+              //                 style: TextStyle(
+              //                     fontSize: 10, fontWeight: FontWeight.w500),
+              //               ),
+              //               Divider(
+              //                 height: 25,
+              //               ),
+              //               Text(
+              //                 'AMP UP YOUR ORDER',
+              //                 style: TextStyle(
+              //                     fontSize: 20, fontWeight: FontWeight.bold),
+              //               ),
+              //               Text(
+              //                 'No Whipped Topping',
+              //                 style: TextStyle(
+              //                     fontSize: 10, fontWeight: FontWeight.w500),
+              //               ),
+              //             ],
               //           ),
-              //         ),
-              //         child: Column(
-              //           mainAxisAlignment: MainAxisAlignment.center,
-              //           children: [
-              //             // Opacity(
-              //             //   opacity: isHeartAnimating ? 1 : 0,
-              //             //   child: HeartAnimationWidget(
-              //             //     isAnimating: isHeartAnimating,
-              //             //     child: Icon(
-              //             //       Icons.favorite,
-              //             //       size: 100,
-              //             //       color: Colors.white,
-              //             //     ),
-              //             //   ),
-              //             // ),
-              //             Align(
-              //               alignment: Alignment.bottomRight,
-              //               child: IconButton(
-              //                   onPressed: () {},
-              //                   icon: Icon(
-              //                     Icons.fullscreen,
-              //                     color: Colors.white,
-              //                     size: 40,
-              //                   )),
-              //             ),
-              //             SizedBox(
-              //               height: h * 0.27,
-              //             ),
-              //             Column(
-              //               children: [
-              //                 Row(
-              //                   mainAxisAlignment: MainAxisAlignment.start,
-              //                   children: [
-              //                     SizedBox(
-              //                       width: w * 0.035,
-              //                     ),
-              //                     Container(
-              //                       height: h * 0.04,
-              //                       width: w * 0.04,
-              //                       decoration: BoxDecoration(
-              //                         image: DecorationImage(
-              //                           image: AssetImage(
-              //                               'assets/images/StarBucks_Logos/vegIcon.jpg'),
-              //                         ),
-              //                       ),
-              //                     ),
-              //                     SizedBox(
-              //                       width: w * 0.02,
-              //                     ),
-              //                     Text(
-              //                       'VEGETERIAN' +
-              //                           '  ${productDisplayList[0]['celsius']}',
-              //                       textAlign: TextAlign.start,
-              //                       style: TextStyle(color: Colors.white),
-              //                     ),
-              //                   ],
-              //                 ),
-              //                 Row(
-              //                   children: [
-              //                     SizedBox(
-              //                       width: w * 0.035,
-              //                     ),
-              //                     Text(
-              //                       productDisplayList[0]['productName'],
-              //                       style: TextStyle(
-              //                           color: Colors.white,
-              //                           // fontSize: 20,
-              //                           fontWeight: FontWeight.bold),
-              //                     ),
-              //                   ],
-              //                 ),
-              //                 Row(
-              //                   children: [
-              //                     SizedBox(
-              //                       width: w * 0.035,
-              //                     ),
-              //                     SizedBox(
-              //                         width: w * 0.86,
-              //                         child: Text(
-              //                           productDisplayList[0]['description'],
-              //                           style: TextStyle(color: Colors.white),
-              //                         )),
-              //                   ],
-              //                 ),
-              //                 Row(
-              //                   children: [
-              //                     SizedBox(
-              //                       width: w * 0.035,
-              //                     ),
-              //                     Text(
-              //                       productDisplayList[0]['category'],
-              //                       style: TextStyle(
-              //                         color: Colors.white,
-              //                       ),
-              //                     ),
-              //                   ],
-              //                 ),
-              //               ],
-              //             ),
-              //           ],
               //         ),
               //       ),
-              //       Opacity(
-              //         opacity: isHeartAnimating ? 1 : 0,
-              //         child: HeartAnimationWidget(
-              //           onEnd: ()=> setState(() {
               //
-              //           }),
-              //           isAnimating: isHeartAnimating,
-              //           child: Positioned(
-              //             height: 502,
-              //             left: 130,
-              //             child: Icon(
-              //               Icons.favorite,
-              //               size: 120,
-              //               color: Colors.white,
-              //             ),
-              //           ),
+              //     ]),
+              //   ),
+              // ]),
+
+
+
+              Stack(alignment: Alignment.bottomLeft,
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      _customizeController.open();
+                    },
+                    child: Container(
+                      height: h * 0.135,
+                      width: w * 1,
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(20),
+                              topRight: Radius.circular(20))),
+                      child: Column(
+                        children: [
+                          SizedBox(
+                            height: h * 0.01,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              SizedBox(
+                                width: w * 0.06,
+                              ),
+                              Text(
+                                'CUSTOMISE YOUR ORDER',
+                                style: TextStyle(
+                                    fontSize: 20, fontWeight: FontWeight.w500),
+                              )
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              SizedBox(
+                                width: w * 0.06,
+                              ),
+                              Text(
+                                'SHORT,' +
+                                    '  ${productDisplayList[0]['ingredients']}',
+                                style: TextStyle(
+                                    fontSize: 10, fontWeight: FontWeight.w400),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+
+                  GestureDetector(
+                    onTap: () {
+                      _addOnsController.open();
+                    },
+                    child: Container(
+                      height: h * 0.07,
+                      width: w * 1,
+                      decoration: BoxDecoration(
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black38,
+                              blurRadius: 4,
+                              spreadRadius: 4,
+                              // offset: Offset(1,)
+                            )
+                          ],
+                          color: Colors.white,
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(20),
+                              topRight: Radius.circular(20))),
+                      child: Column(
+                        children: [
+                          SizedBox(
+                            height: h * 0.015,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              SizedBox(
+                                width: w * 0.01,
+                              ),
+                              Text(
+                                'AMP UP YOUR ORDER WITH ADDITIONAL TOPPINGS',
+                                style: TextStyle(
+                                    fontSize: 15, fontWeight: FontWeight.w500),
+                              )
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              SizedBox(
+                                width: w * 0.06,
+                              ),
+                              Text(
+                                'No Whippped Topping',
+                                style: TextStyle(
+                                    fontSize: 10, fontWeight: FontWeight.w400),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              // GestureDetector(
+              //   onTap: () {
+              //     _addOnsController.open();
+              //   },
+              //   child: Container(
+              //     height: h * 0.07,
+              //     width: w * 1,
+              //     decoration: BoxDecoration(
+              //         boxShadow: [
+              //           BoxShadow(
+              //             color: Colors.black45,
+              //             blurRadius: 4,
+              //             spreadRadius: 4,
+              //             // offset: Offset(1,)
+              //           )
+              //         ],
+              //         color: Colors.white,
+              //         borderRadius: BorderRadius.only(
+              //             topLeft: Radius.circular(20),
+              //             topRight: Radius.circular(20))),
+              //     child: Column(
+              //       children: [
+              //         SizedBox(
+              //           height: h * 0.015,
               //         ),
-              //       )
-              //     ],
+              //         Row(
+              //           mainAxisAlignment: MainAxisAlignment.start,
+              //           children: [
+              //             SizedBox(
+              //               width: w * 0.01,
+              //             ),
+              //             Text(
+              //               'AMP UP YOUR ORDER WITH ADDITIONAL TOPPINGS',
+              //               style: TextStyle(
+              //                   fontSize: 15, fontWeight: FontWeight.w500),
+              //             )
+              //           ],
+              //         ),
+              //         Row(
+              //           children: [
+              //             SizedBox(
+              //               width: w * 0.06,
+              //             ),
+              //             Text(
+              //               'No Whippped Topping',
+              //               style: TextStyle(
+              //                   fontSize: 10, fontWeight: FontWeight.w400),
+              //             ),
+              //           ],
+              //         )
+              //       ],
+              //     ),
               //   ),
               // ),
-              GestureDetector(
-                onTap: () {
-                  _customizeController.open();
-                },
-                child: Container(
-                  height: h * 0.07,
-                  width: w * 1,
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(20),
-                          topRight: Radius.circular(20))),
-                  child: Column(
-                    children: [
-                      SizedBox(
-                        height: h * 0.01,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          SizedBox(
-                            width: w * 0.06,
-                          ),
-                          Text(
-                            'CUSTOMISE YOUR ORDER',
-                            style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.w500),
-                          )
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          SizedBox(
-                            width: w * 0.06,
-                          ),
-                          Text(
-                            'SHORT,' +
-                                '  ${productDisplayList[0]['ingredients']}',
-                            style: TextStyle(
-                                fontSize: 10, fontWeight: FontWeight.w400),
-                          ),
-                        ],
-                      )
-                    ],
-                  ),
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  _addOnsController.open();
-                },
-                child: Container(
-                  height: h * 0.07,
-                  width: w * 1,
-                  decoration: BoxDecoration(
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black45,
-                          blurRadius: 4,
-                          spreadRadius: 4,
-                          // offset: Offset(1,)
-                        )
-                      ],
-                      color: Colors.white,
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(20),
-                          topRight: Radius.circular(20))),
-                  child: Column(
-                    children: [
-                      SizedBox(
-                        height: h * 0.015,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          SizedBox(
-                            width: w * 0.01,
-                          ),
-                          Text(
-                            'AMP UP YOUR ORDER WITH ADDITIONAL TOPPINGS',
-                            style: TextStyle(
-                                fontSize: 15, fontWeight: FontWeight.w500),
-                          )
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          SizedBox(
-                            width: w * 0.06,
-                          ),
-                          Text(
-                            'No Whippped Topping',
-                            style: TextStyle(
-                                fontSize: 10, fontWeight: FontWeight.w400),
-                          ),
-                        ],
-                      )
-                    ],
-                  ),
-                ),
-              ),
               Container(
                 height: h * 0.07,
                 width: w * 1,
