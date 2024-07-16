@@ -204,7 +204,9 @@ class _GiftscreenState extends State<Giftscreen> {
                   ),
                 ],
               ),
-              SizedBox(height: h*0.02,),
+              SizedBox(
+                height: h * 0.02,
+              ),
               SizedBox(
                 height: h * 1,
                 child: ListView.builder(
@@ -235,12 +237,13 @@ class _GiftscreenState extends State<Giftscreen> {
                           Row(
                             children: [
                               Container(
-                                margin: const EdgeInsets.only(right: 10, left: 18),
+                                margin:
+                                    const EdgeInsets.only(right: 10, left: 18),
                                 height: h * 0.15,
                                 width: w * 0.45,
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10),
-                                    image:  DecorationImage(
+                                    image: DecorationImage(
                                         fit: BoxFit.fill,
                                         image: AssetImage(
                                             GiftList[index]['image'])),
@@ -255,18 +258,18 @@ class _GiftscreenState extends State<Giftscreen> {
                               ),
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
+                                // mainAxisAlignment: MainAxisAlignment.spaceAround,
                                 children: [
-                                   Text(
+                                  Text(
                                     '${GiftList[index]['name']}',
                                     style: TextStyle(
-                                        fontWeight: FontWeight.bold, ),
+                                      fontWeight: FontWeight.bold,
+                                    ),
                                   ),
-
-                                   Text(
-                                     softWrap: true,
-                                    '${GiftList[index]['content']}',
-
-                                  ),
+                                  Text(
+                                      // softWrap: true,
+                                      overflow: TextOverflow.ellipsis,
+                                      'Bring in the festive\n season and make each \ncelebration memorable.'),
                                   ElevatedButton(
                                     onPressed: () {},
                                     style: ElevatedButton.styleFrom(
@@ -292,7 +295,9 @@ class _GiftscreenState extends State<Giftscreen> {
                             ],
                           )
                         ]),
-                        SizedBox(height: h*0.02,),
+                        SizedBox(
+                          height: h * 0.02,
+                        ),
                       ],
                     );
                   },

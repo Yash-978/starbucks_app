@@ -304,9 +304,8 @@ class _DetailPageState extends State<DetailPage> {
               //   ),
               // ]),
 
-
-
-              Stack(alignment: Alignment.bottomLeft,
+              Stack(
+                alignment: Alignment.bottomLeft,
                 children: [
                   GestureDetector(
                     onTap: () {
@@ -355,7 +354,6 @@ class _DetailPageState extends State<DetailPage> {
                       ),
                     ),
                   ),
-
                   GestureDetector(
                     onTap: () {
                       _addOnsController.open();
@@ -581,7 +579,13 @@ class _DetailPageState extends State<DetailPage> {
                               Container(
                                 height: h * 0.09,
                                 width: w * 0.15,
-                                color: Colors.green,
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    fit: BoxFit.cover,
+                                    image: AssetImage(
+                                        'assets/images/starbuckslidingUp.jpeg'),
+                                  ),
+                                ),
                               ),
                               SizedBox(
                                 height: h * 0.02,
@@ -609,7 +613,13 @@ class _DetailPageState extends State<DetailPage> {
                               Container(
                                 height: h * 0.09,
                                 width: w * 0.15,
-                                color: Colors.green,
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    fit: BoxFit.cover,
+                                    image: AssetImage(
+                                        'assets/images/starbuckslidingUp.jpeg'),
+                                  ),
+                                ),
                               ),
                               SizedBox(
                                 height: h * 0.02,
@@ -641,7 +651,13 @@ class _DetailPageState extends State<DetailPage> {
                               Container(
                                 height: h * 0.09,
                                 width: w * 0.15,
-                                color: Colors.green,
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    fit: BoxFit.cover,
+                                    image: AssetImage(
+                                        'assets/images/starbuckslidingUp.jpeg'),
+                                  ),
+                                ),
                               ),
                               SizedBox(
                                 height: h * 0.02,
@@ -673,7 +689,13 @@ class _DetailPageState extends State<DetailPage> {
                               Container(
                                 height: h * 0.09,
                                 width: w * 0.15,
-                                color: Colors.green,
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    fit: BoxFit.cover,
+                                    image: AssetImage(
+                                        'assets/images/starbuckslidingUp.jpeg'),
+                                  ),
+                                ),
                               ),
                               SizedBox(
                                 height: h * 0.02,
@@ -764,7 +786,372 @@ class _DetailPageState extends State<DetailPage> {
           // Amp Up Your Order with Add-ons Panel
           SlidingUpPanel(
             controller: _addOnsController,
-            panel: _buildAddOnsPanel(),
+            panel: Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    RichText(
+                        text: TextSpan(
+                      text: 'AMP UP YPUR ORDER WITH ADD...',
+                      style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white),
+                      children: const <TextSpan>[
+                        TextSpan(
+                          text: '(Default)',
+                          style: TextStyle(
+                              fontWeight: FontWeight.w400, fontSize: 15),
+                        ),
+                      ],
+                    )),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        'No Whipped Topping',
+                        style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 13,
+                            color: Colors.white),
+                      ),
+                    ),
+                    Divider(
+                      height: h * 0.1,
+                      thickness: 2,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'WHIPPED TOPPING',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                              color: Colors.white),
+                        ),
+                        Text(
+                          'Select any one',
+                          style: TextStyle(
+                              fontSize: 13,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.white),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: h * 0.05,
+                    ),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        'NO WHIPPED TOPPING',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15,
+                            color: Colors.white),
+                      ),
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          '+',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                              color: Colors.white),
+                        ),
+                        Icon(
+                          Icons.currency_rupee,
+                          color: Colors.white,
+                          size: 14,
+                        ),
+                        Text(
+                          '0.00',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                              color: Colors.white),
+                        ),
+                        Spacer(),
+                        IconButton(
+                            onPressed: () {},
+                            icon: Icon(
+                              Icons.remove_circle_outline,
+                              color: Colors.white,
+                              size: 18,
+                            )),
+                        Text(
+                          '0',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18,
+                              color: Colors.white),
+                        ),
+                        IconButton(
+                            onPressed: () {},
+                            icon: Icon(
+                              Icons.add_circle_outline_rounded,
+                              color: Colors.white,
+                              size: 18,
+                            )),
+                      ],
+                    ),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        'WHIPPED TOPPING',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15,
+                            color: Colors.white),
+                      ),
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          '+',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                              color: Colors.white),
+                        ),
+                        Icon(
+                          Icons.currency_rupee,
+                          color: Colors.white,
+                          size: 14,
+                        ),
+                        Text(
+                          '36.75',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                              color: Colors.white),
+                        ),
+                        Spacer(),
+                        IconButton(
+                            onPressed: () {},
+                            icon: Icon(
+                              Icons.remove_circle_outline,
+                              color: Colors.white,
+                              size: 18,
+                            )),
+                        Text(
+                          '0',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18,
+                              color: Colors.white),
+                        ),
+                        IconButton(
+                            onPressed: () {},
+                            icon: Icon(
+                              Icons.add_circle_outline_rounded,
+                              color: Colors.white,
+                              size: 18,
+                            )),
+                      ],
+                    ),
+                    Divider(
+                      height: h * 0.1,
+                      thickness: 2,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'SYRUPS & SAUCES',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                              color: Colors.white),
+                        ),
+                        Text(
+                          'Select any 5',
+                          style: TextStyle(
+                              fontSize: 13,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.white),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: h * 0.05,
+                    ),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        'No WHIPPED TOPPING',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15,
+                            color: Colors.white),
+                      ),
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          '+',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                              color: Colors.white),
+                        ),
+                        Icon(
+                          Icons.currency_rupee,
+                          color: Colors.white,
+                          size: 14,
+                        ),
+                        Text(
+                          '57.75',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                              color: Colors.white),
+                        ),
+                        Spacer(),
+                        IconButton(
+                            onPressed: () {},
+                            icon: Icon(
+                              Icons.remove_circle_outline,
+                              color: Colors.white,
+                              size: 18,
+                            )),
+                        Text(
+                          '0',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18,
+                              color: Colors.white),
+                        ),
+                        IconButton(
+                            onPressed: () {},
+                            icon: Icon(
+                              Icons.add_circle_outline_rounded,
+                              color: Colors.white,
+                              size: 18,
+                            )),
+                      ],
+                    ),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        'White Mocha Sauce',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15,
+                            color: Colors.white),
+                      ),
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          '+',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                              color: Colors.white),
+                        ),
+                        Icon(
+                          Icons.currency_rupee,
+                          color: Colors.white,
+                          size: 14,
+                        ),
+                        Text(
+                          '57.75',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                              color: Colors.white),
+                        ),
+                        Spacer(),
+                        IconButton(
+                            onPressed: () {},
+                            icon: Icon(
+                              Icons.remove_circle_outline,
+                              color: Colors.white,
+                              size: 18,
+                            )),
+                        Text(
+                          '0',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18,
+                              color: Colors.white),
+                        ),
+                        IconButton(
+                            onPressed: () {},
+                            icon: Icon(
+                              Icons.add_circle_outline_rounded,
+                              color: Colors.white,
+                              size: 18,
+                            )),
+                      ],
+                    ),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        'Vanilla Syrup',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15,
+                            color: Colors.white),
+                      ),
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          '+',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                              color: Colors.white),
+                        ),
+                        Icon(
+                          Icons.currency_rupee,
+                          color: Colors.white,
+                          size: 14,
+                        ),
+                        Text(
+                          '57.75',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                              color: Colors.white),
+                        ),
+                        Spacer(),
+                        IconButton(
+                            onPressed: () {},
+                            icon: Icon(
+                              Icons.remove_circle_outline,
+                              color: Colors.white,
+                              size: 18,
+                            )),
+                        Text(
+                          '0',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18,
+                              color: Colors.white),
+                        ),
+                        IconButton(
+                            onPressed: () {},
+                            icon: Icon(
+                              Icons.add_circle_outline_rounded,
+                              color: Colors.white,
+                              size: 18,
+                            )),
+                      ],
+                    ),
+                    Divider(
+                      height: h * 0.1,
+                      thickness: 2,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            color: primaryColor,
             minHeight: 0,
             maxHeight: 400,
             backdropEnabled: true,
@@ -775,32 +1162,6 @@ class _DetailPageState extends State<DetailPage> {
     );
   }
 }
-
-Widget _buildAddOnsPanel() {
-  return ListView(
-    padding: EdgeInsets.all(16.0),
-    children: [
-      Text('Amp Up Your Order with Add-ons',
-          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-      ListTile(
-        title: Text('Whipped Cream'),
-        trailing: Switch(
-          value: false,
-          onChanged: (value) {},
-        ),
-      ),
-      ListTile(
-        title: Text('Extra Shot of Espresso'),
-        trailing: Switch(
-          value: false,
-          onChanged: (value) {},
-        ),
-      ),
-    ],
-  );
-}
-
-
 
 final ButtonStyle buttonStyleCircle = ButtonStyle(
   // padding: MaterialStateProperty.all<EdgeInsets>(const EdgeInsets.all(15)),
