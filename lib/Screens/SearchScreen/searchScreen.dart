@@ -75,7 +75,7 @@ class _SearchscreenState extends State<Searchscreen> {
                   height: h * 0.01,
                 ),
                 Container(
-                  height: h * 0.069,
+                  height: h * 0.072,
                   width: w * 0.92,
                   decoration: BoxDecoration(
                     color: Colors.white,

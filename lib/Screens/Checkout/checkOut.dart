@@ -151,7 +151,7 @@ void showPaymentTimeDialog(BuildContext context) {
                 children: [
                   // SizedBox(width: 5,),
                   Text(
-                    '     Payment \n    Successfull\n     Completed',
+                    '     Payment \n    Successfully\n     Completed',
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 40,
